@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Curativa — Owner's View (Julia)</title>
+<style>
+  :root{ --pine:#3f6b62; --bronze:#b8823a; --ink:#1b1c18; --line:#e0d8c6; --panel:#f6f1e6; --warn:#8a3a2a; }
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:#fbf8f0; margin:0; padding:22px; font-size:15px; line-height:1.4}
+  .wrap{max-width:1060px; margin:0 auto}
+  h1{color:var(--pine); font-size:23px; margin:0 0 2px}
+  .sub{color:#7a6a4f; font-style:italic; margin:0 0 18px; font-size:13px}
+  .grid{display:grid; grid-template-columns:320px 1fr; gap:20px}
+  @media(max-width:860px){ .grid{grid-template-columns:1fr} }
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:16px 18px}
+  .card h2{font-size:13px; letter-spacing:.05em; text-transform:uppercase; color:var(--bronze); margin:0 0 12px}
+  label{display:block; margin:0 0 11px; font-size:13px; color:#40403a}
+  label span{display:block; font-weight:600; color:var(--ink); margin-bottom:3px}
+  label .u{font-weight:400; color:#9a8f78; font-size:11px}
+  input[type=number]{width:100%; padding:7px 9px; border:1px solid var(--line); border-radius:6px; font-size:15px; font-family:inherit; background:var(--panel)}
+  input:focus{outline:2px solid var(--pine); background:#fff}
+  .banner{background:#eef2ef; border:1px solid #cfe0d9; border-radius:10px; padding:15px 18px; margin-bottom:14px; font-size:15px}
+  .banner b{color:var(--pine)}
+  .banner .big{font-size:20px; font-weight:700; color:var(--pine)}
+  .bbrandon{background:#faf6ec; border:1px solid #ecdcc0; border-radius:10px; padding:11px 16px; margin-bottom:16px; font-size:13.5px; color:#5a4a2a}
+  .bbrandon b{color:#9a6b2f}
+  table{width:100%; border-collapse:collapse; font-size:13.5px}
+  th,td{padding:6px 9px; text-align:right; border-bottom:1px solid #eee4d0}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:#8a8064; font-size:11px; text-transform:uppercase; letter-spacing:.03em; border-bottom:1.5px solid var(--line)}
+  .owner td{font-weight:700; background:#f7f3ea; border-top:1.5px solid var(--bronze)}
+  .julia td{font-weight:700; color:var(--pine); background:#f2f6f3}
+  .split td:first-child{padding-left:16px; color:#7a6a4f}
+  .juliayr td{font-weight:700; color:var(--pine)}
+  .minus td:first-child{color:#7a6a4f; padding-left:16px}
+  .col-today{background:#faf6ec}
+  .col-after{background:#eef2ef}
+  canvas{width:100%; height:170px; margin-top:16px; border:1px solid var(--line); border-radius:8px; background:#fff}
+  .foot{font-size:11.5px; color:#8a8570; margin-top:14px; line-height:1.55}
+  .warnbox{margin-top:12px; padding:10px 13px; border-radius:8px; font-size:12.5px; background:#f7ece6; border-left:3px solid var(--warn); color:#6a3020}
+  .lever{margin-top:12px; padding:10px 13px; border-radius:8px; font-size:12.5px; background:#eef2ef; border-left:3px solid var(--pine); color:#274139}
+  button#reset{margin-top:8px; width:100%; padding:8px 10px; border:1px solid var(--pine); border-radius:6px; background:var(--pine); color:#fff; font-size:13px; font-weight:600; font-family:inherit; cursor:pointer}
+  button#reset:hover{background:#345a52}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Casa Curativa — What Julia Keeps</h1>
+  <p class="sub">Her money, before and after the deal — paying the investor back, paying the operator a wage, AND granting the operator equity. Costs estimated from margin until she gives real numbers.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Inputs — edit these</h2>
+      <label><span>Sales today <span class="u">USD / month</span></span><input type="number" id="sales" value="6700" step="100"></label>
+      <label><span>Annual sales growth <span class="u">%</span></span><input type="number" id="growth" value="25" step="1"></label>
+      <label><span>Gross margin <span class="u">% (deck: 68–79)</span></span><input type="number" id="gm" value="72" step="1"></label>
+      <label><span>Operating costs <span class="u">$/mo — team, rent (NOT Julia, NOT operator)</span></span><input type="number" id="opex" value="2200" step="100"></label>
+      <label><span>Operator (Brandon) wage <span class="u">$/mo</span></span><input type="number" id="wage" value="1200" step="100"></label>
+      <label><span>Operator (Brandon) equity <span class="u">% of the business</span></span><input type="number" id="equity" value="15" step="1"></label>
+      <hr style="border:none;border-top:1px solid var(--line);margin:6px 0 12px">
+      <label><span>Investor share of sales <span class="u">%</span></span><input type="number" id="share" value="12" step="1"></label>
+      <label><span>Repayment cap <span class="u">× investment</span></span><input type="number" id="cap" value="1.75" step="0.05"></label>
+      <label><span>Investment <span class="u">$</span></span><input type="number" id="inv" value="50000" step="1000"></label>
+      <label><span>Grace period <span class="u">months</span></span><input type="number" id="grace" value="6" step="1"></label>
+      <button type="button" id="reset">↺ Reset to current figures</button>
+    </div>
+
+    <div>
+      <div class="banner" id="banner">–</div>
+      <div class="bbrandon" id="bbrandon">–</div>
+
+      <div class="card">
+        <h2>The money, over time</h2>
+        <table>
+          <thead>
+            <tr><th>Per month</th><th class="col-today">Today</th><th>Year 1</th><th>Year 2</th><th>Year 3</th><th class="col-after">Investor gone</th></tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <canvas id="chart" width="760" height="170"></canvas>
+        <div class="lever" id="lever"></div>
+        <div class="warnbox" id="warn"></div>
+        <div class="foot">
+          <b>Read it left to right:</b> Today = what she makes now (she owns 100%, no operator, no investor). Years 1–3 subtract the investor payback AND the operator wage, then split the owner profit — Julia's share vs Brandon's equity. "Investor gone" is the month the cap is met; from then it's just costs + wage, and the profit jumps.<br>
+          <b>The valley &amp; the lever:</b> if Year 1 dips below Today, that's the build year. Lower the operator wage or the operating costs (staff Brandon replaces) to shrink it. Note Brandon's wage + equity trade off — less wage, more equity, roughly the same for him near-term but better long-term and better for Julia now.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const IDS=['sales','growth','gm','opex','wage','equity','share','cap','inv','grace'];
+const DEFAULTS={}; IDS.forEach(i=>{ DEFAULTS[i]=$(i).value; $(i).addEventListener('input',recalc); });
+$('reset').addEventListener('click',()=>{ IDS.forEach(i=>$(i).value=DEFAULTS[i]); recalc(); });
+const money=v=>(v<0?'-$':'$')+Math.abs(Math.round(v)).toLocaleString();
+
+function buildMonths(){
+  const sales0=+$('sales').value, g=+$('growth').value/100, gm=+$('gm').value/100,
+        opex=+$('opex').value, wage=+$('wage').value, eq=+$('equity').value/100,
+        share=+$('share').value/100, cap=+$('inv').value*+$('cap').value, grace=+$('grace').value;
+  const mg=Math.pow(1+g,1/12); let cum=0, payoff=null; const arr=[];
+  for(let m=1;m<=180;m++){
+    const s=sales0*Math.pow(mg,m-1);
+    let inv=0;
+    if(m>grace && cum<cap){ inv=Math.min(share*s, cap-cum); cum+=inv; if(cum>=cap-0.01&&payoff===null)payoff=m; }
+    const gp=s*gm;
+    const owner=gp-opex-wage-inv;        // owner profit pool (after wage + investor)
+    const julia=owner*(1-eq), brandonEq=owner*eq;
+    arr.push({m,s,gp,opex,wage,inv,owner,julia,brandonEq});
+  }
+  return {arr, payoff, gm, opex, eq, wage:+$('wage').value};
+}
+const snap=(a,m)=>a.arr[Math.min(m-1,a.arr.length-1)];
+
+function recalc(){
+  const a=buildMonths();
+  const gm=+$('gm').value/100, opex=+$('opex').value, eq=+$('equity').value/100, wage=+$('wage').value;
+  const sales0=+$('sales').value;
+  const today={ s:sales0, gp:sales0*gm, opex, wage:0, inv:0, owner:sales0*gm-opex, julia:sales0*gm-opex, brandonEq:0 };
+  const y1=snap(a,12), y2=snap(a,24), y3=snap(a,36);
+  const after = a.payoff ? snap(a, Math.min(a.payoff+1, a.arr.length)) : null;
+  // after: investor=0
+  const afterOwner = after ? (after.gp-after.opex-after.wage) : null;
+  const afterJulia = after ? afterOwner*(1-eq) : null;
+  const afterBrandonEq = after ? afterOwner*eq : null;
+
+  const cols=[today,y1,y2,y3];
+  const line=(lbl,fn,cls,afterVal)=>{
+    let h=`<tr class="${cls}"><td>${lbl}</td><td class="col-today">${money(fn(today))}</td>`;
+    h+=`<td>${money(fn(y1))}</td><td>${money(fn(y2))}</td><td>${money(fn(y3))}</td>`;
+    h+=`<td class="col-after">${after?money(afterVal):'—'}</td></tr>`; return h;
+  };
+  let html='';
+  html+=line('Monthly sales', c=>c.s, '', after?after.s:0);
+  html+=line('− Product cost', c=>-(c.s-c.gp), 'minus', after?-(after.s-after.gp):0);
+  html+=line('= Gross profit', c=>c.gp, '', after?after.gp:0);
+  html+=line('− Operating costs', c=>-c.opex, 'minus', -opex);
+  html+=line('− Operator wage', c=>-c.wage, 'minus', after?-after.wage:0);
+  html+=line('− Investor payback', c=>-c.inv, 'minus', 0);
+  html+=line('= Owner profit / mo', c=>c.owner, 'owner', afterOwner);
+  html+=line('→ Julia'+"'"+'s share', c=>c.julia, 'julia split', afterJulia);
+  html+=line('→ Brandon equity', c=>c.brandonEq, 'split', afterBrandonEq);
+  // Julia annual
+  html+=`<tr class="juliayr"><td>Julia / year (run-rate)</td><td class="col-today">${money(today.julia*12)}</td><td>${money(y1.julia*12)}</td><td>${money(y2.julia*12)}</td><td>${money(y3.julia*12)}</td><td class="col-after">${after?money(afterJulia*12):'—'}</td></tr>`;
+  $('tbody').innerHTML=html;
+
+  const payYr=a.payoff?(a.payoff/12).toFixed(1):'—';
+  $('banner').innerHTML = after
+    ? `<b>Julia's yearly take:</b> <span class="big">${money(today.julia*12)}</span> today → <span class="big">${money(y3.julia*12)}</span> by year 3 → <span class="big">${money(afterJulia*12)}</span> once the investor's paid off (~${payYr} yrs). She put in <b>$0</b> and still owns <b>${(100-eq*100).toFixed(0)}%</b>.`
+    : `<b>At these settings the investor isn't repaid within 15 years.</b> Raise growth or the investor share.`;
+
+  $('bbrandon').innerHTML = after
+    ? `<b>Brandon's total (year ~${payYr}, investor gone):</b> ${money(wage*12)} wage + ${money(afterBrandonEq*12)} from ${(eq*100).toFixed(0)}% equity = <b>${money(wage*12+afterBrandonEq*12)}/yr</b>, and rising every year the business grows — for $0 of his own capital in.`
+    : `<b>Brandon:</b> ${money(wage*12)}/yr wage + ${(eq*100).toFixed(0)}% equity (upside once repaid).`;
+
+  const valley=y1.julia<today.julia;
+  $('warn').textContent = valley
+    ? `⚠️ Build-year valley: Year 1 (Julia ${money(y1.julia)}/mo) is below Today (${money(today.julia)}/mo). Be upfront — she earns ~${money(today.julia-y1.julia)}/mo less for ~a year, then lands far ahead.`
+    : '';
+  $('lever').textContent = valley
+    ? `Erase the valley: lower the operator wage, or cut "Operating costs" by the staff Brandon replaces (~${money(today.julia-y1.julia)}/mo closes the gap).`
+    : `No valley — Julia is at or above today's income every year, and far ahead once the investor rolls off.`;
+
+  drawChart(a, today.julia);
+}
+
+function drawChart(a, todayJulia){
+  const c=$('chart'), ctx=c.getContext('2d'), W=c.width, H=c.height, pad=26;
+  ctx.clearRect(0,0,W,H);
+  const N=Math.min(a.payoff?a.payoff+12:72, a.arr.length);
+  const vals=a.arr.slice(0,N).map(r=>r.julia);
+  const maxY=Math.max(todayJulia,...vals)*1.1, minY=Math.min(todayJulia,...vals,0);
+  const x=i=>pad+(W-2*pad)*(i/(N-1));
+  const y=v=>H-pad-(H-2*pad)*((v-minY)/(maxY-minY));
+  ctx.strokeStyle='#b8823a'; ctx.setLineDash([5,4]); ctx.lineWidth=1.3;
+  ctx.beginPath(); ctx.moveTo(pad,y(todayJulia)); ctx.lineTo(W-pad,y(todayJulia)); ctx.stroke(); ctx.setLineDash([]);
+  ctx.fillStyle='#9a6b2f'; ctx.font='11px sans-serif'; ctx.fillText('today '+money(todayJulia)+'/mo', pad+2, y(todayJulia)-4);
+  if(a.payoff&&a.payoff<N){ const px=x(a.payoff-1); ctx.strokeStyle='#cfe0d9'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(px,pad); ctx.lineTo(px,H-pad); ctx.stroke(); ctx.fillStyle='#3f6b62'; ctx.fillText('investor gone', px+3, pad+10); }
+  ctx.strokeStyle='#3f6b62'; ctx.lineWidth=2.6; ctx.beginPath();
+  vals.forEach((v,i)=> i?ctx.lineTo(x(i),y(v)):ctx.moveTo(x(i),y(v))); ctx.stroke();
+  ctx.fillStyle='#8a8064'; ctx.font='10px sans-serif'; ctx.fillText('Julia'+"'"+'s take-home / month →', pad, H-6);
+}
+recalc();
+</script>
+</body>
+</html>
