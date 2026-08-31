@@ -49,10 +49,21 @@ a:hover{color:#EAE3D3}
 </style>
 </head>
 <body>
+<style>
+section h2{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.4px;font-weight:700;line-height:1.02;font-size:clamp(28px,4.6vw,42px);color:#EAE3D3;margin:0 0 26px}
+section h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.3px;font-weight:600;line-height:1.1;font-size:clamp(19px,2.4vw,23px);color:#EAE3D3;margin:40px 0 14px}
+section p{font-family:'Inter',sans-serif;font-size:17px;line-height:1.7;color:#C9CAB8;margin:0 0 18px}
+section li{font-family:'Inter',sans-serif;font-size:17px;line-height:1.7;color:#C9CAB8;margin:0 0 14px}
+section ul{padding-left:22px;margin:0 0 18px}
+section strong{color:#EAE3D3;font-weight:600}
+section em{color:#EAE3D3;font-style:italic}
+section blockquote{margin:26px 0;padding:20px 24px;border-left:3px solid #3F6B62;background:#1B1D15}
+section blockquote p:last-child{margin-bottom:0}
+@media(max-width:560px){section{padding:52px 0 !important}}
+</style>
 
-<div class="bd" style="background:#13140F;color:#EAE3D3;min-height:100vh;overflow-x:hidden">
-
-  <!-- NAV -->
+<div class="bd" style="background:#13140F;color:#EAE3D3;overflow-x:hidden">
+<!-- NAV -->
   <nav style="position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:16px;padding:16px 40px;background:rgba(19,20,15,.82);backdrop-filter:blur(10px);border-bottom:1px solid #24261C">
     <a href="/" style="display:flex;align-items:center;gap:14px">
       <img class="logo-mark" src="/logo-mark.png" alt="">
@@ -63,189 +74,409 @@ a:hover{color:#EAE3D3}
       <a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01" style="padding:11px 20px;font-size:14px">Get the Profile</a>
     </div>
   </nav>
+<section id="01-hero" style="background:#13140F;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>You built the business. Now it only runs when you override yourself.</h2>
 
-  <!-- HERO -->
-  <header class="pad-x" style="position:relative;max-width:1160px;margin:0 auto;padding:80px 40px 0">
-    <a href="/" style="font-family:'Inter',sans-serif;font-weight:500;font-size:13px;color:#7E8070">← Back to home</a>
-    <h1 class="hl" style="font-size:clamp(44px,7vw,96px);color:#EAE3D3;margin:26px 0 0;max-width:15ch">The Operator Profile</h1>
-    <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(18px,2.1vw,23px);line-height:1.5;color:#C6C2B3;max-width:660px;margin:26px 0 0">Give us your birth date, time, and place — nothing about your business — and we'll name the exact call you keep getting wrong. Then we tell you what to do about it. This week.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:13px;margin:38px 0 0;align-items:center">
-      <a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a>
-      <a class="btn-ghost" href="#inside">See what's inside ↓</a>
-    </div>
-    <!-- waveform -->
-    <div class="wave" id="wave-top" style="height:64px;margin:60px 0 0"></div>
-    <div style="display:flex;justify-content:space-between;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#5E604D;margin-top:10px;padding-bottom:10px">
-      <span>How you're wired</span><span>What to do about it</span>
-    </div>
-  </header>
+<p>You are working hard and the business is fighting you anyway. The pace it demands is not the pace you can actually hold, the decision you have been sitting on still will not close, and the advice that works for every other founder keeps sliding off you. That collision — between how you are built to operate and how you are currently running the company — is what this is about.</p>
 
-  <!-- THE WEDGE -->
-  <section class="pad-x" style="max-width:1160px;margin:0 auto;padding:96px 40px 0">
-    <div class="g-2" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
-      <div>
-        <h2 class="hl" style="font-size:clamp(30px,4vw,50px);color:#EAE3D3;margin:0;max-width:14ch">Every assessment tells you what you are. Then it stops.</h2>
-      </div>
-      <div style="padding-top:8px">
-        <p style="font-family:'Inter',sans-serif;font-size:18px;line-height:1.65;color:#C6C2B3;margin:0 0 20px">This tells you what to do with it — to run your business.</p>
-        <p style="font-family:'Inter',sans-serif;font-size:18px;line-height:1.65;color:#A2A392;margin:0">You've probably taken one of these before. It told you you're a 3, a Type A, a "visionary." Interesting for about a day. Monday comes and nothing in the business changes, because nobody told you what to do with it. This one does. Same read. One more layer: how to run your business with it.</p>
-      </div>
-    </div>
-  </section>
+<p>The Operator Profile is a founder operating manual written for one person, and it reads two things. Your birth date, exact birth time and birthplace. And six questions about the business: what shape it is in today, what you sell and who buys it, how customers find you now, what feels heavy, the decision you keep postponing, and the advice that never sticks. The birth data is the read of how you operate. Your six answers are what it gets applied to — which is why the instructions come back specific instead of generic.</p>
 
-  <!-- WHAT YOU GET -->
-  <section id="inside" style="margin:96px 0 0;border-top:1px solid #24261C;border-bottom:1px solid #24261C;background:#161711">
-    <div class="pad-x" style="max-width:1160px;margin:0 auto;padding:80px 40px">
-      <h2 class="hl" style="font-size:clamp(32px,4.4vw,56px);color:#EAE3D3;margin:0 0 16px">Four to six pages. Five things in it.</h2>
-      <p style="font-family:'Inter',sans-serif;font-size:18px;line-height:1.65;color:#C6C2B3;max-width:680px;margin:0 0 44px">A written document you keep. Not a reading — an operating manual. Five parts:</p>
+<p>What arrives is more than 5,000 words in thirteen sections. The sample we generated from real birth data ran over 7,600. Half of it is recognition. Half of it is what to do about it:</p>
 
-      <div class="g-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
-        <div style="padding:28px;border:1px solid #34352A;border-radius:14px;background:#1C1D16">
-          <div class="hl" style="font-size:32px;color:#B8823A">01</div>
-          <div class="hl" style="font-size:20px;color:#EAE3D3;margin:12px 0 8px">The operating contradiction</div>
-          <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:#A2A392;margin:0">Opens the document. The exact place your wiring and how you're actually running the business collide. Named in one line, so you know we're not guessing.</p>
-        </div>
-        <div style="padding:28px;border:1px solid #34352A;border-radius:14px;background:#1C1D16">
-          <div class="hl" style="font-size:32px;color:#3F6B62">02</div>
-          <div class="hl" style="font-size:20px;color:#EAE3D3;margin:12px 0 8px">How you're wired to run a business</div>
-          <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:#A2A392;margin:0">A tight portrait: how you decide, how you sell. Not your whole story — just the parts that run a business.</p>
-        </div>
-        <div style="padding:28px;border:1px solid #34352A;border-radius:14px;background:#1C1D16">
-          <div class="hl" style="font-size:32px;color:#EAE3D3">03</div>
-          <div class="hl" style="font-size:20px;color:#EAE3D3;margin:12px 0 8px">At least five operating instructions</div>
-          <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:#A2A392;margin:0">The core of it. Each one: the instruction, why it's true for you, what ignoring it costs, and the move to make this week. Instruction, never description.</p>
-        </div>
-        <div style="padding:28px;border:1px solid #34352A;border-radius:14px;background:#1C1D16">
-          <div class="hl" style="font-size:32px;color:#B8823A">04</div>
-          <div class="hl" style="font-size:20px;color:#EAE3D3;margin:12px 0 8px">Your specific bottleneck</div>
-          <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:#A2A392;margin:0">You tell us what feels broken right now. We tell you why — and whether that's the actual problem, or just where the real one is showing up.</p>
-        </div>
-        <div style="padding:28px;border:1px solid #454736;border-radius:14px;background:#20211A;display:flex;flex-direction:column;justify-content:center">
-          <div class="hl" style="font-size:32px;color:#3F6B62">05</div>
-          <div class="hl" style="font-size:20px;color:#EAE3D3;margin:12px 0 8px">Two pin-it-up cards</div>
-          <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:#C6C2B3;margin:0">How you make every call that matters, and the first hire your wiring actually needs. Print them. Put them where you'll see them.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<ul>
+  <li>Six long sections: the contradiction you are running, how a decision actually arrives for you, your sustainable pace, how you are built to sell, money and pressure, and your bottleneck.</li>
+  <li>Five to seven operating instructions — each with the move, why it fits you, where it shows up, what ignoring it costs, an experiment to run inside seven days, and what to watch.</li>
+  <li>A 30-day operating experiment, four cards to pin up, and a plain section on what this profile cannot know.</li>
+  <li>A portal you keep, with six practices and a strategist you can ask questions in your own operating terms.</li>
+</ul>
 
-  <!-- LENGTH IS A FEATURE -->
-  <section class="pad-x" style="max-width:1160px;margin:96px auto 0;padding:0 40px">
-    <div class="g-2" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
-      <div>
-        <h2 class="hl" style="font-size:clamp(28px,3.6vw,46px);color:#EAE3D3;margin:0;max-width:16ch">Read in fifteen minutes. Act on it Monday.</h2>
-      </div>
-      <div style="padding-top:8px">
-        <p style="font-family:'Inter',sans-serif;font-size:18px;line-height:1.65;color:#C6C2B3;margin:0">Four to six pages. Eleven hundred to fifteen hundred words. Every sentence has to earn its place, because you're reading this once at your kitchen table, then going back to run your business — not filing it away.</p>
-      </div>
-    </div>
-  </section>
+<p>For a founder or owner already running something real — not for someone asking birth data to invent a business from nothing.</p>
 
-  <!-- BIRTH DATA -->
-  <section class="pad-x" style="max-width:1160px;margin:96px auto 0;padding:0 40px">
-    <div style="border:1px solid #34352A;border-radius:20px;background:#161711;padding:52px 44px">
-      <h2 class="hl" style="font-size:clamp(28px,3.6vw,44px);color:#EAE3D3;margin:0 0 18px">Birth date, time, and place. Yes, really.</h2>
-      <p style="font-family:'Inter',sans-serif;font-size:17px;line-height:1.65;color:#C6C2B3;max-width:680px;margin:0 0 18px">Your exact birth data goes into four independent readings: Western astrology (your natal chart), Vedic astrology (the sidereal chart, a second and older sky), the I Ching (the 64 gates, the developmental layer), and Human Design (type, authority, profile, centers, channels, incarnation cross). Each one gets a real, full read on its own terms — not a glance.</p>
-      <p style="font-family:'Inter',sans-serif;font-size:17px;line-height:1.65;color:#C6C2B3;max-width:680px;margin:0 0 18px">Then our synthesis engine lines all four up and finds where they converge — the places where four systems, run independently, land on the same truth about you. That convergence is what makes it into your profile. Where they don't agree, we drop it.</p>
-      <p style="font-family:'Inter',sans-serif;font-size:17px;line-height:1.65;color:#C6C2B3;max-width:680px;margin:0">That's also why the birth time has to be exact. Guess it, and at least two of the four calculate wrong — the wrong house, the wrong gate — and the convergence breaks before it starts. If you don't know it off the top of your head, it's usually right there on your birth certificate.</p>
-    </div>
-  </section>
+<p>$29, one time. Pay, answer the questions, and watch it build on the page.</p>
+<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+  </div>
+</section>
+<section id="02-problem" style="background:#171812;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>The advice isn't wrong. It was written for a different operator.</h2>
 
-  <!-- HOW IT WORKS -->
-  <section class="pad-x" style="max-width:1160px;margin:96px auto 0;padding:0 40px">
-    <h2 class="hl" style="font-size:clamp(30px,4vw,50px);color:#EAE3D3;margin:0 0 20px">Order it. Answer a few quick questions. Read it before lunch.</h2>
-    <p style="font-family:'Inter',sans-serif;font-size:17px;line-height:1.65;color:#A2A392;max-width:680px;margin:0 0 20px">Six short questions beyond the birth data — what you sell, how customers find you, what feels heaviest right now, and the decision you've been sitting on. That's what turns a reading into a diagnosis.</p>
-    <div style="border-top:1px solid #24261C">
-      <div class="step">
-        <div class="step-n">01</div>
-        <div><b style="color:#EAE3D3;font-family:'Inter',sans-serif;font-weight:600">You pay.</b> <span style="font-family:'Inter',sans-serif;color:#A2A392">$29. Right here, then straight back to this site.</span></div>
-      </div>
-      <div class="step">
-        <div class="step-n">02</div>
-        <div><b style="color:#EAE3D3;font-family:'Inter',sans-serif;font-weight:600">You tell us.</b> <span style="font-family:'Inter',sans-serif;color:#A2A392">Birth date, time, place — plus team size, what feels broken right now, and how you get customers today.</span></div>
-      </div>
-      <div class="step">
-        <div class="step-n">03</div>
-        <div><b style="color:#EAE3D3;font-family:'Inter',sans-serif;font-weight:600">You watch it build.</b> <span style="font-family:'Inter',sans-serif;color:#A2A392">Right there on the page — no inbox, no waiting on an email. It's saved to this device, so you can come back to it whenever you want.</span></div>
-      </div>
-    </div>
-  </section>
+<p>You've probably taken one of these before. A number, a letter, a four-word type. It described you well enough that you read it twice and sent a screenshot to someone. Then Monday came, and the week ran exactly the way it ran the week before. Nothing in the description told you what to do at nine in the morning with a full inbox and a decision you'd already been sitting on for a month.</p>
 
-  <!-- ON-RAMP -->
-  <section class="pad-x" style="max-width:1160px;margin:96px auto 0;padding:0 40px">
-    <div class="g-2" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
-      <div>
-        <h2 class="hl" style="font-size:clamp(28px,3.6vw,46px);color:#EAE3D3;margin:0;max-width:16ch">The Profile is the map. I build the thing it points to.</h2>
-      </div>
-      <div style="padding-top:8px">
-        <p style="font-family:'Inter',sans-serif;font-size:18px;line-height:1.65;color:#C6C2B3;margin:0 0 18px">The Operator Profile is self-contained — read it, use it, done. If it's right, and your business is already making real money but still runs you more than you run it, that's a conversation for the <b style="color:#EAE3D3;font-weight:600">six-week engagement</b>: I find the gap, then I build the fix myself.</p>
-        <a class="btn-ghost" href="/">See how the six weeks work</a>
-      </div>
-    </div>
-  </section>
+<p>That's the harmless half of the problem. Here's the expensive half.</p>
 
-  <!-- FAQ -->
-  <section class="pad-x" style="max-width:1160px;margin:96px auto 0;padding:0 40px">
-    <h2 class="hl" style="font-size:clamp(28px,3.6vw,46px);color:#EAE3D3;margin:0 0 40px">Before you order</h2>
-    <div class="g-2" style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
-      <div style="padding:28px;border:1px solid #34352A;border-radius:14px;background:#1C1D16">
-        <div class="hl" style="font-size:18px;color:#EAE3D3;margin:0 0 10px">Why do you need my exact birth time?</div>
-        <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:#A2A392;margin:0">Skip it and the read goes soft. There's no "close enough" version, so we don't offer one.</p>
-      </div>
-      <div style="padding:28px;border:1px solid #34352A;border-radius:14px;background:#1C1D16">
-        <div class="hl" style="font-size:18px;color:#EAE3D3;margin:0 0 10px">Isn't this just a personality test with extra steps?</div>
-        <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:#A2A392;margin:0">A personality test hands you a label and stops. This hands you the place that label is costing you money right now, plus at least five things to do about it this week. If you want another label, plenty of places sell those.</p>
-      </div>
-      <div style="padding:28px;border:1px solid #34352A;border-radius:14px;background:#1C1D16">
-        <div class="hl" style="font-size:18px;color:#EAE3D3;margin:0 0 10px">What if I don't believe in any of this?</div>
-        <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:#A2A392;margin:0">You don't have to, to check it. Page one is the operating contradiction — the exact place your wiring and your business are fighting. Hold it up against your actual week. If it's not true, don't bother reading the rest.</p>
-      </div>
-      <div style="padding:28px;border:1px solid #34352A;border-radius:14px;background:#1C1D16">
-        <div class="hl" style="font-size:18px;color:#EAE3D3;margin:0 0 10px">What if my wiring doesn't have much to say?</div>
-        <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:#A2A392;margin:0">Some wirings are naturally more open and produce fewer hard instructions than others. Every document we build still ships at least five. What changes is the mix, never the number.</p>
-      </div>
-    </div>
-  </section>
+<p>Have you built the time-blocked schedule three or four times and quietly stopped setting the alarm by day four? Tried the morning routine that changes everything and found it changed nothing? Run the follow-up cadence, the daily posting, the delegation system — the real version, with a tracker and a week of genuine effort behind it — and watched it fall over anyway, while the person who recommended it is still doing it and still fine?</p>
 
-  <!-- FINAL CTA -->
-  <section class="pad-x" style="max-width:1160px;margin:96px auto 0;padding:0 40px">
-    <div style="text-align:center;padding:76px 40px 40px;border:1px solid #34352A;border-radius:20px;background:#161711;position:relative;overflow:hidden">
-      <h2 class="hl" style="font-size:clamp(34px,5vw,68px);color:#EAE3D3;margin:0 auto;max-width:16ch;position:relative">Find out what you're wired to do. Then go do it.</h2>
-      <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:18px;color:#C6C2B3;max-width:540px;margin:22px auto 0;position:relative">Birth date, time, place — and six questions about your business. That's it.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:13px;justify-content:center;margin:36px 0 0;position:relative">
-        <a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a>
-      </div>
-      <div class="wave" id="wave-bottom" style="height:44px;margin:56px 0 0;justify-content:center;gap:2px"></div>
-    </div>
-  </section>
+<p>When that happens enough times, most people land on the same conclusion. It works for everybody else, so I must be the one who's broken. Not disciplined enough. Not consistent enough. Missing something other founders clearly have. So you go looking for a better system, and the better system fails in the same place, and the conclusion gets a little more certain every time.</p>
 
-  <!-- FOOTER -->
-  <footer class="pad-x" style="max-width:1160px;margin:64px auto 0;padding:34px 40px 56px;border-top:1px solid #24261C;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-    <img class="logo-mark" src="/logo-mark.png" alt="" style="height:22px">
-    <a href="/" style="display:block"><img src="/wordmark-3s.png" alt="Abundanc3 Alch3my" style="height:16px;width:auto;display:block"></a>
-    <span style="font-family:'Inter',sans-serif;font-size:13px;color:#5E604D;margin-left:8px">Finding the gap between who you are and how you operate — then closing it.</span>
-    <a href="/why-the-33/" style="font-family:'Inter',sans-serif;font-size:13px;color:#7E8070">Why the 33?</a>
-    <span style="margin-left:auto;font-family:'Inter',sans-serif;font-size:12px;color:#5E604D">© 2026 Abundanc3 Alch3my</span>
-  </footer>
+<h3>What's actually going on</h3>
 
+<p>That conclusion is wrong, and the correction isn't that you're secretly exceptional. It's more boring than that, and more fixable.</p>
+
+<p>Generic advice is written for a generic operator. Whoever wrote it built it on their own wiring, and then removed the part where that mattered. It assumes decisions get made by weighing options over several days. It assumes your energy is a flat, renewable resource you can schedule against. It assumes you sell by initiating, that Tuesday at 2pm will produce the same quality of attention as any other hour on the calendar, and that the fix for a dropped habit is more willpower. Every one of those is true for somebody. Some of them may not be true for you. The advice never says which, because the person who wrote it never had to notice.</p>
+
+<p>So the system doesn't collapse because you failed it. It collapses at a specific joint — the one place its assumption about the operator doesn't match the operator running it. And because nobody ever names the joint, the failure reads as a character flaw instead of a mismatch.</p>
+
+<p>Here is what naming it sounds like. This is a line from a real profile, in the section on that founder's bottleneck, explaining why every pipeline system they had tried eventually fell apart:</p>
+
+<blockquote>
+  <p>You're spending willpower you don't have on a system that requires willpower you'll never sustainably have.</p>
+</blockquote>
+
+<p>That sentence excuses nothing. It's harder to hear than "try again Monday," because it means the thing you kept restarting was never going to hold, and the effort already spent on it is spent. It's also the first sentence in the whole sequence you can use. Once you know which joint breaks, you can stop buying systems that break there — and start choosing the ones built the way you already run.</p>
+
+<p>That's the gap this is built for. It isn't another description of who you are. It's the specific place your wiring and the way you're currently running your business are working against each other, and what to test this week in the business you actually have.</p>
+
+  </div>
+</section>
+<section id="03-what-it-is" style="background:#13140F;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>What actually arrives</h2>
+
+<p>A document of more than 5,000 words, written for one person, in thirteen sections. The sample we generated from a real chart came to 7,627. It is built in two halves, and the split is deliberate.</p>
+
+<h3>The first half is recognition</h3>
+
+<p>Six long sections, roughly 600 words each, that describe how you operate. They are written from your birth data alone — not from anything you typed — and that is the whole point of them. If they land, they landed on evidence you did not hand over.</p>
+
+<ul>
+  <li><strong>The contradiction you're running.</strong> The exact place where how you are built and how you are currently running the company are fighting each other. Where it shows up in an ordinary week, what it costs you now, and why it has survived this long — which is almost always because one half of it is a genuine strength that has paid off before.</li>
+  <li><strong>How a decision actually arrives for you.</strong> On what timescale a real yes forms. What a true signal feels like from the inside, and what the convincing impostor feels like. Which decisions you are reliably good at, and which you should never make alone or on the spot.</li>
+  <li><strong>Your sustainable pace.</strong> The conditions that produce your best work, what drains you fastest, and the difference between your capacity and your adrenaline — including the tell that you have crossed from one into the other. It also names the piece of popular productivity advice most likely to fail someone built like you, and why.</li>
+  <li><strong>How you're built to sell.</strong> Where your actual persuasive force comes from, which is rarely the thing you think you are supposed to be doing. What kind of selling costs you almost nothing and what kind drains you out of proportion to what it returns.</li>
+  <li><strong>Money, risk, and pressure.</strong> How you behave when money is tight and when it is suddenly plentiful — both distort, usually in different directions. Your real risk posture, which is often not the one you claim. And your stress signature: which of your judgements to distrust in a hard week.</li>
+  <li><strong>Your bottleneck.</strong> The one section that reads what you typed. It takes the thing you said feels heavy and diagnoses the operating pattern underneath it — and answers the question you cannot answer yourself: is this your wiring serving you, or the same wiring running you?</li>
+</ul>
+
+<h3>The second half is what to do about it</h3>
+
+<p>Short, specific, and pointed at your week. Five to seven operating instructions, each with six parts. A 30-day operating experiment that sequences three of those instructions across four weeks — a behaviour-change loop, not a business roadmap. Then four cards short enough to pin above a desk: how you make every call, your early warning signs, what to stop doing by default, and the support you need next.</p>
+
+<p>And a closing section on what the profile cannot know. That one is in here because a document that never names its own edges is asking you to trust it further than it has earned.</p>
+
+<p>You read it on screen the moment it is written — about forty seconds. Then it stays, in a portal you keep.</p>
+<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+  </div>
+</section>
+<section id="04-mechanism" style="background:#171812;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>How the profile is actually built</h2>
+
+<p>Your birth date, your exact birth time, and your birthplace go into four separate readings: Western astrology, Vedic astrology, Human Design, and the I Ching. Each is calculated and interpreted on its own terms, without being shown what the others said.</p>
+
+<p>Then the engine looks for where they land in the same place. A theme only one lens raises stays a minor note. What the profile leads with is what more than one lens reached independently, and the specific placements underneath it are counted and kept.</p>
+
+<h3>The honest count is three, not four</h3>
+
+<p>It would be tidy to tell you that four systems agree. That sentence is not available here, and it is worth knowing why. Human Design and the I Ching are two readings of the same computed wheel of 64 gates. Human Design reads that wheel mechanically, as type, authority and centers. The I Ching reads the same wheel developmentally. Same arithmetic, read twice.</p>
+
+<p>So when the engine counts how many independent sources landed on a theme, it counts three: the gate wheel, the Western chart, and the Vedic chart. Three is the number it reports internally, and three is the number we will say to you. In the sample profile quoted on this page, the strongest theme was carried by all three, with fifteen separate placements behind it. That is a real count off a real chart.</p>
+
+<h3>This is a reading of tendencies, not a measurement</h3>
+
+<p>Nothing here is scored. No instrument is calibrated against a population. Three lenses landing in the same place is a reason to look harder at something, not proof that it is true about you. That is why every operating instruction in the profile is written as a seven-day experiment with an observable signal to watch, and why the last section of the profile is a plain list of what it cannot know.</p>
+
+<h3>Why we ask six questions about your business</h3>
+
+<p>Birth data on its own produces a description of a person. That is interesting, and it is still one step away from your Tuesday. So before the profile is written, the intake asks six questions about the company. It takes about three minutes:</p>
+
+<ul>
+  <li>What the business looks like today — just you, a small team, or a growing one.</li>
+  <li>What you sell, and who buys it.</li>
+  <li>How customers usually find you now.</li>
+  <li>What feels broken, heavy, or harder than it should right now.</li>
+  <li>The decision you have been sitting on longer than it deserves.</li>
+  <li>The business advice or system you have tried that never seems to stick.</li>
+</ul>
+
+<p>Those answers are never handed back to you as though the chart revealed them. They are the thing the wiring gets applied to, and the profile says so out loud. From the sample:</p>
+
+<blockquote>
+  <p>Everything from this point forward is a read of how you are built to operate — how you decide, sell, structure your time, and where your own wiring is working against you. The business above is what it gets applied to.</p>
+</blockquote>
+
+<p>Without those six answers you would get a portrait. With them, the instructions point at the channel you actually sell through, the load that is actually heavy, and the decision you are actually postponing. That is the difference between a description of you and a manual for the business you are running.</p>
+
+  </div>
+</section>
+<section id="05-sample" style="background:#13140F;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>A real passage from a real profile</h2>
+
+<p>You should not have to take our word for how this reads. What follows is the opening of an Operator Profile that was actually generated — one real birth chart, one real set of six business answers, more than 7,600 words of output. It is copied out of the file exactly as it was produced. Nothing has been smoothed over for this page.</p>
+
+<blockquote><p>The sharpest thing you produce — the insight that lands whole, that reorders how someone sees their own situation — arrives before you can explain it, and you've built a business that keeps demanding you explain it anyway. So you're either holding back the knowing because the room hasn't asked the right way yet, or you're pushing it out too early and watching it land as noise, and either way the revenue moment passes. The contradiction isn't between your confidence and your delivery — it's that your most valuable output is unrepeatable, untimely, and almost impossible to package, and you're trying to run a scalable operation on top of it.</p></blockquote>
+
+<p>That is the first thing this founder read. No greeting, no summary of their strengths. The contradiction they are running, stated in the opening sentence. They sell strategic advisory retainers to founders of small agencies, and when the intake asked what feels heaviest, they said the pipeline gets rebuilt from scratch every month. The profile went straight at that.</p>
+
+<p>Further in, a section called "How a decision actually arrives for you" spends close to seven hundred words on one question: how does this person know when a call is right? It separates the fast body-level read from the case the mind assembles afterwards, and then it drops the difference into an ordinary week.</p>
+
+<blockquote><p>It's Thursday afternoon, someone is in your inbox with an opportunity — a partnership, a deal, a hire. Your gut landed in the first ten seconds of reading it. But the terms are interesting. The numbers work on paper. So you stay with it, run it forward in your mind, start building the case. Two hours later you've written a mental deck justifying a yes that your body flagged as a no before you'd finished the second sentence. That mental deck is not your decision. It's noise that arrived after your actual decision was already made.</p></blockquote>
+
+<h3>What to notice about that</h3>
+
+<ul>
+<li>It names a mechanism, not a compliment. It does not say you have good instincts. It says the signal lands first, the reasoning gets built afterwards, and the second one sounds far more convincing than it is.</li>
+<li>It can be wrong, which is the whole point. A flattering line cannot be checked. This one can — go back to the last opportunity you sat on for two hours and see whether that is what happened.</li>
+<li>It draws lines fine enough to use. The same section separates being time-rushed from being attention-rushed, says which decisions this person can trust themselves to make on the spot and which they should never make with someone watching, and hands them the sentence that buys the gap: "Let me sit with this tonight."</li>
+<li>It could not be true of a thousand founders. Plenty of people make their best calls in a full room under pressure. This profile tells this one that pressure produces their worst.</li>
+</ul>
+
+<p>Then the profile stops describing and starts instructing, and the six business answers show up by name. One of this founder's instructions reads:</p>
+
+<blockquote><p>Stop treating every referral conversation like a cold pitch — tell them explicitly what you're solving for and let them bring the qualified name to you.</p></blockquote>
+
+<p>Under it sits the seven-day version. In the next conversation where someone praises your work, say one sentence out loud: "I'm specifically looking for founders running small agencies who feel like their pipeline resets every month — if anyone comes to mind, I'd love an introduction." Do it once, deliberately, before Friday. Then watch whether they pause and name someone specific, or say they will think about it. That is their own market, in their own words, handed back as something to say on a Tuesday.</p>
+<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+  </div>
+</section>
+<section id="06-intake" style="background:#171812;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>Six questions about your business, and why we ask them</h2>
+
+<p>Your birth data says how you are wired. It cannot say what that wiring is being applied to. So before the read begins, you answer six short questions about the business you are actually running. Without them, an operating instruction is just a description of you with a verb attached to it. With them, the instructions can point at your pipeline, your buyers, and the decision you are currently sitting on.</p>
+
+<p>Here are all six:</p>
+
+<ul>
+  <li>What does the business look like today — just you, a small team, or a growing team?</li>
+  <li>What do you sell, and who buys it? One or two plain sentences.</li>
+  <li>How do customers usually find you now — referrals, content, outbound, paid ads, marketplace or retail, or a mix?</li>
+  <li>What feels broken, heavy, or harder than it should right now?</li>
+  <li>What decision have you been sitting on longer than it deserves?</li>
+  <li>What business advice or system have you tried that never seems to stick?</li>
+</ul>
+
+<p>Three are taps. Three are one line in your own words. One question per screen. It takes about three minutes, and you are never asked for your revenue.</p>
+
+<p>Then you watch those answers do work. In the sample profile, the open decision was whether to raise a retainer rate or bring on a second contractor. One of that person's operating instructions is titled <em>"When the rate-or-contractor decision comes back around this week, don't research it further — notice what your body already settled on and test that reading against one real constraint."</em> That instruction exists because of one line typed at intake.</p>
+
+<h3>You can always tell which half is which</h3>
+
+<p>The profile opens by reading your own answers back to you, plainly, with nothing added and nothing dressed up as insight. Then it draws the line out loud:</p>
+
+<blockquote>
+  <p>Everything from this point forward is a read of how you are built to operate — how you decide, sell, structure your time, and where your own wiring is working against you. The business above is what it gets applied to.</p>
+</blockquote>
+
+<p>That boundary holds for the rest of the document. What you told us stays what you told us. It is never handed back to you as something the chart supposedly revealed. When a section says your pipeline gets rebuilt every month and never compounds, that is your sentence. When a section says how clarity actually arrives for you, or where your pace breaks, that came from the birth data.</p>
+
+<p>This matters most in the passages that land hardest. Plenty of tools get their power by repeating your own words at you in a lower voice. You should be able to check, sentence by sentence, whether you are recognising something you had not put into words yet or reading back what you typed three minutes ago. In this profile you can.</p>
+
+  </div>
+</section>
+<section id="07-instructions" style="background:#13140F;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>Five to seven instructions, and six fields on every one</h2>
+
+<p>Halfway through, the profile stops describing you and starts handing you things to do. You get five to seven operating instructions. Each one is a single direct sentence — and then five more fields, because a sentence on its own is just advice.</p>
+
+<ul>
+  <li>The instruction. One sentence, specific enough to act on this week.</li>
+  <li>Why it fits. The evidence from how you're wired, in plain language.</li>
+  <li>Where it shows up. The moment in the week you described, named.</li>
+  <li>What ignoring it costs. In time, attention, or energy — never an invented number.</li>
+  <li>A seven-day experiment. One thing to run before next week is over.</li>
+  <li>What to watch. The signal that tells you whether it did anything.</li>
+</ul>
+
+<p>Those last two fields are the reason this works. An instruction here is a testable operating hypothesis, not a command. You're allowed to read one and think it's wrong for you. Run the seven-day version anyway, watch the signal it names, and the verdict comes from your own week instead of from us.</p>
+
+<p>Here is one in full, from a real profile. It was written for a solo advisor who told the intake that time blocking never sticks — he'd tried it four times and quit inside a week, every time.</p>
+
+<blockquote>
+  <p>Replace time blocking with a single daily constraint: one non-negotiable output before any inbox or async response.</p>
+  <p>Why: Time blocking fails you because it treats the structure as the thing to protect, and the structure is what you keep renegotiating when the day moves. You're built to work in concentrated bursts, not in pre-scheduled categories. The one-thing-first rule is harder to renegotiate than a calendar block because it's binary — it's done or it isn't.</p>
+  <p>Where it shows up: This is what's underneath the four failed time-blocking attempts. The system collapses because it requires you to defend multiple containers. One constraint is a decision made once; a timetable is a decision remade every hour.</p>
+  <p>What it's costing you: Without the constraint, reactive work — messages, client questions, inbox — fills the available space and the one thing that would have compounded (content, product, the rate conversation) keeps landing at the bottom of the day when you're depleted.</p>
+  <p>This week: Tomorrow morning, before you open email or any messaging, produce one thing: a paragraph, a decision made and written down, a piece of content drafted. It can be short. Do this for five consecutive days and track only whether you did it, not what it produced.</p>
+  <p>What to watch: Whether the protected output is still happening by Friday, and how the rest of the day feels differently organized when the first thing is already done before you've fielded a single request.</p>
+</blockquote>
+
+<p>Read what it doesn't do. It doesn't tell him to try harder, and it doesn't hand him a system that worked for somebody else. It takes the habit he already told us he abandons, explains why that particular structure fights the way he works, swaps in one that asks less of him, and then tells him what to look at on Friday to find out if it held.</p>
+
+<p>That is the difference between this and a personality report. A report names what you are and leaves Monday to you. These instructions already know what you sell, how customers find you, what feels heavy, and which decision you've been sitting on — because you answered six questions about the business before anything was written. So they can point at the real conversation, the real decision, the real habit. The other instructions in that same profile covered his referral conversations, the rate-or-contractor decision he'd been circling, two windows a week with no deliverable attached, the pull to re-edit content instead of publishing, and one question to ask a retainer client.</p>
+<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+  </div>
+</section>
+<section id="08-portal" style="background:#171812;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>It is not a PDF. It is a desk you come back to</h2>
+
+<p>Most things like this arrive as a file. You read it once, feel seen for an afternoon, and never open it again — which is the same failure as the personality test, arriving a bit later.</p>
+
+<p>This one opens as a portal. Every section of your profile is in the rail on the left, so you can go straight to the one that matters this week instead of scrolling for it. Beside them sit six practices, and each one takes something live in your business and runs your own profile against it.</p>
+
+<h3>The six practices</h3>
+
+<ul>
+  <li><strong>Decision Room.</strong> Bring a decision you are actually sitting on. It applies your own decision protocol to that specific call and gives you a brief: the process to use, the self-sabotage pattern to watch for on a call like this, the business facts it cannot see, and a readiness call about the <em>process</em> — never about which option is right. Afterwards you come back and record what happened, and that becomes part of what it knows about how you really decide.</li>
+  <li><strong>Bottleneck Lab.</strong> Something is stuck. This separates the visible problem from the operating pattern underneath it and leaves you with one experiment worth seven days: the pattern, the early tell, the smallest change worth testing, what to measure, and when to come back.</li>
+  <li><strong>Weekly Operator Review.</strong> Ten minutes on the week that just happened. Which decision took too long, what you kept doing that someone else could have owned, where the week felt clean, where you overrode your own protocol. No streaks, nothing to keep up, no penalty for skipping it for a month.</li>
+  <li><strong>Delegation Lab.</strong> List what you are carrying. It sorts the work into keep, hand off, systemise first, automate carefully, and stop — then builds the actual handoff for the one you pick, including the way you are most likely to take it back.</li>
+  <li><strong>Build My Week.</strong> You give it the hours you actually have, not the hours a productivity book assumes. It returns a week shaped like the way you work: two or three focus blocks placed where they belong for you, decision time matched to your own protocol, recovery where your judgement needs it, one block nothing is allowed into, and a Friday review. It writes a plan you copy — it does not touch your calendar.</li>
+  <li><strong>Advice Fit Lab.</strong> Someone told you to run your business a particular way. This works out which parts fit how you are built, which parts fight you, which parts need business evidence it does not have — and what to <em>modify</em> rather than abandon.</li>
+</ul>
+
+<h3>And you can ask it things</h3>
+
+<p>An ask bar sits at the bottom of every surface, and it already knows which page you are standing on, so you never have to re-explain your context. Ask what a section means for a specific call this week, or why a particular instruction is aimed at you and not at someone else. It answers in the same operating terms as the document — not as a chat assistant that happens to have read it.</p>
+
+<p>If the business changes, you change the six answers. The profile is being applied to whatever you say it is, and you are not asked those questions from scratch ever again.</p>
+<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+  </div>
+</section>
+<section id="09-limits" style="background:#13140F;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>What this profile cannot know</h2>
+
+<p>Here is the edge of what your birth data and six business questions can see. Knowing where that edge sits is the only reason to trust what's inside it.</p>
+
+<p>The Operator Profile does not know:</p>
+
+<ul>
+<li>whether a market wants what you're selling</li>
+<li>whether your price is right</li>
+<li>whether your unit economics work</li>
+<li>which niche would be the most profitable one for you</li>
+<li>whether to hire, keep, or let go of a specific person</li>
+<li>whether the decision you're weighing will succeed</li>
+<li>what you must do</li>
+</ul>
+
+<p>Those are settled by evidence: your numbers, your customers, and the people actually in the room with you. None of it replaces a market test. Where a question needs business data the profile doesn't have, it says so and names the data you'd need, rather than dressing a guess up as an answer.</p>
+
+<h3>What it can see</h3>
+
+<p>Operating tendency, applied to the business you described. How you take information in, and whether clarity arrives for you in a moment or over a few days. What conditions distort a decision you'd otherwise make cleanly. Where your best output comes from, and what drains it fastest. How you sell when you're not forcing it, and how your voice changes under pressure. Where the way you're built is rubbing against the way you're currently running things — and which of those tensions is worth testing in the next seven days.</p>
+
+<p>That's a narrow lane, and it's narrow on purpose. Inside it the profile gets specific, because it's applied to what you sell, how customers find you, what feels heaviest right now, and the decision you named.</p>
+
+<p>You don't have to take that boundary on faith from a sales page. The profile draws it itself, in its own final section. From the real sample:</p>
+
+<blockquote>
+<p>What you just read knows how you're wired to operate. It does not know whether a market wants what you're selling. That is a question your numbers answer, not your birth data. […] Every one of those things is settled by evidence: your market, your numbers, the people actually in the room with you.</p>
+<p>The company is yours. The call is yours. Nothing written here outranks your own judgement about your own business.</p>
+</blockquote>
+
+<p>That's the arrangement. You get better information about the operator; you stay the one who decides what the business does with it. If a line in there doesn't match what you see in your own week, throw it out. The profile hands you its instructions as experiments for exactly that reason, and tells you what to watch so you can settle it yourself.</p>
+
+  </div>
+</section>
+<section id="10-who" style="background:#171812;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>Who the Operator Profile is for</h2>
+
+<p>You are already running something. There is revenue, there are customers, and a week that fills itself. That is the starting condition: the profile applies how you are built to a business that already exists, so there has to be one.</p>
+
+<p>Past that, it is written for you if any of this is true:</p>
+
+<ul>
+  <li>The business works, but only because you keep overriding your own pace or your own way of deciding.</li>
+  <li>Advice that visibly works for other founders keeps failing to stick for you.</li>
+  <li>You are sitting on a decision you understand completely and still cannot make cleanly.</li>
+  <li>Selling, being visible, or handing work off keeps costing more than it should.</li>
+  <li>You suspect you are the bottleneck, and you cannot see the exact mechanism.</li>
+  <li>You want something you can act on this week, not another label for the pile.</li>
+</ul>
+
+<p>That is why the intake asks six questions about the business: what you sell and who buys it, the shape of the operation today, how customers find you now, what feels heavy, the decision you have been sitting on, and the advice that never sticks. The profile reads it straight back to you before it applies anything. Here is that moment from a real generated profile:</p>
+
+<blockquote>Strategic advisory retainers sold to founders of small agencies, plus a self-serve digital product. Right now the business is you alone. Clients find you through referrals and through content you put out.</blockquote>
+
+<p>If you do not have answers to those questions yet, there is nothing for the profile to be applied to.</p>
+
+<h3>And who it is not for</h3>
+
+<p>Here is what it will not do. Better you find that out now than after you pay.</p>
+
+<p>It will not write your business plan, and it will not build your marketing strategy. It will not pick a niche or rank your options by which one pays best. It will not name a dream client. It will not tell you whether your price is right, whether your unit economics work, or whether the market wants what you sell, because those are settled by your numbers and not by your birth data.</p>
+
+<p>It will not forecast. Nothing in it predicts revenue, growth, or how a decision turns out. The profile says so itself, in its own closing section: it does not know whether a particular decision you are weighing will succeed or fail, and it does not tell you what to do.</p>
+
+<p>And it is not a horoscope. No month ahead, no good days and bad days, no daily guidance. Your birth data is read once, for how you are built to operate, and everything after that is about how your week actually goes.</p>
+
+<p>If you wanted one of those, this is not it, and I would rather you kept your $29. If you wanted a straight read on why the way you run the business keeps fighting the person running it, that is the whole document. $29, one time.</p>
+
+  </div>
+</section>
+<section id="11-faq" style="background:#13140F;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>Questions people actually ask</h2>
+
+<h3>Is this astrology?</h3>
+<p>Astrology is one of the four things it reads. The others are Human Design, Gene Keys, and the I Ching. But nothing in the document names any of them, and it is not written in that register — it is written as an operating manual. If a section only worked because you believed in the source, it would not be worth $29. Read it and see whether it describes how you actually work.</p>
+
+<h3>What if I do not know my birth time?</h3>
+<p>Then it will not guess one. A birth time changes the read substantially, so instead of inventing a plausible time, the system calculates your chart across the window you give it and keeps only what stays the same throughout. The time-sensitive parts are left out and said to be left out. A smaller true profile beats a complete invented one.</p>
+
+<h3>Do I have to answer the business questions?</h3>
+<p>No. The profile still generates. But the instructions get noticeably less specific, because there is nothing to aim them at — and the section that reflects your business back is simply omitted rather than filled in with a guess. Three minutes is a good trade.</p>
+
+<h3>How long is it, and how fast?</h3>
+<p>More than 5,000 words; the sample ran 7,627. It appears on screen while it is being written — about forty seconds. Keep the link it gives you; that link is how you get back in.</p>
+
+<h3>Is this a subscription?</h3>
+<p>No. $29, once. The profile is yours to keep and does not expire.</p>
+
+<h3>Can I change my business answers later?</h3>
+<p>Yes, any time, from inside the portal. Businesses change in month three. You should not have to buy a second profile to say so.</p>
+
+<h3>What if it does not describe me?</h3>
+<p>Then say so. It is a read of tendencies, not a measurement, and it can be wrong about a person. The practices are built to notice that — the Weekly Review is explicitly allowed to conclude that a hypothesis in your profile did not hold. A tool that can never be wrong is not telling you anything.</p>
+
+<h3>Will it tell me what to do with my business?</h3>
+<p>No, and it says so in its own last section. It cannot know whether a market wants your offer, whether your price is right, whether the unit economics work, which niche is most profitable, whether to hire or fire someone, or whether a decision will succeed. Those need business evidence it does not have. What it can do is show you how you are built to operate and where that is costing you.</p>
+
+<h3>How is this different from a coach?</h3>
+<p>A coach asks questions until they understand how you work. This starts from a read of how you work and applies it — for $29 rather than a monthly retainer. It is not a replacement for someone who knows your business. It is the thing you would otherwise spend three sessions establishing.</p>
+
+<h3>What is "Ask your profile"?</h3>
+<p>A strategist that has read your document and answers in its terms. It sits at the bottom of every page in the portal and knows which page you are on. It is not a therapist and not a crisis service, and it will say so if you take it somewhere it should not go.</p>
+
+<h3>Is my data private?</h3>
+<p>Your birth data and your answers are used to write your profile and nothing else. You can export everything held about you, and you can delete it. Both are buttons in the portal, not an email you have to send.</p>
+
+<h3>Do I need to believe in any of this?</h3>
+<p>No. The document never asks you to. It describes how you operate and hands you instructions you can test inside seven days — and every instruction comes with what to watch, so you can find out whether it was right rather than deciding whether to trust it.</p>
+
+  </div>
+</section>
+<section id="12-close" style="background:#171812;padding:74px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+<h2>Every other one stops at what you are</h2>
+
+<p>You have probably taken one of these before. It gave you a type, a number, a letter. It held your attention for a day. Then Monday came and nothing about how you run the business changed, because nobody told you what to do with it.</p>
+
+<p>That is the whole difference here. The Operator Profile spends its first half on recognition — the contradiction you are running, how a decision actually arrives for you, the pace you can hold, how you are built to sell, what money and pressure do to your judgement, and where you have become the bottleneck. Then it turns and spends the second half on what to do about it, inside the business you described, starting this week.</p>
+
+<p>That is also why the intake asks six questions about the business alongside your birth date, exact birth time, and place. Without those answers you get a portrait. With them, the instructions name your own pipeline, your own stuck decision, and the advice you keep abandoning.</p>
+
+<h3>What arrives</h3>
+
+<ul>
+<li>A written profile of at least 5,000 words in thirteen sections. The real one we generated ran to more than 7,600.</li>
+<li>Five to seven operating instructions. Each one carries why it fits you, where it shows up in your week, what ignoring it costs, an experiment you can run inside seven days, and the signal to watch.</li>
+<li>A 30-day operating experiment that sequences the three with the most leverage.</li>
+<li>Four pin-it-up cards: how you make every call, your early warning signs, what to stop doing by default, and the support you need next.</li>
+<li>A section that states plainly what the profile cannot know.</li>
+<li>A portal you keep. It holds every section, six practices — the Decision Room, the Bottleneck Lab, the Weekly Operator Review, the Delegation Lab, Build My Week, and the Advice Fit Lab — and Ask your profile, a strategist that answers in your own operating terms.</li>
+</ul>
+
+<p>$29, once. The profile is complete on its own, and nothing else is required to use it.</p>
+
+<p>Enter your birth date, exact birth time, and place. Answer the six questions about the business. Then read the first section and hold it against a real Thursday in your actual week. If it is not true of you, stop there. If it is, the rest of the document was written for that person.</p>
+
+<p>Get the Operator Profile — $29.</p>
+<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+  </div>
+</section>
+<footer style="background:#0E0F0B;border-top:1px solid #24261C;padding:54px 0">
+  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
+    <p class="sub" style="margin:0 0 10px">The Operator Profile · $29, one time · Abundanc3 Alch3my</p>
+    <p class="sub" style="margin:0">It reads how you are wired to operate. It is not financial, legal, or medical advice, and it does not predict outcomes.</p>
+  </div>
+</footer>
 </div>
-
-<script>
-function makeWave(container, n, maxH, color){
-  const frag = document.createDocumentFragment();
-  for(let i=0;i<n;i++){
-    const t = i/(n-1);
-    const env = Math.pow(1-t,1.6);
-    const jag = 0.32 + 0.68*Math.abs(Math.sin(i*1.7+0.5)*Math.cos(i*0.6));
-    const h = Math.max(2, 2 + env*maxH*jag);
-    const d = document.createElement('div');
-    d.style.cssText = `width:3px;flex:none;border-radius:2px;height:${h}px;background:${color};opacity:${(0.4+0.6*env).toFixed(2)}`;
-    frag.appendChild(d);
-  }
-  container.appendChild(frag);
-}
-makeWave(document.getElementById('wave-top'), 120, 60, '#B8823A');
-makeWave(document.getElementById('wave-bottom'), 90, 40, '#B8823A');
-</script>
 </body>
 </html>
