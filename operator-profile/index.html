@@ -4,479 +4,1030 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Operator Profile — Abundanc3 Alch3my</title>
-<meta name="description" content="A short document built from your birth data: the exact place how you're wired and how you're running the business are fighting each other, and at least five operating instructions to close it. $29.">
+<meta name="description" content="A founder operating manual built from your birth data and six questions about the business: the exact place how you're wired and how you're running it are fighting each other, and five to seven operating instructions to close it. $29.">
 <meta property="og:title" content="The Operator Profile — Abundanc3 Alch3my">
 <meta property="og:description" content="Every assessment tells you what you are and stops. This tells you what to do with it — to run your business.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="/operator-profile/img/collision.webp">
+<meta name="theme-color" content="#13140F">
 <link rel="icon" type="image/png" href="/logo-mark.png">
+<noscript><style>
+  /* The reveal animation starts every .rv block at opacity:0 and JS turns it on.
+     With JS off that is a page whose body copy is invisible. Show it outright. */
+  .rv{opacity:1 !important;transform:none !important;filter:none !important}
+  .draw *{stroke-dashoffset:0 !important;animation:none !important;opacity:1 !important}
+</style></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="preload" as="image" href="img/hero-desk.webp"
+      imagesrcset="img/hero-desk-sm.webp 700w, img/hero-desk.webp 1100w"
+      imagesizes="(max-width:900px) 92vw, 34vw">
 <style>
-:root{--ob:#13140F;--bone:#EAE3D3;--pine:#3F6B62;--bronze:#B8823A}
+/* ── TOKENS ─────────────────────────────────────────────────────────────────
+   Palette and type are BRAND.md's, not this page's invention. Pine is the
+   structural accent (rules, labels, links, data series 1); Bronze is the action
+   accent (every CTA, data series 2). Never both loud on one element.
+   --data-a is a higher-chroma step of the same pine hue used ONLY inside charts:
+   brand Pine reads as gray at mark size (OKLCh chroma 0.051, under the 0.1
+   floor). The pair #00A98C / #B8823A passes all six palette checks against this
+   surface, worst CVD separation deltaE 10.5.                                    */
+:root{
+  --ob:#13140F; --ob-2:#191B14; --ob-3:#1F211A; --ob-4:#262920;
+  --line:#2A2C21; --line-2:#3B3E2E;
+  --bone:#EAE3D3; --bone-2:#C6C7B4; --bone-3:#93957F;
+  --pine:#3F6B62; --pine-lt:#6D9A8E; --pine-dk:#2A4A44;
+  --bronze:#B8823A; --bronze-lt:#D6A45F;
+  --data-a:#00A98C; --data-b:#B8823A;
+  --r:14px; --r-sm:8px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --shell:1240px;
+  color-scheme:dark;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#13140F}
-::selection{background:#3F6B62;color:#EAE3D3}
-a{color:#B8823A;text-decoration:none}
-a:hover{color:#EAE3D3}
-.hl{font-family:'Oswald',sans-serif;text-transform:uppercase;line-height:.98;letter-spacing:.4px;font-weight:600}
-.bd{font-family:'Inter',sans-serif}
-.sub{font-family:'Inter',sans-serif;font-weight:500;font-size:15.5px;line-height:1.45;color:#A2A392}
-.btn-primary{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;padding:14px 26px;border-radius:11px;background:#B8823A;color:#13140F;border:none;cursor:pointer;transition:transform .15s,background .15s;white-space:nowrap;display:inline-block;text-align:center}
-.btn-primary:hover{background:#c9924a;transform:translateY(-1px);color:#13140F}
-.btn-ghost{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;padding:14px 26px;border-radius:11px;background:transparent;color:#EAE3D3;border:1px solid #454736;cursor:pointer;transition:border-color .15s,color .15s;white-space:nowrap;display:inline-block;text-align:center}
-.btn-ghost:hover{border-color:#7E8070;color:#EAE3D3}
-.logo-mark{height:26px;width:auto;display:block;flex:none}
-.wave{display:flex;align-items:flex-end;gap:3px}
-.zone{font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:#A2A392;padding-left:20px;position:relative;margin:0 0 14px}
-.zone:last-child{margin-bottom:0}
-.zone b{color:#EAE3D3;font-weight:600}
-.zone span.k{position:absolute;left:0;color:#3F6B62}
-.step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #24261C}
-.step:last-child{border-bottom:none}
-.step-n{font-family:'Oswald',sans-serif;font-weight:600;font-size:22px;color:#B8823A;flex:none;width:34px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ob);color:var(--bone);font-family:'Inter',system-ui,sans-serif;
+     -webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-@media(max-width:860px){
-  .g-3{grid-template-columns:1fr !important}
-  .g-2{grid-template-columns:1fr !important}
-  .navlinks{display:none !important}
+/* Browser surfaces we did not draw, themed from the palette. */
+::selection{background:var(--pine);color:var(--bone)}
+:focus-visible{outline:2px solid var(--bronze-lt);outline-offset:3px;border-radius:4px}
+*{scrollbar-color:var(--line-2) var(--ob)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--ob)}
+::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:99px;border:3px solid var(--ob)}
+::-webkit-scrollbar-thumb:hover{background:var(--pine)}
+a{color:var(--bronze-lt);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--bone)}
+img{max-width:100%;display:block}
+.num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+
+/* ── TYPE ────────────────────────────────────────────────────────────────── */
+h1,h2,h3,h4{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;
+            margin:0;color:var(--bone);text-wrap:balance}
+h1{font-size:clamp(36px,4.6vw,56px);line-height:.98;letter-spacing:-.3px;font-weight:700}
+h2{font-size:clamp(29px,4.1vw,45px);line-height:.99;letter-spacing:-.2px;font-weight:700}
+h3{font-size:clamp(18px,2.1vw,23px);line-height:1.14;letter-spacing:.2px}
+h4{font-size:13.5px;line-height:1.2;letter-spacing:1.4px;color:var(--pine-lt);font-weight:500}
+p{margin:0 0 18px;font-size:17px;line-height:1.72;color:var(--bone-2);max-width:68ch}
+p:last-child{margin-bottom:0}
+strong{color:var(--bone);font-weight:600}
+em{color:var(--bone);font-style:italic}
+.lede{font-size:clamp(18px,2.05vw,21px);line-height:1.6;color:var(--bone);max-width:60ch}
+.small{font-size:14.5px;line-height:1.62;color:var(--bone-3);max-width:64ch}
+.h2sub{margin-top:20px}
+
+/* ── SHELL ───────────────────────────────────────────────────────────────── */
+.wrap{max-width:var(--shell);margin:0 auto;padding:0 40px}
+.narrow{max-width:800px}
+section{padding:clamp(64px,8vw,104px) 0;position:relative}
+.band{background:var(--ob-2)}
+hr.rule{height:1px;background:var(--line);border:0;margin:0}
+
+/* ── BUTTONS ─────────────────────────────────────────────────────────────── */
+.btn{font-family:'Inter',sans-serif;font-weight:600;font-size:15.5px;letter-spacing:.1px;
+     padding:15px 28px;border-radius:var(--r);border:1px solid transparent;cursor:pointer;
+     display:inline-flex;align-items:center;gap:10px;white-space:nowrap;text-decoration:none;
+     transition:transform .18s var(--ease),background .18s,border-color .18s,box-shadow .18s}
+/* Offset plus soft blur, tinted to the button's own hue: a warm lift off the
+   ground, not a zero-offset halo. */
+.btn-primary{background:var(--bronze);color:#17120A;
+             box-shadow:0 12px 28px -18px rgba(120,82,28,.9)}
+.btn-primary:hover{background:var(--bronze-lt);color:#17120A;transform:translateY(-2px);
+                   box-shadow:0 18px 36px -18px rgba(120,82,28,.95)}
+.btn-primary:active{transform:translateY(0) scale(.985)}
+.btn-ghost{background:transparent;color:var(--bone);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--pine-lt);color:var(--bone);transform:translateY(-2px)}
+.btn-ghost:active{transform:translateY(0) scale(.985)}
+.buy{display:flex;flex-wrap:wrap;align-items:center;gap:15px 22px;margin-top:38px}
+.buy .small{margin:0;max-width:30ch}
+
+/* ── MOTION ──────────────────────────────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(20px);filter:blur(4px);
+    transition:opacity .8s var(--ease),transform .8s var(--ease),filter .8s var(--ease)}
+.rv.in{opacity:1;transform:none;filter:none}
+.rv[data-d="1"]{transition-delay:.08s} .rv[data-d="2"]{transition-delay:.16s}
+.rv[data-d="3"]{transition-delay:.24s} .rv[data-d="4"]{transition-delay:.32s}
+.rv[data-d="5"]{transition-delay:.40s} .rv[data-d="6"]{transition-delay:.48s}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;filter:none;transition:none}
+  .draw *{stroke-dashoffset:0 !important;animation:none !important;opacity:1 !important}
+  .barfill{transform:none !important;transition:none !important}
+  .btn,.pract,.qcard,.anat-row{transition:none !important}
 }
+
+/* ── NAV ─────────────────────────────────────────────────────────────────── */
+nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:16px;height:70px;
+    padding:0 40px;background:rgba(19,20,15,.88);backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid var(--line)}
+nav .brand{display:flex;align-items:center;gap:13px;flex:none;text-decoration:none}
+nav .brand img.mark{height:25px;width:auto}
+nav .brand img.word{height:18px;width:auto}
+nav .navend{margin-left:auto;display:flex;align-items:center;gap:26px}
+nav a.nl{font-size:14px;font-weight:500;color:var(--bone-3);text-decoration:none;transition:color .18s}
+nav a.nl:hover{color:var(--bone)}
+nav .btn{padding:11px 20px;font-size:14px}
+@media(max-width:880px){nav a.nl{display:none}}
+@media(max-width:560px){nav{padding:0 20px;height:62px}}
+
+/* ── HERO — asymmetric split ─────────────────────────────────────────────── */
+#hero{padding:clamp(46px,6vw,84px) 0 clamp(58px,6vw,88px);overflow:hidden}
+#hero::before{content:"";position:absolute;left:-20%;top:-25%;width:75%;height:110%;
+  pointer-events:none;background:radial-gradient(ellipse at 35% 42%,rgba(63,107,98,.20),transparent 62%)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.78fr);
+           gap:clamp(32px,4.4vw,60px);align-items:center;position:relative}
+.hero-price{display:inline-flex;align-items:baseline;gap:9px;margin-bottom:26px;
+  padding:8px 16px 8px 14px;border:1px solid var(--line-2);border-radius:99px;background:var(--ob-2)}
+.hero-price b{font-family:'Oswald',sans-serif;font-size:19px;font-weight:600;color:var(--bronze-lt)}
+.hero-price span{font-size:13.5px;color:var(--bone-3);letter-spacing:.2px}
+#hero p.lede{margin:26px 0 0}
+.hero-shot{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 44px 96px -52px rgba(0,0,0,.95),0 5px 24px -14px rgba(0,0,0,.75)}
+.hero-shot img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+/* The lower third of this frame is handwriting. It belongs to the picture as
+   texture, not as something to read, so the scrim drops it into shadow. */
+.hero-shot::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(200deg,rgba(63,107,98,.14),transparent 38%,rgba(19,20,15,.62) 82%,rgba(19,20,15,.9) 100%)}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-shot{order:-1;max-width:520px;margin-inline:auto}
+  .hero-shot img{aspect-ratio:16/10}
+}
+
+/* ── FACT ROW — under the hero, never inside it ──────────────────────────── */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);
+       border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact{padding:32px 30px 32px 0;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact b{display:block;font-family:'Oswald',sans-serif;font-size:clamp(27px,3.3vw,39px);
+        font-weight:600;color:var(--bone);line-height:1;margin-bottom:10px;letter-spacing:-.3px}
+.fact span{font-size:14px;line-height:1.5;color:var(--bone-3);display:block;max-width:23ch}
+@media(max-width:820px){
+  .facts{grid-template-columns:1fr 1fr}
+  .fact{padding:24px 22px 24px 0}
+  .fact:nth-child(2n){border-right:0}
+  .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+
+/* ── FULL-BLEED IMAGE SECTION ────────────────────────────────────────────── */
+.bleed{position:relative;padding:0;min-height:clamp(420px,58vw,620px);display:grid;
+       align-items:center;overflow:hidden;border-block:1px solid var(--line)}
+.bleed>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+           object-position:78% 50%}
+.bleed::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(19,20,15,.97) 0%,rgba(19,20,15,.94) 40%,rgba(19,20,15,.34) 76%,rgba(19,20,15,.56) 100%)}
+/* The card frame is busy edge to edge, unlike the gears, so its copy needs a
+   near-solid ground rather than a wash. */
+#cards>img{object-position:100% 50%}
+#cards.bleed::after{background:linear-gradient(90deg,rgba(19,20,15,.99) 0%,rgba(19,20,15,.98) 42%,rgba(19,20,15,.62) 66%,rgba(19,20,15,.3) 100%)}
+.bleed .wrap{position:relative;z-index:2;padding-block:clamp(64px,8vw,96px)}
+.bleed .col{max-width:560px}
+@media(max-width:760px){
+  /* Stacked, the copy sits on the lower half and the picture keeps the upper
+     third clear enough to actually be seen. */
+  .bleed{align-items:end;min-height:clamp(500px,105vw,660px)}
+  .bleed::after{background:linear-gradient(180deg,rgba(19,20,15,.34) 0%,rgba(19,20,15,.62) 30%,rgba(19,20,15,.95) 56%,rgba(19,20,15,.98) 100%)}
+  #cards>img{object-position:62% 34%}
+  #cards.bleed::after{background:linear-gradient(180deg,rgba(19,20,15,.42) 0%,rgba(19,20,15,.7) 28%,rgba(19,20,15,.96) 54%,rgba(19,20,15,.99) 100%)}
+}
+
+/* ── SCROLL-SNAP QUESTION CARDS ──────────────────────────────────────────── */
+.snaprow{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,340px);gap:18px;
+  overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 40px 22px;margin:0 -40px;
+  scrollbar-width:thin}
+.snaprow>*{scroll-snap-align:start}
+.qcard{background:var(--ob-3);border:1px solid var(--line);border-radius:var(--r);
+       padding:26px 24px 24px;transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.qcard:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.qcard .qi{color:var(--pine-lt);font-size:22px;line-height:1;display:block;margin-bottom:16px}
+.qcard p{font-size:15.5px;line-height:1.62;color:var(--bone-2);margin:0}
+.qcard b{color:var(--bone)}
+
+/* ── CHART FIGURES ───────────────────────────────────────────────────────── */
+figure{margin:0}
+.fig{background:var(--ob-3);border:1px solid var(--line);border-radius:var(--r);
+     padding:clamp(22px,3vw,34px)}
+.fig figcaption{font-size:13.5px;line-height:1.55;color:var(--bone-3);margin-top:18px;max-width:70ch}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-bottom:22px}
+.legend span{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:var(--bone-2);
+             font-weight:500}
+.legend i{width:11px;height:11px;border-radius:3px;flex:none}
+.fig svg{width:100%;height:auto;display:block;overflow:visible}
+.fig svg text{font-family:'Inter',sans-serif}
+
+/* ── TWO-COLUMN CONTRAST ─────────────────────────────────────────────────── */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);align-items:start}
+@media(max-width:820px){.duo{grid-template-columns:1fr;gap:38px}}
+.tick{list-style:none;margin:0;padding:0}
+.tick li{position:relative;padding-left:30px;margin-bottom:15px;font-size:16.5px;line-height:1.62;
+         color:var(--bone-2)}
+.tick li:last-child{margin-bottom:0}
+.tick li i{position:absolute;left:0;top:2px;font-size:18px;line-height:1.2}
+.tick.no li i{color:#8A6B54}
+.tick.yes li i{color:var(--pine-lt)}
+
+/* ── PLAIN FEATURE LIST WITH LEADING RULE ────────────────────────────────── */
+.stack{border-top:1px solid var(--line)}
+.stack .row{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.55fr);
+            gap:clamp(18px,3vw,44px);padding:30px 0;border-bottom:1px solid var(--line)}
+.stack .row h3{color:var(--bone)}
+.stack .row p{margin:0;font-size:16.5px}
+@media(max-width:760px){.stack .row{grid-template-columns:1fr;gap:12px;padding:26px 0}}
+
+/* ── PINE COLOR BLOCK — the page's one deliberate field change ───────────── */
+.field{background:var(--pine-dk);border-block:1px solid #365F57;position:relative;overflow:hidden}
+.field::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 78% 10%,rgba(109,154,142,.28),transparent 58%)}
+.field .wrap{position:relative}
+.field h2,.field h3{color:#F2ECDD}
+.field p{color:#CDDCD6}
+.field .pull{font-family:'Inter',sans-serif;font-weight:300;
+  font-size:clamp(20px,2.7vw,30px);line-height:1.42;color:#F5F0E2;max-width:26ch;margin:0}
+.field .src{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:#9DBBB2;
+            margin:0 0 22px;font-weight:500}
+.quotecard{background:rgba(19,20,15,.34);border:1px solid rgba(234,227,211,.16);
+           border-radius:var(--r);padding:clamp(24px,3.4vw,38px)}
+.quotecard p{color:#E4EDE8;font-size:17px;line-height:1.72}
+.quotecard p:first-child{margin-top:0}
+/* On the pine field the ordinary pine-light icon loses too much contrast, so the
+   marks and the muted ink both step up against that ground. */
+.field .tick li{color:#D6E3DD}
+.field .tick.yes li i{color:#A9D0C4}
+.field .small{color:#A9BDB6}
+
+/* ── SIX QUESTIONS — numbered flow, the sequence carries information ─────── */
+.qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+       border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.qg{background:var(--ob-3);padding:28px 26px 26px;display:flex;flex-direction:column;gap:12px}
+.qg .qn{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--bronze);
+        letter-spacing:1px}
+.qg .qq{font-size:16.5px;line-height:1.55;color:var(--bone);font-weight:500;margin:0;flex:1}
+.qg .qm{font-size:12.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--pine-lt);
+        display:inline-flex;align-items:center;gap:7px;font-weight:500}
+.qg .qm i{font-size:15px}
+@media(max-width:860px){.qgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.qgrid{grid-template-columns:1fr}}
+
+/* ── ANNOTATED INSTRUCTION CARD ──────────────────────────────────────────── */
+.anat{background:var(--ob-3);border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden}
+.anat-head{padding:clamp(22px,3vw,32px);border-bottom:1px solid var(--line);
+           background:linear-gradient(180deg,rgba(184,130,58,.09),transparent)}
+.anat-head .lbl{font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;
+                color:var(--bronze);font-weight:600;display:block;margin-bottom:12px}
+.anat-head p{font-size:clamp(18px,2.2vw,22px);line-height:1.45;color:var(--bone);
+             font-weight:500;margin:0;max-width:52ch}
+.anat-row{display:grid;grid-template-columns:190px minmax(0,1fr);gap:clamp(14px,2.5vw,32px);
+          padding:22px clamp(22px,3vw,32px);border-bottom:1px solid var(--line);
+          transition:background .25s var(--ease)}
+.anat-row:last-child{border-bottom:0}
+.anat-row:hover{background:var(--ob-4)}
+.anat-row .k{display:flex;flex-direction:column;gap:6px}
+.anat-row .k b{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--bone);
+                letter-spacing:.6px;text-transform:uppercase}
+.anat-row .k span{font-size:12.5px;line-height:1.45;color:var(--pine-lt)}
+.anat-row p{margin:0;font-size:16px;line-height:1.68}
+@media(max-width:700px){.anat-row{grid-template-columns:1fr;gap:8px}}
+
+/* ── PRACTICES ───────────────────────────────────────────────────────────── */
+/* Content-height, not row-height: six practices of genuinely different length
+   should end where they end rather than pad out to the tallest one. */
+.practs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.pract{background:var(--ob-3);border:1px solid var(--line);border-radius:var(--r);
+       padding:26px 24px;transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.pract:hover{border-color:var(--pine);transform:translateY(-3px)}
+.pract i{font-size:23px;color:var(--pine-lt);display:block;margin-bottom:15px}
+.pract h3{margin-bottom:9px;font-size:19px}
+.pract p{font-size:15.5px;line-height:1.6;margin:0;color:var(--bone-2)}
+@media(max-width:940px){.practs{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.practs{grid-template-columns:1fr}}
+
+/* ── PRODUCT SCREENSHOTS ─────────────────────────────────────────────────── */
+.shots{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(0,.72fr);gap:clamp(16px,2.4vw,26px);
+       align-items:end}
+.shot{border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden;background:var(--ob-3);
+      box-shadow:0 40px 90px -55px rgba(0,0,0,.95)}
+.shot img{width:100%}
+.shotcap{font-size:13px;color:var(--bone-3);margin:12px 2px 0;line-height:1.5}
+@media(max-width:860px){.shots{grid-template-columns:1fr}.shots>div:last-child{max-width:340px}}
+
+/* ── FAQ ACCORDION ───────────────────────────────────────────────────────── */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(28px,4vw,56px);align-items:start}
+@media(max-width:860px){.faq{grid-template-columns:1fr}}
+details{border-bottom:1px solid var(--line)}
+details summary{cursor:pointer;list-style:none;padding:20px 34px 20px 0;position:relative;
+  font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:16.5px;font-weight:500;
+  letter-spacing:.4px;color:var(--bone);transition:color .2s}
+details summary::-webkit-details-marker{display:none}
+details summary:hover{color:var(--bronze-lt)}
+details summary::after{content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;
+  margin-top:-7px;border-right:1.5px solid var(--pine-lt);border-bottom:1.5px solid var(--pine-lt);
+  transform:rotate(45deg);transition:transform .28s var(--ease)}
+details[open] summary::after{transform:rotate(-135deg);margin-top:-2px}
+details .ans{padding:0 0 22px}
+details .ans p{font-size:16px;margin:0}
+
+/* ── CLOSE ───────────────────────────────────────────────────────────────── */
+#close{border-top:1px solid var(--line)}
+.closegrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);
+           gap:clamp(30px,4.6vw,64px);align-items:center}
+@media(max-width:900px){.closegrid{grid-template-columns:1fr}}
+.deliver{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.deliver li{display:grid;grid-template-columns:26px 1fr;gap:14px;padding:16px 0;
+            border-bottom:1px solid var(--line);font-size:16px;line-height:1.62;color:var(--bone-2)}
+.deliver li i{color:var(--bronze);font-size:18px;line-height:1.5}
+.deliver li b{color:var(--bone);font-weight:600}
+
+footer{background:#0E0F0B;border-top:1px solid var(--line);padding:52px 0}
+footer p{font-size:14px;color:var(--bone-3);margin:0 0 10px;max-width:80ch}
+footer p:last-child{margin:0}
+
 @media(max-width:560px){
-  .pad-x{padding-left:22px !important;padding-right:22px !important}
-  nav{padding-left:20px !important;padding-right:20px !important}
+  .wrap{padding:0 22px}
+  .snaprow{padding:6px 22px 22px;margin:0 -22px}
+  p{font-size:16.5px}
+  /* Two buttons of different label length read as a mistake when they stack.
+     Full width makes the pair deliberate. */
+  .buy{gap:12px}
+  .buy .btn{width:100%;justify-content:center}
+  .buy .small{margin-top:4px}
 }
 </style>
 </head>
 <body>
-<style>
-section h2{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.4px;font-weight:700;line-height:1.02;font-size:clamp(28px,4.6vw,42px);color:#EAE3D3;margin:0 0 26px}
-section h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.3px;font-weight:600;line-height:1.1;font-size:clamp(19px,2.4vw,23px);color:#EAE3D3;margin:40px 0 14px}
-section p{font-family:'Inter',sans-serif;font-size:17px;line-height:1.7;color:#C9CAB8;margin:0 0 18px}
-section li{font-family:'Inter',sans-serif;font-size:17px;line-height:1.7;color:#C9CAB8;margin:0 0 14px}
-section ul{padding-left:22px;margin:0 0 18px}
-section strong{color:#EAE3D3;font-weight:600}
-section em{color:#EAE3D3;font-style:italic}
-section blockquote{margin:26px 0;padding:20px 24px;border-left:3px solid #3F6B62;background:#1B1D15}
-section blockquote p:last-child{margin-bottom:0}
-@media(max-width:560px){section{padding:52px 0 !important}}
-</style>
 
-<div class="bd" style="background:#13140F;color:#EAE3D3;overflow-x:hidden">
-<!-- NAV -->
-  <nav style="position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:16px;padding:16px 40px;background:rgba(19,20,15,.82);backdrop-filter:blur(10px);border-bottom:1px solid #24261C">
-    <a href="/" style="display:flex;align-items:center;gap:14px">
-      <img class="logo-mark" src="/logo-mark.png" alt="">
-      <img src="/wordmark-3s.png" alt="Abundanc3 Alch3my" style="height:19px;width:auto;display:block">
-    </a>
-    <div style="margin-left:auto;display:flex;align-items:center;gap:28px">
-      <a class="navlinks" href="/#proof" style="font-family:'Inter',sans-serif;font-weight:500;font-size:14px;color:#A2A392">Proof</a>
-      <a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01" style="padding:11px 20px;font-size:14px">Get the Profile</a>
+<nav>
+  <a class="brand" href="/">
+    <img class="mark" src="/logo-mark.png" alt="">
+    <img class="word" src="/wordmark-3s.png" alt="Abundanc3 Alch3my">
+  </a>
+  <div class="navend">
+    <a class="nl" href="#arrives">What arrives</a>
+    <a class="nl" href="#sample">A real passage</a>
+    <a class="nl" href="#portal">The portal</a>
+    <a class="nl" href="#faq">Questions</a>
+    <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Profile</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-price rv"><b>$29</b><span>one time, no subscription</span></div>
+      <h1 class="rv" data-d="1">You built the business. Now it only runs when you override yourself.</h1>
+      <p class="lede rv" data-d="2">A founder operating manual written for one person, from your birth data and six questions about the company.</p>
+      <div class="buy rv" data-d="3">
+        <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
+          <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
+        </a>
+        <a class="btn btn-ghost" href="#sample">Read a real passage first</a>
+      </div>
     </div>
-  </nav>
-<section id="01-hero" style="background:#13140F;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>You built the business. Now it only runs when you override yourself.</h2>
-
-<p>You are working hard and the business is fighting you anyway. The pace it demands is not the pace you can actually hold, the decision you have been sitting on still will not close, and the advice that works for every other founder keeps sliding off you. That collision — between how you are built to operate and how you are currently running the company — is what this is about.</p>
-
-<p>The Operator Profile is a founder operating manual written for one person, and it reads two things. Your birth date, exact birth time and birthplace. And six questions about the business: what shape it is in today, what you sell and who buys it, how customers find you now, what feels heavy, the decision you keep postponing, and the advice that never sticks. The birth data is the read of how you operate. Your six answers are what it gets applied to — which is why the instructions come back specific instead of generic.</p>
-
-<p>What arrives is more than 5,000 words in thirteen sections. The sample we generated from real birth data ran over 7,600. Half of it is recognition. Half of it is what to do about it:</p>
-
-<ul>
-  <li>Six long sections: the contradiction you are running, how a decision actually arrives for you, your sustainable pace, how you are built to sell, money and pressure, and your bottleneck.</li>
-  <li>Five to seven operating instructions — each with the move, why it fits you, where it shows up, what ignoring it costs, an experiment to run inside seven days, and what to watch.</li>
-  <li>A 30-day operating experiment, four cards to pin up, and a plain section on what this profile cannot know.</li>
-  <li>A portal you keep, with six practices and a strategist you can ask questions in your own operating terms.</li>
-</ul>
-
-<p>For a founder or owner already running something real — not for someone asking birth data to invent a business from nothing.</p>
-
-<p>$29, one time. Pay, answer the questions, and watch it build on the page.</p>
-<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+    <div class="hero-shot rv" data-d="2">
+      <img src="img/hero-desk.webp" srcset="img/hero-desk-sm.webp 700w, img/hero-desk.webp 1100w"
+           sizes="(max-width:900px) 92vw, 34vw"
+           alt="A founder's desk late at night: one bronze lamp, a page of handwritten notes, a closed laptop."
+           width="1100" height="1375" fetchpriority="high">
+    </div>
   </div>
 </section>
-<section id="02-problem" style="background:#171812;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>The advice isn't wrong. It was written for a different operator.</h2>
 
-<p>You've probably taken one of these before. A number, a letter, a four-word type. It described you well enough that you read it twice and sent a screenshot to someone. Then Monday came, and the week ran exactly the way it ran the week before. Nothing in the description told you what to do at nine in the morning with a full inbox and a decision you'd already been sitting on for a month.</p>
+<div class="wrap">
+  <div class="facts rv">
+    <div class="fact"><b class="num">5,000+</b><span>words, in thirteen sections. The real sample ran 7,627.</span></div>
+    <div class="fact"><b class="num">5&ndash;7</b><span>operating instructions, each carrying six fields</span></div>
+    <div class="fact"><b class="num">6</b><span>practices in a portal you keep, plus a strategist to ask</span></div>
+    <div class="fact"><b class="num">~40s</b><span>from the last question to reading it on screen</span></div>
+  </div>
+</div>
 
-<p>That's the harmless half of the problem. Here's the expensive half.</p>
-
-<p>Have you built the time-blocked schedule three or four times and quietly stopped setting the alarm by day four? Tried the morning routine that changes everything and found it changed nothing? Run the follow-up cadence, the daily posting, the delegation system — the real version, with a tracker and a week of genuine effort behind it — and watched it fall over anyway, while the person who recommended it is still doing it and still fine?</p>
-
-<p>When that happens enough times, most people land on the same conclusion. It works for everybody else, so I must be the one who's broken. Not disciplined enough. Not consistent enough. Missing something other founders clearly have. So you go looking for a better system, and the better system fails in the same place, and the conclusion gets a little more certain every time.</p>
-
-<h3>What's actually going on</h3>
-
-<p>That conclusion is wrong, and the correction isn't that you're secretly exceptional. It's more boring than that, and more fixable.</p>
-
-<p>Generic advice is written for a generic operator. Whoever wrote it built it on their own wiring, and then removed the part where that mattered. It assumes decisions get made by weighing options over several days. It assumes your energy is a flat, renewable resource you can schedule against. It assumes you sell by initiating, that Tuesday at 2pm will produce the same quality of attention as any other hour on the calendar, and that the fix for a dropped habit is more willpower. Every one of those is true for somebody. Some of them may not be true for you. The advice never says which, because the person who wrote it never had to notice.</p>
-
-<p>So the system doesn't collapse because you failed it. It collapses at a specific joint — the one place its assumption about the operator doesn't match the operator running it. And because nobody ever names the joint, the failure reads as a character flaw instead of a mismatch.</p>
-
-<p>Here is what naming it sounds like. This is a line from a real profile, in the section on that founder's bottleneck, explaining why every pipeline system they had tried eventually fell apart:</p>
-
-<blockquote>
-  <p>You're spending willpower you don't have on a system that requires willpower you'll never sustainably have.</p>
-</blockquote>
-
-<p>That sentence excuses nothing. It's harder to hear than "try again Monday," because it means the thing you kept restarting was never going to hold, and the effort already spent on it is spent. It's also the first sentence in the whole sequence you can use. Once you know which joint breaks, you can stop buying systems that break there — and start choosing the ones built the way you already run.</p>
-
-<p>That's the gap this is built for. It isn't another description of who you are. It's the specific place your wiring and the way you're currently running your business are working against each other, and what to test this week in the business you actually have.</p>
-
+<!-- ═══ THE COLLISION — full-bleed image ═══════════════════════════════════ -->
+<section class="bleed" id="collision">
+  <img src="img/collision.webp" srcset="img/collision-sm.webp 900w, img/collision.webp 1600w"
+       sizes="100vw"
+       alt="Two machined gears on a dark surface, one bronze and one green, cut to different pitches and not meshing."
+       width="1600" height="900" loading="lazy">
+  <div class="wrap">
+    <div class="col">
+      <h2 class="rv">The advice isn't wrong. It was written for a different operator.</h2>
+      <p class="lede h2sub rv" data-d="1">You are working hard and the business is fighting you anyway.</p>
+      <p class="rv" data-d="2">The pace it demands is not the pace you can actually hold. The decision you have been sitting on still will not close. The advice that works for every other founder keeps sliding off you. That collision, between how you are built to operate and how you are currently running the company, is what this is about.</p>
+    </div>
   </div>
 </section>
-<section id="03-what-it-is" style="background:#13140F;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>What actually arrives</h2>
 
-<p>A document of more than 5,000 words, written for one person, in thirteen sections. The sample we generated from a real chart came to 7,627. It is built in two halves, and the split is deliberate.</p>
+<!-- ═══ THE FAILED SYSTEMS ═════════════════════════════════════════════════ -->
+<section id="problem">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">You've taken one of these before</h2>
+      <p class="h2sub rv" data-d="1">A number, a letter, a four-word type. It described you well enough that you read it twice and sent a screenshot to someone. Then Monday came, and the week ran exactly the way it ran the week before. Nothing in the description told you what to do at nine in the morning with a full inbox and a decision you'd already been sitting on for a month.</p>
+      <p class="lede rv" data-d="2">That's the harmless half of the problem. Here's the expensive half.</p>
+    </div>
+  </div>
 
-<h3>The first half is recognition</h3>
+  <div class="wrap" style="margin-top:38px">
+    <div class="snaprow rv">
+      <div class="qcard"><i class="ph ph-calendar-x qi" aria-hidden="true"></i><p>Have you built the <b>time-blocked schedule</b> three or four times and quietly stopped setting the alarm by day four?</p></div>
+      <div class="qcard"><i class="ph ph-sun-horizon qi" aria-hidden="true"></i><p>Tried the <b>morning routine that changes everything</b> and found that it changed nothing?</p></div>
+      <div class="qcard"><i class="ph ph-arrows-clockwise qi" aria-hidden="true"></i><p>Run the <b>follow-up cadence</b>, the daily posting, the delegation system, with a tracker and a week of genuine effort behind it?</p></div>
+      <div class="qcard"><i class="ph ph-user-check qi" aria-hidden="true"></i><p>And watched it fall over anyway, <b>while the person who recommended it is still doing it and still fine?</b></p></div>
+    </div>
+  </div>
 
-<p>Six long sections, roughly 600 words each, that describe how you operate. They are written from your birth data alone — not from anything you typed — and that is the whole point of them. If they land, they landed on evidence you did not hand over.</p>
+  <div class="wrap" style="margin-top:34px">
+    <div class="narrow">
+      <p class="rv">When that happens enough times, most people land on the same conclusion. It works for everybody else, so I must be the one who's broken. Not disciplined enough. Not consistent enough. Missing something other founders clearly have. So you go looking for a better system, and the better system fails in the same place, and the conclusion gets a little more certain every time.</p>
+    </div>
+  </div>
 
-<ul>
-  <li><strong>The contradiction you're running.</strong> The exact place where how you are built and how you are currently running the company are fighting each other. Where it shows up in an ordinary week, what it costs you now, and why it has survived this long — which is almost always because one half of it is a genuine strength that has paid off before.</li>
-  <li><strong>How a decision actually arrives for you.</strong> On what timescale a real yes forms. What a true signal feels like from the inside, and what the convincing impostor feels like. Which decisions you are reliably good at, and which you should never make alone or on the spot.</li>
-  <li><strong>Your sustainable pace.</strong> The conditions that produce your best work, what drains you fastest, and the difference between your capacity and your adrenaline — including the tell that you have crossed from one into the other. It also names the piece of popular productivity advice most likely to fail someone built like you, and why.</li>
-  <li><strong>How you're built to sell.</strong> Where your actual persuasive force comes from, which is rarely the thing you think you are supposed to be doing. What kind of selling costs you almost nothing and what kind drains you out of proportion to what it returns.</li>
-  <li><strong>Money, risk, and pressure.</strong> How you behave when money is tight and when it is suddenly plentiful — both distort, usually in different directions. Your real risk posture, which is often not the one you claim. And your stress signature: which of your judgements to distrust in a hard week.</li>
-  <li><strong>Your bottleneck.</strong> The one section that reads what you typed. It takes the thing you said feels heavy and diagnoses the operating pattern underneath it — and answers the question you cannot answer yourself: is this your wiring serving you, or the same wiring running you?</li>
-</ul>
-
-<h3>The second half is what to do about it</h3>
-
-<p>Short, specific, and pointed at your week. Five to seven operating instructions, each with six parts. A 30-day operating experiment that sequences three of those instructions across four weeks — a behaviour-change loop, not a business roadmap. Then four cards short enough to pin above a desk: how you make every call, your early warning signs, what to stop doing by default, and the support you need next.</p>
-
-<p>And a closing section on what the profile cannot know. That one is in here because a document that never names its own edges is asking you to trust it further than it has earned.</p>
-
-<p>You read it on screen the moment it is written — about forty seconds. Then it stays, in a portal you keep.</p>
-<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+  <div class="wrap" style="margin-top:56px">
+    <div class="duo">
+      <div>
+        <h3 class="rv">That conclusion is wrong</h3>
+        <p class="rv" data-d="1" style="margin-top:14px">The correction isn't that you're secretly exceptional. It's more boring than that, and more fixable.</p>
+        <p class="rv" data-d="1">Generic advice is written for a generic operator. Whoever wrote it built it on their own wiring, and then removed the part where that mattered. It assumes decisions get made by weighing options over several days. It assumes your energy is a flat, renewable resource you can schedule against. It assumes you sell by initiating, that Tuesday at 2pm will produce the same quality of attention as any other hour on the calendar, and that the fix for a dropped habit is more willpower.</p>
+        <p class="rv" data-d="1">Every one of those is true for somebody. Some of them may not be true for you. The advice never says which, because the person who wrote it never had to notice.</p>
+      </div>
+      <figure class="fig rv" data-d="2">
+        <div class="legend">
+          <span><i style="background:var(--line-2)"></i>Steps that hold</span>
+          <span><i style="background:var(--data-b)"></i>The joint that gives</span>
+        </div>
+        <svg viewBox="0 0 420 250" role="img" aria-labelledby="jointTitle jointDesc" class="draw">
+          <title id="jointTitle">Where a borrowed system breaks</title>
+          <desc id="jointDesc">A five-step chain. The first two steps and the last two hold. The middle joint, the one place the system assumes something about the operator that isn't true, is the point that gives way.</desc>
+          <line x1="46" y1="70" x2="374" y2="70" stroke="#3B3E2E" stroke-width="2" stroke-linecap="round"/>
+          <g fill="#1F211A" stroke="#3B3E2E" stroke-width="2">
+            <circle cx="46" cy="70" r="13"/><circle cx="128" cy="70" r="13"/>
+            <circle cx="292" cy="70" r="13"/><circle cx="374" cy="70" r="13"/>
+          </g>
+          <circle cx="210" cy="70" r="17" fill="rgba(184,130,58,.14)" stroke="#B8823A" stroke-width="2.5"/>
+          <path d="M203 63 L217 77 M217 63 L203 77" stroke="#B8823A" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M210 96 L210 128" stroke="#B8823A" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>
+          <text x="210" y="152" text-anchor="middle" fill="#EAE3D3" font-size="15" font-weight="600">The joint</text>
+          <text x="210" y="176" text-anchor="middle" fill="#93957F" font-size="13">The one place its assumption about</text>
+          <text x="210" y="196" text-anchor="middle" fill="#93957F" font-size="13">the operator doesn't match the</text>
+          <text x="210" y="216" text-anchor="middle" fill="#93957F" font-size="13">operator running it</text>
+          <text x="46" y="40" text-anchor="middle" fill="#93957F" font-size="12.5">Holds</text>
+          <text x="128" y="40" text-anchor="middle" fill="#93957F" font-size="12.5">Holds</text>
+          <text x="292" y="40" text-anchor="middle" fill="#93957F" font-size="12.5">Holds</text>
+          <text x="374" y="40" text-anchor="middle" fill="#93957F" font-size="12.5">Holds</text>
+        </svg>
+        <figcaption>The system doesn't collapse because you failed it. It collapses at a specific joint. And because nobody ever names the joint, the failure reads as a character flaw instead of a mismatch.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
-<section id="04-mechanism" style="background:#171812;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>How the profile is actually built</h2>
 
-<p>Your birth date, your exact birth time, and your birthplace go into four separate readings: Western astrology, Vedic astrology, Human Design, and the I Ching. Each is calculated and interpreted on its own terms, without being shown what the others said.</p>
+<!-- ═══ WHAT ARRIVES — the document anatomy chart ══════════════════════════ -->
+<section id="arrives" class="band">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">What actually arrives</h2>
+      <p class="lede h2sub rv" data-d="1">A document of more than 5,000 words, written for one person, in thirteen sections. The sample we generated from a real chart came to 7,627.</p>
+      <p class="rv" data-d="2">It is built in two halves, and the split is deliberate.</p>
+    </div>
 
-<p>Then the engine looks for where they land in the same place. A theme only one lens raises stays a minor note. What the profile leads with is what more than one lens reached independently, and the specific placements underneath it are counted and kept.</p>
+    <figure class="fig rv" data-d="2" style="margin-top:44px">
+      <div class="legend">
+        <span><i style="background:var(--data-a)"></i>Recognition &mdash; how you operate</span>
+        <span><i style="background:var(--data-b)"></i>Instruction &mdash; what to do about it</span>
+      </div>
+      <svg viewBox="0 0 900 214" role="img" aria-labelledby="anatTitle anatDesc">
+        <title id="anatTitle">The two halves, measured on a real profile</title>
+        <desc id="anatDesc">On the 7,627-word sample: 3,902 words of recognition across six long sections averaging 650 words each, and 2,965 words of instruction across thirteen shorter pieces.</desc>
+        <text x="0" y="16" fill="#93957F" font-size="13">Recognition &middot; 6 sections &middot; 650 words each on average</text>
+        <text x="900" y="16" text-anchor="end" fill="#93957F" font-size="13">Instruction &middot; 13 pieces</text>
+        <g>
+          <rect class="barfill" x="0" y="30" width="509" height="46" rx="4" fill="#00A98C"/>
+          <rect class="barfill" x="513" y="30" width="387" height="46" rx="4" fill="#B8823A"/>
+        </g>
+        <text x="14" y="59" fill="#06231D" font-size="15" font-weight="600">3,902 words</text>
+        <text x="527" y="59" fill="#241704" font-size="15" font-weight="600">2,965 words</text>
+        <g font-size="13.5" fill="#C6C7B4">
+          <text x="0" y="110">The contradiction you're running</text>
+          <text x="0" y="134">How a decision actually arrives for you</text>
+          <text x="0" y="158">Your sustainable pace</text>
+          <text x="0" y="182">How you're built to sell</text>
+          <text x="0" y="206">Money, risk and pressure &middot; Your bottleneck</text>
+        </g>
+        <g font-size="13.5" fill="#C6C7B4" text-anchor="end">
+          <text x="900" y="110">6 operating instructions</text>
+          <text x="900" y="134">A 30-day operating experiment</text>
+          <text x="900" y="158">The load you should stop carrying</text>
+          <text x="900" y="182">Four pin-it-up cards</text>
+          <text x="900" y="206">What this profile cannot know</text>
+        </g>
+      </svg>
+      <figcaption>Measured section by section on sample 1, a real chart: 6,867 words across the two halves, 7,627 in the finished document once the opening, the reflection of your own six answers, and the close are counted. Cross-section overlap on that sample was 0.000% at a six-word window, which is the mechanical way of saying no two sections repeat each other.</figcaption>
+    </figure>
+  </div>
 
-<h3>The honest count is three, not four</h3>
+  <div class="wrap" style="margin-top:64px">
+    <div class="narrow">
+      <h3 class="rv">The first half is recognition</h3>
+      <p class="rv" data-d="1" style="margin-top:14px">Six long sections, roughly 650 words each, that describe how you operate. They are written from your birth data alone, not from anything you typed, and that is the whole point of them. If they land, they landed on evidence you did not hand over.</p>
+    </div>
+    <div class="stack rv" data-d="1" style="margin-top:36px">
+      <div class="row"><h3>The contradiction you're running</h3><p>The exact place where how you are built and how you are currently running the company are fighting each other. Where it shows up in an ordinary week, what it costs you now, and why it has survived this long &mdash; which is almost always because one half of it is a genuine strength that has paid off before.</p></div>
+      <div class="row"><h3>How a decision actually arrives</h3><p>On what timescale a real yes forms. What a true signal feels like from the inside, and what the convincing impostor feels like. Which decisions you are reliably good at, and which you should never make alone or on the spot.</p></div>
+      <div class="row"><h3>Your sustainable pace</h3><p>The conditions that produce your best work, what drains you fastest, and the difference between your capacity and your adrenaline &mdash; including the tell that you have crossed from one into the other. It also names the piece of popular productivity advice most likely to fail someone built like you, and why.</p></div>
+      <div class="row"><h3>How you're built to sell</h3><p>Where your actual persuasive force comes from, which is rarely the thing you think you are supposed to be doing. What kind of selling costs you almost nothing, and what kind drains you out of proportion to what it returns.</p></div>
+      <div class="row"><h3>Money, risk and pressure</h3><p>How you behave when money is tight and when it is suddenly plentiful &mdash; both distort, usually in different directions. Your real risk posture, which is often not the one you claim. And your stress signature: which of your judgements to distrust in a hard week.</p></div>
+      <div class="row"><h3>Your bottleneck</h3><p>The one section that reads what you typed. It takes the thing you said feels heavy and diagnoses the operating pattern underneath it, and answers the question you cannot answer yourself: is this your wiring serving you, or the same wiring running you?</p></div>
+    </div>
+  </div>
 
-<p>It would be tidy to tell you that four systems agree. That sentence is not available here, and it is worth knowing why. Human Design and the I Ching are two readings of the same computed wheel of 64 gates. Human Design reads that wheel mechanically, as type, authority and centers. The I Ching reads the same wheel developmentally. Same arithmetic, read twice.</p>
-
-<p>So when the engine counts how many independent sources landed on a theme, it counts three: the gate wheel, the Western chart, and the Vedic chart. Three is the number it reports internally, and three is the number we will say to you. In the sample profile quoted on this page, the strongest theme was carried by all three, with fifteen separate placements behind it. That is a real count off a real chart.</p>
-
-<h3>This is a reading of tendencies, not a measurement</h3>
-
-<p>Nothing here is scored. No instrument is calibrated against a population. Three lenses landing in the same place is a reason to look harder at something, not proof that it is true about you. That is why every operating instruction in the profile is written as a seven-day experiment with an observable signal to watch, and why the last section of the profile is a plain list of what it cannot know.</p>
-
-<h3>Why we ask six questions about your business</h3>
-
-<p>Birth data on its own produces a description of a person. That is interesting, and it is still one step away from your Tuesday. So before the profile is written, the intake asks six questions about the company. It takes about three minutes:</p>
-
-<ul>
-  <li>What the business looks like today — just you, a small team, or a growing one.</li>
-  <li>What you sell, and who buys it.</li>
-  <li>How customers usually find you now.</li>
-  <li>What feels broken, heavy, or harder than it should right now.</li>
-  <li>The decision you have been sitting on longer than it deserves.</li>
-  <li>The business advice or system you have tried that never seems to stick.</li>
-</ul>
-
-<p>Those answers are never handed back to you as though the chart revealed them. They are the thing the wiring gets applied to, and the profile says so out loud. From the sample:</p>
-
-<blockquote>
-  <p>Everything from this point forward is a read of how you are built to operate — how you decide, sell, structure your time, and where your own wiring is working against you. The business above is what it gets applied to.</p>
-</blockquote>
-
-<p>Without those six answers you would get a portrait. With them, the instructions point at the channel you actually sell through, the load that is actually heavy, and the decision you are actually postponing. That is the difference between a description of you and a manual for the business you are running.</p>
-
+  <div class="wrap" style="margin-top:58px">
+    <div class="narrow">
+      <h3 class="rv">The second half is what to do about it</h3>
+      <p class="rv" data-d="1" style="margin-top:14px">Short, specific, and pointed at your week. Five to seven operating instructions, each with six parts. A 30-day operating experiment that sequences three of those instructions across four weeks &mdash; a behaviour-change loop, not a business roadmap. Then four cards short enough to pin above a desk: how you make every call, your early warning signs, what to stop doing by default, and the support you need next.</p>
+      <p class="rv" data-d="1">And a closing section on what the profile cannot know. That one is in here because a document that never names its own edges is asking you to trust it further than it has earned.</p>
+      <p class="rv" data-d="1">You read it on screen the moment it is written, about forty seconds. Then it stays, in a portal you keep.</p>
+      <div class="buy rv" data-d="2">
+        <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
+          <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
+        </a>
+        <p class="small">$29, one time. Pay, answer the questions, and watch it build on the page.</p>
+      </div>
+    </div>
   </div>
 </section>
-<section id="05-sample" style="background:#13140F;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>A real passage from a real profile</h2>
 
-<p>You should not have to take our word for how this reads. What follows is the opening of an Operator Profile that was actually generated — one real birth chart, one real set of six business answers, more than 7,600 words of output. It is copied out of the file exactly as it was produced. Nothing has been smoothed over for this page.</p>
+<!-- ═══ THE ENGINE ═════════════════════════════════════════════════════════ -->
+<section id="engine">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">How the profile is actually built</h2>
+      <p class="lede h2sub rv" data-d="1">Your birth date, your exact birth time and your birthplace go into four separate readings, each calculated and interpreted on its own terms, without being shown what the others said.</p>
+    </div>
 
-<blockquote><p>The sharpest thing you produce — the insight that lands whole, that reorders how someone sees their own situation — arrives before you can explain it, and you've built a business that keeps demanding you explain it anyway. So you're either holding back the knowing because the room hasn't asked the right way yet, or you're pushing it out too early and watching it land as noise, and either way the revenue moment passes. The contradiction isn't between your confidence and your delivery — it's that your most valuable output is unrepeatable, untimely, and almost impossible to package, and you're trying to run a scalable operation on top of it.</p></blockquote>
+    <figure class="fig rv" data-d="1" style="margin-top:42px">
+      <svg viewBox="0 0 900 300" role="img" aria-labelledby="convTitle convDesc" class="draw">
+        <title id="convTitle">Four readings, three independent counts, one converged theme</title>
+        <desc id="convDesc">Western astrology, Vedic astrology, Human Design and the I Ching are each read separately. Human Design and the I Ching read the same computed wheel of 64 gates, so they count as one independent source, not two. The engine leads with what more than one source reached on its own.</desc>
+        <g font-size="14" fill="#EAE3D3" font-weight="500">
+          <rect x="0" y="18" width="196" height="46" rx="8" fill="#1F211A" stroke="#3B3E2E"/>
+          <text x="18" y="46">Western astrology</text>
+          <rect x="0" y="82" width="196" height="46" rx="8" fill="#1F211A" stroke="#3B3E2E"/>
+          <text x="18" y="110">Vedic astrology</text>
+          <rect x="0" y="150" width="196" height="46" rx="8" fill="#1F211A" stroke="#3B3E2E"/>
+          <text x="18" y="178">Human Design</text>
+          <rect x="0" y="214" width="196" height="46" rx="8" fill="#1F211A" stroke="#3B3E2E"/>
+          <text x="18" y="242">The I Ching</text>
+        </g>
+        <g stroke="#3B3E2E" stroke-width="1.5" fill="none">
+          <path d="M196 41 C 250 41, 250 41, 300 41"/>
+          <path d="M196 105 C 250 105, 250 105, 300 105"/>
+          <path d="M196 173 C 250 173, 250 190, 300 200"/>
+          <path d="M196 237 C 250 237, 250 218, 300 208"/>
+        </g>
+        <g font-size="13.5">
+          <rect x="300" y="20" width="176" height="42" rx="8" fill="rgba(0,169,140,.11)" stroke="#00A98C"/>
+          <text x="388" y="46" text-anchor="middle" fill="#EAE3D3" font-weight="500">The Western chart</text>
+          <rect x="300" y="84" width="176" height="42" rx="8" fill="rgba(0,169,140,.11)" stroke="#00A98C"/>
+          <text x="388" y="110" text-anchor="middle" fill="#EAE3D3" font-weight="500">The Vedic chart</text>
+          <rect x="300" y="180" width="176" height="52" rx="8" fill="rgba(0,169,140,.11)" stroke="#00A98C"/>
+          <text x="388" y="202" text-anchor="middle" fill="#EAE3D3" font-weight="500">The gate wheel</text>
+          <text x="388" y="221" text-anchor="middle" fill="#93957F" font-size="12">one wheel, read twice</text>
+        </g>
+        <g stroke="#B8823A" stroke-width="1.7" fill="none">
+          <path d="M476 41 C 560 41, 570 120, 640 143"/>
+          <path d="M476 105 C 560 105, 570 130, 640 148"/>
+          <path d="M476 206 C 560 206, 570 175, 640 158"/>
+        </g>
+        <rect x="640" y="112" width="260" height="80" rx="10" fill="rgba(184,130,58,.12)" stroke="#B8823A" stroke-width="1.6"/>
+        <text x="770" y="142" text-anchor="middle" fill="#EAE3D3" font-size="15" font-weight="600">What the profile leads with</text>
+        <text x="770" y="166" text-anchor="middle" fill="#C6C7B4" font-size="13">Reached independently by 2 or 3</text>
+        <text x="770" y="184" text-anchor="middle" fill="#93957F" font-size="12.5">A single lens stays a minor note</text>
+      </svg>
+      <figcaption>In the sample profile quoted on this page, the strongest theme was carried by all three sources, with fifteen separate placements behind it. That is a real count off a real chart.</figcaption>
+    </figure>
 
-<p>That is the first thing this founder read. No greeting, no summary of their strengths. The contradiction they are running, stated in the opening sentence. They sell strategic advisory retainers to founders of small agencies, and when the intake asked what feels heaviest, they said the pipeline gets rebuilt from scratch every month. The profile went straight at that.</p>
-
-<p>Further in, a section called "How a decision actually arrives for you" spends close to seven hundred words on one question: how does this person know when a call is right? It separates the fast body-level read from the case the mind assembles afterwards, and then it drops the difference into an ordinary week.</p>
-
-<blockquote><p>It's Thursday afternoon, someone is in your inbox with an opportunity — a partnership, a deal, a hire. Your gut landed in the first ten seconds of reading it. But the terms are interesting. The numbers work on paper. So you stay with it, run it forward in your mind, start building the case. Two hours later you've written a mental deck justifying a yes that your body flagged as a no before you'd finished the second sentence. That mental deck is not your decision. It's noise that arrived after your actual decision was already made.</p></blockquote>
-
-<h3>What to notice about that</h3>
-
-<ul>
-<li>It names a mechanism, not a compliment. It does not say you have good instincts. It says the signal lands first, the reasoning gets built afterwards, and the second one sounds far more convincing than it is.</li>
-<li>It can be wrong, which is the whole point. A flattering line cannot be checked. This one can — go back to the last opportunity you sat on for two hours and see whether that is what happened.</li>
-<li>It draws lines fine enough to use. The same section separates being time-rushed from being attention-rushed, says which decisions this person can trust themselves to make on the spot and which they should never make with someone watching, and hands them the sentence that buys the gap: "Let me sit with this tonight."</li>
-<li>It could not be true of a thousand founders. Plenty of people make their best calls in a full room under pressure. This profile tells this one that pressure produces their worst.</li>
-</ul>
-
-<p>Then the profile stops describing and starts instructing, and the six business answers show up by name. One of this founder's instructions reads:</p>
-
-<blockquote><p>Stop treating every referral conversation like a cold pitch — tell them explicitly what you're solving for and let them bring the qualified name to you.</p></blockquote>
-
-<p>Under it sits the seven-day version. In the next conversation where someone praises your work, say one sentence out loud: "I'm specifically looking for founders running small agencies who feel like their pipeline resets every month — if anyone comes to mind, I'd love an introduction." Do it once, deliberately, before Friday. Then watch whether they pause and name someone specific, or say they will think about it. That is their own market, in their own words, handed back as something to say on a Tuesday.</p>
-<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+    <div class="duo" style="margin-top:56px">
+      <div>
+        <h3 class="rv">The honest count is three, not four</h3>
+        <p class="rv" data-d="1" style="margin-top:14px">It would be tidy to tell you that four systems agree. That sentence is not available here, and it is worth knowing why. Human Design and the I Ching are two readings of the same computed wheel of 64 gates. Human Design reads that wheel mechanically, as type, authority and centers. The I Ching reads the same wheel developmentally. Same arithmetic, read twice.</p>
+        <p class="rv" data-d="1">So when the engine counts how many independent sources landed on a theme, it counts three: the gate wheel, the Western chart, and the Vedic chart. Three is the number it reports internally, and three is the number we will say to you.</p>
+      </div>
+      <div>
+        <h3 class="rv" data-d="1">This is a reading of tendencies, not a measurement</h3>
+        <p class="rv" data-d="2" style="margin-top:14px">Nothing here is scored. No instrument is calibrated against a population. Three lenses landing in the same place is a reason to look harder at something, not proof that it is true about you.</p>
+        <p class="rv" data-d="2">That is why every operating instruction in the profile is written as a seven-day experiment with an observable signal to watch, and why the last section of the profile is a plain list of what it cannot know.</p>
+      </div>
+    </div>
   </div>
 </section>
-<section id="06-intake" style="background:#171812;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>Six questions about your business, and why we ask them</h2>
 
-<p>Your birth data says how you are wired. It cannot say what that wiring is being applied to. So before the read begins, you answer six short questions about the business you are actually running. Without them, an operating instruction is just a description of you with a verb attached to it. With them, the instructions can point at your pipeline, your buyers, and the decision you are currently sitting on.</p>
+<!-- ═══ THE SAMPLE — the page's one field change ═══════════════════════════ -->
+<section id="sample" class="field">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">A real passage from a real profile</h2>
+      <p class="rv" data-d="1" style="margin-top:20px">You should not have to take our word for how this reads. What follows is the opening of an Operator Profile that was actually generated: one real birth chart, one real set of six business answers, more than 7,600 words of output. It is copied out of the file exactly as it was produced. Nothing has been smoothed over for this page.</p>
+    </div>
+    <div class="duo" style="margin-top:44px;align-items:center">
+      <p class="pull rv" data-d="1">The contradiction they are running, stated in the opening sentence. No greeting, no summary of their strengths.</p>
+      <div class="quotecard rv" data-d="2">
+        <p class="src">Opening lines, sample profile</p>
+        <p>The sharpest thing you produce &mdash; the insight that lands whole, that reorders how someone sees their own situation &mdash; arrives before you can explain it, and you've built a business that keeps demanding you explain it anyway. So you're either holding back the knowing because the room hasn't asked the right way yet, or you're pushing it out too early and watching it land as noise, and either way the revenue moment passes. The contradiction isn't between your confidence and your delivery &mdash; it's that your most valuable output is unrepeatable, untimely, and almost impossible to package, and you're trying to run a scalable operation on top of it.</p>
+      </div>
+    </div>
+    <div class="narrow" style="margin-top:44px">
+      <p class="rv">That founder sells strategic advisory retainers to founders of small agencies. When the intake asked what feels heaviest, they said the pipeline gets rebuilt from scratch every month. The profile went straight at that.</p>
+      <p class="rv">Further in, a section called <em>How a decision actually arrives for you</em> spends close to seven hundred words on one question: how does this person know when a call is right? It separates the fast body-level read from the case the mind assembles afterwards, and then it drops the difference into an ordinary week.</p>
+    </div>
+    <div class="quotecard rv narrow" style="margin-top:26px">
+      <p class="src">From the decision section</p>
+      <p>It's Thursday afternoon, someone is in your inbox with an opportunity &mdash; a partnership, a deal, a hire. Your gut landed in the first ten seconds of reading it. But the terms are interesting. The numbers work on paper. So you stay with it, run it forward in your mind, start building the case. Two hours later you've written a mental deck justifying a yes that your body flagged as a no before you'd finished the second sentence. That mental deck is not your decision. It's noise that arrived after your actual decision was already made.</p>
+    </div>
 
-<p>Here are all six:</p>
+    <h3 class="rv" style="margin-top:56px">What to notice about that</h3>
+    <div class="duo rv" data-d="1" style="margin-top:24px">
+      <ul class="tick yes">
+        <li><i class="ph ph-gear-six" aria-hidden="true"></i>It names a mechanism, not a compliment. It does not say you have good instincts. It says the signal lands first, the reasoning gets built afterwards, and the second one sounds far more convincing than it is.</li>
+        <li><i class="ph ph-scales" aria-hidden="true"></i>It can be wrong, which is the whole point. A flattering line cannot be checked. This one can. Go back to the last opportunity you sat on for two hours and see whether that is what happened.</li>
+      </ul>
+      <ul class="tick yes">
+        <li><i class="ph ph-crosshair-simple" aria-hidden="true"></i>It draws lines fine enough to use. It separates being time-rushed from being attention-rushed, says which decisions this person can trust themselves to make on the spot, and hands them the sentence that buys the gap: <em>Let me sit with this tonight.</em></li>
+        <li><i class="ph ph-user-focus" aria-hidden="true"></i>It could not be true of a thousand founders. Plenty of people make their best calls in a full room under pressure. This profile tells this one that pressure produces their worst.</li>
+      </ul>
+    </div>
 
-<ul>
-  <li>What does the business look like today — just you, a small team, or a growing team?</li>
-  <li>What do you sell, and who buys it? One or two plain sentences.</li>
-  <li>How do customers usually find you now — referrals, content, outbound, paid ads, marketplace or retail, or a mix?</li>
-  <li>What feels broken, heavy, or harder than it should right now?</li>
-  <li>What decision have you been sitting on longer than it deserves?</li>
-  <li>What business advice or system have you tried that never seems to stick?</li>
-</ul>
-
-<p>Three are taps. Three are one line in your own words. One question per screen. It takes about three minutes, and you are never asked for your revenue.</p>
-
-<p>Then you watch those answers do work. In the sample profile, the open decision was whether to raise a retainer rate or bring on a second contractor. One of that person's operating instructions is titled <em>"When the rate-or-contractor decision comes back around this week, don't research it further — notice what your body already settled on and test that reading against one real constraint."</em> That instruction exists because of one line typed at intake.</p>
-
-<h3>You can always tell which half is which</h3>
-
-<p>The profile opens by reading your own answers back to you, plainly, with nothing added and nothing dressed up as insight. Then it draws the line out loud:</p>
-
-<blockquote>
-  <p>Everything from this point forward is a read of how you are built to operate — how you decide, sell, structure your time, and where your own wiring is working against you. The business above is what it gets applied to.</p>
-</blockquote>
-
-<p>That boundary holds for the rest of the document. What you told us stays what you told us. It is never handed back to you as something the chart supposedly revealed. When a section says your pipeline gets rebuilt every month and never compounds, that is your sentence. When a section says how clarity actually arrives for you, or where your pace breaks, that came from the birth data.</p>
-
-<p>This matters most in the passages that land hardest. Plenty of tools get their power by repeating your own words at you in a lower voice. You should be able to check, sentence by sentence, whether you are recognising something you had not put into words yet or reading back what you typed three minutes ago. In this profile you can.</p>
-
+    <div class="narrow" style="margin-top:48px">
+      <p class="rv">Then the profile stops describing and starts instructing, and the six business answers show up by name. One of this founder's instructions reads:</p>
+    </div>
+    <div class="quotecard rv narrow" style="margin-top:20px">
+      <p>Stop treating every referral conversation like a cold pitch. Tell them explicitly what you're solving for and let them bring the qualified name to you.</p>
+    </div>
+    <div class="narrow" style="margin-top:26px">
+      <p class="rv">Under it sits the seven-day version. In the next conversation where someone praises your work, say one sentence out loud: <em>I'm specifically looking for founders running small agencies who feel like their pipeline resets every month. If anyone comes to mind, I'd love an introduction.</em> Do it once, deliberately, before Friday. Then watch whether they pause and name someone specific, or say they will think about it. That is their own market, in their own words, handed back as something to say on a Tuesday.</p>
+      <div class="buy rv">
+        <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
+          <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
+        </a>
+      </div>
+    </div>
   </div>
 </section>
-<section id="07-instructions" style="background:#13140F;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>Five to seven instructions, and six fields on every one</h2>
 
-<p>Halfway through, the profile stops describing you and starts handing you things to do. You get five to seven operating instructions. Each one is a single direct sentence — and then five more fields, because a sentence on its own is just advice.</p>
+<!-- ═══ THE SIX QUESTIONS ══════════════════════════════════════════════════ -->
+<section id="intake" class="band">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">Six questions about your business, and why we ask them</h2>
+      <p class="lede h2sub rv" data-d="1">Your birth data says how you are wired. It cannot say what that wiring is being applied to.</p>
+      <p class="rv" data-d="2">Without these answers, an operating instruction is just a description of you with a verb attached to it. With them, the instructions point at your pipeline, your buyers, and the decision you are currently sitting on.</p>
+    </div>
 
-<ul>
-  <li>The instruction. One sentence, specific enough to act on this week.</li>
-  <li>Why it fits. The evidence from how you're wired, in plain language.</li>
-  <li>Where it shows up. The moment in the week you described, named.</li>
-  <li>What ignoring it costs. In time, attention, or energy — never an invented number.</li>
-  <li>A seven-day experiment. One thing to run before next week is over.</li>
-  <li>What to watch. The signal that tells you whether it did anything.</li>
-</ul>
+    <div class="qgrid rv" data-d="2" style="margin-top:40px">
+      <div class="qg"><span class="qn">01</span><p class="qq">What does the business look like today: just you, a small team, or a growing team?</p><span class="qm"><i class="ph ph-hand-tap" aria-hidden="true"></i>Tap</span></div>
+      <div class="qg"><span class="qn">02</span><p class="qq">What do you sell, and who buys it?</p><span class="qm"><i class="ph ph-pencil-simple" aria-hidden="true"></i>One or two lines</span></div>
+      <div class="qg"><span class="qn">03</span><p class="qq">How do customers usually find you now?</p><span class="qm"><i class="ph ph-hand-tap" aria-hidden="true"></i>Tap</span></div>
+      <div class="qg"><span class="qn">04</span><p class="qq">What feels broken, heavy, or harder than it should right now?</p><span class="qm"><i class="ph ph-pencil-simple" aria-hidden="true"></i>Your own words</span></div>
+      <div class="qg"><span class="qn">05</span><p class="qq">What decision have you been sitting on longer than it deserves?</p><span class="qm"><i class="ph ph-pencil-simple" aria-hidden="true"></i>Your own words</span></div>
+      <div class="qg"><span class="qn">06</span><p class="qq">What business advice or system have you tried that never seems to stick?</p><span class="qm"><i class="ph ph-hand-tap" aria-hidden="true"></i>Tap</span></div>
+    </div>
 
-<p>Those last two fields are the reason this works. An instruction here is a testable operating hypothesis, not a command. You're allowed to read one and think it's wrong for you. Run the seven-day version anyway, watch the signal it names, and the verdict comes from your own week instead of from us.</p>
+    <div class="narrow" style="margin-top:34px">
+      <p class="rv">One question per screen. It takes about three minutes, and you are never asked for your revenue.</p>
+      <p class="rv">Then you watch those answers do work. In the sample profile, the open decision was whether to raise a retainer rate or bring on a second contractor. One of that person's operating instructions is titled <em>&ldquo;When the rate-or-contractor decision comes back around this week, don't research it further &mdash; notice what your body already settled on and test that reading against one real constraint.&rdquo;</em> That instruction exists because of one line typed at intake.</p>
+    </div>
 
-<p>Here is one in full, from a real profile. It was written for a solo advisor who told the intake that time blocking never sticks — he'd tried it four times and quit inside a week, every time.</p>
-
-<blockquote>
-  <p>Replace time blocking with a single daily constraint: one non-negotiable output before any inbox or async response.</p>
-  <p>Why: Time blocking fails you because it treats the structure as the thing to protect, and the structure is what you keep renegotiating when the day moves. You're built to work in concentrated bursts, not in pre-scheduled categories. The one-thing-first rule is harder to renegotiate than a calendar block because it's binary — it's done or it isn't.</p>
-  <p>Where it shows up: This is what's underneath the four failed time-blocking attempts. The system collapses because it requires you to defend multiple containers. One constraint is a decision made once; a timetable is a decision remade every hour.</p>
-  <p>What it's costing you: Without the constraint, reactive work — messages, client questions, inbox — fills the available space and the one thing that would have compounded (content, product, the rate conversation) keeps landing at the bottom of the day when you're depleted.</p>
-  <p>This week: Tomorrow morning, before you open email or any messaging, produce one thing: a paragraph, a decision made and written down, a piece of content drafted. It can be short. Do this for five consecutive days and track only whether you did it, not what it produced.</p>
-  <p>What to watch: Whether the protected output is still happening by Friday, and how the rest of the day feels differently organized when the first thing is already done before you've fielded a single request.</p>
-</blockquote>
-
-<p>Read what it doesn't do. It doesn't tell him to try harder, and it doesn't hand him a system that worked for somebody else. It takes the habit he already told us he abandons, explains why that particular structure fights the way he works, swaps in one that asks less of him, and then tells him what to look at on Friday to find out if it held.</p>
-
-<p>That is the difference between this and a personality report. A report names what you are and leaves Monday to you. These instructions already know what you sell, how customers find you, what feels heavy, and which decision you've been sitting on — because you answered six questions about the business before anything was written. So they can point at the real conversation, the real decision, the real habit. The other instructions in that same profile covered his referral conversations, the rate-or-contractor decision he'd been circling, two windows a week with no deliverable attached, the pull to re-edit content instead of publishing, and one question to ask a retainer client.</p>
-<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+    <div class="duo" style="margin-top:52px">
+      <div>
+        <h3 class="rv">You can always tell which half is which</h3>
+        <p class="rv" data-d="1" style="margin-top:14px">The profile opens by reading your own answers back to you, plainly, with nothing added and nothing dressed up as insight. Then it draws the line out loud.</p>
+        <p class="rv" data-d="1">That boundary holds for the rest of the document. What you told us stays what you told us. It is never handed back to you as something the chart supposedly revealed. When a section says your pipeline gets rebuilt every month and never compounds, that is your sentence. When a section says how clarity actually arrives for you, or where your pace breaks, that came from the birth data.</p>
+        <p class="rv" data-d="1">This matters most in the passages that land hardest. Plenty of tools get their power by repeating your own words at you in a lower voice. You should be able to check, sentence by sentence, whether you are recognising something you had not put into words yet or reading back what you typed three minutes ago. In this profile you can.</p>
+      </div>
+      <figure class="fig rv" data-d="2">
+        <p class="small" style="margin:0 0 18px;color:var(--pine-lt);letter-spacing:.6px;text-transform:uppercase;font-size:12.5px;font-weight:600">The line, in the document's own words</p>
+        <p style="font-size:17px;line-height:1.7;color:var(--bone);margin:0">Everything from this point forward is a read of how you are built to operate &mdash; how you decide, sell, structure your time, and where your own wiring is working against you. The business above is what it gets applied to.</p>
+        <figcaption>Without the six answers you would get a portrait. With them, the instructions point at the channel you actually sell through, the load that is actually heavy, and the decision you are actually postponing.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
-<section id="08-portal" style="background:#171812;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>It is not a PDF. It is a desk you come back to</h2>
 
-<p>Most things like this arrive as a file. You read it once, feel seen for an afternoon, and never open it again — which is the same failure as the personality test, arriving a bit later.</p>
+<!-- ═══ INSTRUCTION ANATOMY ════════════════════════════════════════════════ -->
+<section id="instructions">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">Five to seven instructions, and six fields on every one</h2>
+      <p class="lede h2sub rv" data-d="1">Halfway through, the profile stops describing you and starts handing you things to do.</p>
+      <p class="rv" data-d="2">Each instruction is a single direct sentence, and then five more fields, because a sentence on its own is just advice. Here is one in full, from a real profile. It was written for a solo advisor who told the intake that time blocking never sticks: he'd tried it four times and quit inside a week, every time.</p>
+    </div>
 
-<p>This one opens as a portal. Every section of your profile is in the rail on the left, so you can go straight to the one that matters this week instead of scrolling for it. Beside them sit six practices, and each one takes something live in your business and runs your own profile against it.</p>
+    <div class="anat rv" data-d="2" style="margin-top:40px">
+      <div class="anat-head">
+        <span class="lbl">The instruction</span>
+        <p>Replace time blocking with a single daily constraint: one non-negotiable output before any inbox or async response.</p>
+      </div>
+      <div class="anat-row">
+        <div class="k"><b>Why it fits</b><span>The evidence from how you're wired, in plain language</span></div>
+        <p>Time blocking fails you because it treats the structure as the thing to protect, and the structure is what you keep renegotiating when the day moves. You're built to work in concentrated bursts, not in pre-scheduled categories. The one-thing-first rule is harder to renegotiate than a calendar block because it's binary. It's done or it isn't.</p>
+      </div>
+      <div class="anat-row">
+        <div class="k"><b>Where it shows up</b><span>The moment in the week you described, named</span></div>
+        <p>This is what's underneath the four failed time-blocking attempts. The system collapses because it requires you to defend multiple containers. One constraint is a decision made once; a timetable is a decision remade every hour.</p>
+      </div>
+      <div class="anat-row">
+        <div class="k"><b>What ignoring it costs</b><span>In time, attention or energy, never an invented number</span></div>
+        <p>Without the constraint, reactive work &mdash; messages, client questions, inbox &mdash; fills the available space, and the one thing that would have compounded (content, product, the rate conversation) keeps landing at the bottom of the day when you're depleted.</p>
+      </div>
+      <div class="anat-row">
+        <div class="k"><b>This week</b><span>One experiment to run inside seven days</span></div>
+        <p>Tomorrow morning, before you open email or any messaging, produce one thing: a paragraph, a decision made and written down, a piece of content drafted. It can be short. Do this for five consecutive days and track only whether you did it, not what it produced.</p>
+      </div>
+      <div class="anat-row">
+        <div class="k"><b>What to watch</b><span>The observable signal that settles it</span></div>
+        <p>Whether the protected output is still happening by Friday, and how the rest of the day feels differently organized when the first thing is already done before you've fielded a single request.</p>
+      </div>
+    </div>
 
-<h3>The six practices</h3>
-
-<ul>
-  <li><strong>Decision Room.</strong> Bring a decision you are actually sitting on. It applies your own decision protocol to that specific call and gives you a brief: the process to use, the self-sabotage pattern to watch for on a call like this, the business facts it cannot see, and a readiness call about the <em>process</em> — never about which option is right. Afterwards you come back and record what happened, and that becomes part of what it knows about how you really decide.</li>
-  <li><strong>Bottleneck Lab.</strong> Something is stuck. This separates the visible problem from the operating pattern underneath it and leaves you with one experiment worth seven days: the pattern, the early tell, the smallest change worth testing, what to measure, and when to come back.</li>
-  <li><strong>Weekly Operator Review.</strong> Ten minutes on the week that just happened. Which decision took too long, what you kept doing that someone else could have owned, where the week felt clean, where you overrode your own protocol. No streaks, nothing to keep up, no penalty for skipping it for a month.</li>
-  <li><strong>Delegation Lab.</strong> List what you are carrying. It sorts the work into keep, hand off, systemise first, automate carefully, and stop — then builds the actual handoff for the one you pick, including the way you are most likely to take it back.</li>
-  <li><strong>Build My Week.</strong> You give it the hours you actually have, not the hours a productivity book assumes. It returns a week shaped like the way you work: two or three focus blocks placed where they belong for you, decision time matched to your own protocol, recovery where your judgement needs it, one block nothing is allowed into, and a Friday review. It writes a plan you copy — it does not touch your calendar.</li>
-  <li><strong>Advice Fit Lab.</strong> Someone told you to run your business a particular way. This works out which parts fit how you are built, which parts fight you, which parts need business evidence it does not have — and what to <em>modify</em> rather than abandon.</li>
-</ul>
-
-<h3>And you can ask it things</h3>
-
-<p>An ask bar sits at the bottom of every surface, and it already knows which page you are standing on, so you never have to re-explain your context. Ask what a section means for a specific call this week, or why a particular instruction is aimed at you and not at someone else. It answers in the same operating terms as the document — not as a chat assistant that happens to have read it.</p>
-
-<p>If the business changes, you change the six answers. The profile is being applied to whatever you say it is, and you are not asked those questions from scratch ever again.</p>
-<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+    <div class="duo" style="margin-top:52px">
+      <div>
+        <h3 class="rv">Read what it doesn't do</h3>
+        <p class="rv" data-d="1" style="margin-top:14px">It doesn't tell him to try harder, and it doesn't hand him a system that worked for somebody else. It takes the habit he already told us he abandons, explains why that particular structure fights the way he works, swaps in one that asks less of him, and then tells him what to look at on Friday to find out if it held.</p>
+        <p class="rv" data-d="1">Those last two fields are the reason this works. An instruction here is a testable operating hypothesis, not a command. You're allowed to read one and think it's wrong for you. Run the seven-day version anyway, watch the signal it names, and the verdict comes from your own week instead of from us.</p>
+      </div>
+      <div>
+        <h3 class="rv" data-d="1">That is the difference from a personality report</h3>
+        <p class="rv" data-d="2" style="margin-top:14px">A report names what you are and leaves Monday to you. These instructions already know what you sell, how customers find you, what feels heavy, and which decision you've been sitting on, because you answered six questions about the business before anything was written.</p>
+        <p class="rv" data-d="2">So they can point at the real conversation, the real decision, the real habit. The other instructions in that same profile covered his referral conversations, the rate-or-contractor decision he'd been circling, two windows a week with no deliverable attached, the pull to re-edit content instead of publishing, and one question to ask a retainer client.</p>
+      </div>
+    </div>
   </div>
 </section>
-<section id="09-limits" style="background:#13140F;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>What this profile cannot know</h2>
 
-<p>Here is the edge of what your birth data and six business questions can see. Knowing where that edge sits is the only reason to trust what's inside it.</p>
+<!-- ═══ THE PORTAL ═════════════════════════════════════════════════════════ -->
+<section id="portal" class="band">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">It is not a PDF. It is a desk you come back to</h2>
+      <p class="h2sub rv" data-d="1">Most things like this arrive as a file. You read it once, feel seen for an afternoon, and never open it again, which is the same failure as the personality test, arriving a bit later.</p>
+      <p class="rv" data-d="2">This one opens as a portal. Every section of your profile is in the rail on the left, so you can go straight to the one that matters this week instead of scrolling for it. Beside them sit six practices, and each one takes something live in your business and runs your own profile against it.</p>
+    </div>
 
-<p>The Operator Profile does not know:</p>
+    <div class="shots rv" data-d="2" style="margin-top:44px">
+      <div>
+        <div class="shot"><img src="img/portal-home.webp" alt="The portal home screen: a left rail listing every section of the profile and the six practices, with the current focus, this week's move and Ask your profile in the main column." width="1180" height="1180" loading="lazy"></div>
+        <p class="shotcap">Your operating home. Every section in the rail, the practices under it, and the ask bar pinned to the bottom of every screen.</p>
+      </div>
+      <div>
+        <div class="shot"><img src="img/portal-mobile.webp" alt="The same portal on a phone-width screen, with the rail collapsed behind a top bar." width="520" height="1050" loading="lazy"></div>
+        <p class="shotcap">And on a phone, where most people actually read it.</p>
+      </div>
+    </div>
 
-<ul>
-<li>whether a market wants what you're selling</li>
-<li>whether your price is right</li>
-<li>whether your unit economics work</li>
-<li>which niche would be the most profitable one for you</li>
-<li>whether to hire, keep, or let go of a specific person</li>
-<li>whether the decision you're weighing will succeed</li>
-<li>what you must do</li>
-</ul>
+    <h3 class="rv" style="margin-top:64px">The six practices</h3>
+    <div class="practs rv" data-d="1" style="margin-top:26px">
+      <div class="pract"><i class="ph ph-signpost" aria-hidden="true"></i><h3>Decision Room</h3><p>Bring a decision you are actually sitting on. It applies your own decision protocol to that specific call and gives you a brief: the process to use, the self-sabotage pattern to watch for, the business facts it cannot see, and a readiness call about the <em>process</em>, never about which option is right. Afterwards you record what happened, and that becomes part of what it knows about how you really decide.</p></div>
+      <div class="pract"><i class="ph ph-funnel-simple" aria-hidden="true"></i><h3>Bottleneck Lab</h3><p>Something is stuck. This separates the visible problem from the operating pattern underneath it and leaves you with one experiment worth seven days: the pattern, the early tell, the smallest change worth testing, what to measure, and when to come back.</p></div>
+      <div class="pract"><i class="ph ph-clipboard-text" aria-hidden="true"></i><h3>Weekly Operator Review</h3><p>Ten minutes on the week that just happened. Which decision took too long, what you kept doing that someone else could have owned, where the week felt clean, where you overrode your own protocol. No streaks, nothing to keep up, no penalty for skipping it for a month.</p></div>
+      <div class="pract"><i class="ph ph-hand-arrow-up" aria-hidden="true"></i><h3>Delegation Lab</h3><p>List what you are carrying. It sorts the work into keep, hand off, systemise first, automate carefully, and stop, then builds the actual handoff for the one you pick, including the way you are most likely to take it back.</p></div>
+      <div class="pract"><i class="ph ph-calendar-check" aria-hidden="true"></i><h3>Build My Week</h3><p>You give it the hours you actually have, not the hours a productivity book assumes. It returns a week shaped like the way you work: two or three focus blocks placed where they belong for you, decision time matched to your own protocol, recovery where your judgement needs it, one block nothing is allowed into, and a Friday review. It writes a plan you copy. It does not touch your calendar.</p></div>
+      <div class="pract"><i class="ph ph-magnifying-glass" aria-hidden="true"></i><h3>Advice Fit Lab</h3><p>Someone told you to run your business a particular way. This works out which parts fit how you are built, which parts fight you, which parts need business evidence it does not have, and what to <em>modify</em> rather than abandon.</p></div>
+    </div>
 
-<p>Those are settled by evidence: your numbers, your customers, and the people actually in the room with you. None of it replaces a market test. Where a question needs business data the profile doesn't have, it says so and names the data you'd need, rather than dressing a guess up as an answer.</p>
-
-<h3>What it can see</h3>
-
-<p>Operating tendency, applied to the business you described. How you take information in, and whether clarity arrives for you in a moment or over a few days. What conditions distort a decision you'd otherwise make cleanly. Where your best output comes from, and what drains it fastest. How you sell when you're not forcing it, and how your voice changes under pressure. Where the way you're built is rubbing against the way you're currently running things — and which of those tensions is worth testing in the next seven days.</p>
-
-<p>That's a narrow lane, and it's narrow on purpose. Inside it the profile gets specific, because it's applied to what you sell, how customers find you, what feels heaviest right now, and the decision you named.</p>
-
-<p>You don't have to take that boundary on faith from a sales page. The profile draws it itself, in its own final section. From the real sample:</p>
-
-<blockquote>
-<p>What you just read knows how you're wired to operate. It does not know whether a market wants what you're selling. That is a question your numbers answer, not your birth data. […] Every one of those things is settled by evidence: your market, your numbers, the people actually in the room with you.</p>
-<p>The company is yours. The call is yours. Nothing written here outranks your own judgement about your own business.</p>
-</blockquote>
-
-<p>That's the arrangement. You get better information about the operator; you stay the one who decides what the business does with it. If a line in there doesn't match what you see in your own week, throw it out. The profile hands you its instructions as experiments for exactly that reason, and tells you what to watch so you can settle it yourself.</p>
-
+    <div class="duo" style="margin-top:60px;align-items:center">
+      <div>
+        <h3 class="rv">And you can ask it things</h3>
+        <p class="rv" data-d="1" style="margin-top:14px">An ask bar sits at the bottom of every surface, and it already knows which page you are standing on, so you never have to re-explain your context. Ask what a section means for a specific call this week, or why a particular instruction is aimed at you and not at someone else. It answers in the same operating terms as the document, not as a chat assistant that happens to have read it.</p>
+        <p class="rv" data-d="1">If the business changes, you change the six answers. The profile is being applied to whatever you say it is, and you are not asked those questions from scratch ever again.</p>
+        <div class="buy rv" data-d="2">
+          <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
+            <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="shot rv" data-d="2"><img src="img/portal-decision.webp" alt="The Decision Room practice open in the portal, asking what decision you are making, what the actual options are, and what your first signal was before any analysis." width="1180" height="820" loading="lazy"></div>
+        <p class="shotcap">The Decision Room, mid-practice.</p>
+      </div>
+    </div>
   </div>
 </section>
-<section id="10-who" style="background:#171812;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>Who the Operator Profile is for</h2>
 
-<p>You are already running something. There is revenue, there are customers, and a week that fills itself. That is the starting condition: the profile applies how you are built to a business that already exists, so there has to be one.</p>
-
-<p>Past that, it is written for you if any of this is true:</p>
-
-<ul>
-  <li>The business works, but only because you keep overriding your own pace or your own way of deciding.</li>
-  <li>Advice that visibly works for other founders keeps failing to stick for you.</li>
-  <li>You are sitting on a decision you understand completely and still cannot make cleanly.</li>
-  <li>Selling, being visible, or handing work off keeps costing more than it should.</li>
-  <li>You suspect you are the bottleneck, and you cannot see the exact mechanism.</li>
-  <li>You want something you can act on this week, not another label for the pile.</li>
-</ul>
-
-<p>That is why the intake asks six questions about the business: what you sell and who buys it, the shape of the operation today, how customers find you now, what feels heavy, the decision you have been sitting on, and the advice that never sticks. The profile reads it straight back to you before it applies anything. Here is that moment from a real generated profile:</p>
-
-<blockquote>Strategic advisory retainers sold to founders of small agencies, plus a self-serve digital product. Right now the business is you alone. Clients find you through referrals and through content you put out.</blockquote>
-
-<p>If you do not have answers to those questions yet, there is nothing for the profile to be applied to.</p>
-
-<h3>And who it is not for</h3>
-
-<p>Here is what it will not do. Better you find that out now than after you pay.</p>
-
-<p>It will not write your business plan, and it will not build your marketing strategy. It will not pick a niche or rank your options by which one pays best. It will not name a dream client. It will not tell you whether your price is right, whether your unit economics work, or whether the market wants what you sell, because those are settled by your numbers and not by your birth data.</p>
-
-<p>It will not forecast. Nothing in it predicts revenue, growth, or how a decision turns out. The profile says so itself, in its own closing section: it does not know whether a particular decision you are weighing will succeed or fail, and it does not tell you what to do.</p>
-
-<p>And it is not a horoscope. No month ahead, no good days and bad days, no daily guidance. Your birth data is read once, for how you are built to operate, and everything after that is about how your week actually goes.</p>
-
-<p>If you wanted one of those, this is not it, and I would rather you kept your $29. If you wanted a straight read on why the way you run the business keeps fighting the person running it, that is the whole document. $29, one time.</p>
-
+<!-- ═══ THE PIN-IT-UP CARDS ════════════════════════════════════════════════ -->
+<section class="bleed" id="cards">
+  <img src="img/cards.webp" alt="Four handwritten index cards laid out on a green desk surface with a brass pin." width="1500" height="844" loading="lazy">
+  <div class="wrap">
+    <div class="col">
+      <h2 class="rv">Four cards short enough to pin above a desk</h2>
+      <p class="h2sub rv" data-d="1">The end of the document collapses into things you can read in ten seconds on a bad morning, without rereading the section they came from.</p>
+      <ul class="tick yes rv" data-d="2" style="margin-top:24px">
+        <li><i class="ph ph-path" aria-hidden="true"></i>How you make every call</li>
+        <li><i class="ph ph-warning-circle" aria-hidden="true"></i>Your early warning signs</li>
+        <li><i class="ph ph-prohibit" aria-hidden="true"></i>What to stop doing by default</li>
+        <li><i class="ph ph-users-three" aria-hidden="true"></i>The support you need next</li>
+      </ul>
+    </div>
   </div>
 </section>
-<section id="11-faq" style="background:#13140F;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>Questions people actually ask</h2>
 
-<h3>Is this astrology?</h3>
-<p>Astrology is one of the four things it reads. The others are Human Design, Gene Keys, and the I Ching. But nothing in the document names any of them, and it is not written in that register — it is written as an operating manual. If a section only worked because you believed in the source, it would not be worth $29. Read it and see whether it describes how you actually work.</p>
+<!-- ═══ LIMITS ═════════════════════════════════════════════════════════════ -->
+<section id="limits">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">What this profile cannot know</h2>
+      <p class="lede h2sub rv" data-d="1">Here is the edge of what your birth data and six business questions can see. Knowing where that edge sits is the only reason to trust what's inside it.</p>
+    </div>
 
-<h3>What if I do not know my birth time?</h3>
-<p>Then it will not guess one. A birth time changes the read substantially, so instead of inventing a plausible time, the system calculates your chart across the window you give it and keeps only what stays the same throughout. The time-sensitive parts are left out and said to be left out. A smaller true profile beats a complete invented one.</p>
+    <div class="duo" style="margin-top:40px">
+      <div class="rv" data-d="1">
+        <h3 style="color:var(--bone-3);font-size:15px;letter-spacing:1.2px;margin-bottom:20px">Outside the edge</h3>
+        <ul class="tick no">
+          <li><i class="ph ph-x" aria-hidden="true"></i>Whether a market wants what you're selling</li>
+          <li><i class="ph ph-x" aria-hidden="true"></i>Whether your price is right</li>
+          <li><i class="ph ph-x" aria-hidden="true"></i>Whether your unit economics work</li>
+          <li><i class="ph ph-x" aria-hidden="true"></i>Which niche would be the most profitable one for you</li>
+          <li><i class="ph ph-x" aria-hidden="true"></i>Whether to hire, keep, or let go of a specific person</li>
+          <li><i class="ph ph-x" aria-hidden="true"></i>Whether the decision you're weighing will succeed</li>
+          <li><i class="ph ph-x" aria-hidden="true"></i>What you must do</li>
+        </ul>
+        <p class="small" style="margin-top:22px">Those are settled by evidence: your numbers, your customers, and the people actually in the room with you. Where a question needs business data the profile doesn't have, it says so and names the data you'd need, rather than dressing a guess up as an answer.</p>
+      </div>
+      <div class="rv" data-d="2">
+        <h3 style="color:var(--pine-lt);font-size:15px;letter-spacing:1.2px;margin-bottom:20px">Inside it</h3>
+        <ul class="tick yes">
+          <li><i class="ph ph-check" aria-hidden="true"></i>How you take information in, and whether clarity arrives in a moment or over a few days</li>
+          <li><i class="ph ph-check" aria-hidden="true"></i>What conditions distort a decision you'd otherwise make cleanly</li>
+          <li><i class="ph ph-check" aria-hidden="true"></i>Where your best output comes from, and what drains it fastest</li>
+          <li><i class="ph ph-check" aria-hidden="true"></i>How you sell when you're not forcing it, and how your voice changes under pressure</li>
+          <li><i class="ph ph-check" aria-hidden="true"></i>Where the way you're built is rubbing against the way you're currently running things</li>
+          <li><i class="ph ph-check" aria-hidden="true"></i>Which of those tensions is worth testing in the next seven days</li>
+        </ul>
+        <p class="small" style="margin-top:22px">That's a narrow lane, and it's narrow on purpose. Inside it the profile gets specific, because it's applied to what you sell, how customers find you, what feels heaviest right now, and the decision you named.</p>
+      </div>
+    </div>
 
-<h3>Do I have to answer the business questions?</h3>
-<p>No. The profile still generates. But the instructions get noticeably less specific, because there is nothing to aim them at — and the section that reflects your business back is simply omitted rather than filled in with a guess. Three minutes is a good trade.</p>
-
-<h3>How long is it, and how fast?</h3>
-<p>More than 5,000 words; the sample ran 7,627. It appears on screen while it is being written — about forty seconds. Keep the link it gives you; that link is how you get back in.</p>
-
-<h3>Is this a subscription?</h3>
-<p>No. $29, once. The profile is yours to keep and does not expire.</p>
-
-<h3>Can I change my business answers later?</h3>
-<p>Yes, any time, from inside the portal. Businesses change in month three. You should not have to buy a second profile to say so.</p>
-
-<h3>What if it does not describe me?</h3>
-<p>Then say so. It is a read of tendencies, not a measurement, and it can be wrong about a person. The practices are built to notice that — the Weekly Review is explicitly allowed to conclude that a hypothesis in your profile did not hold. A tool that can never be wrong is not telling you anything.</p>
-
-<h3>Will it tell me what to do with my business?</h3>
-<p>No, and it says so in its own last section. It cannot know whether a market wants your offer, whether your price is right, whether the unit economics work, which niche is most profitable, whether to hire or fire someone, or whether a decision will succeed. Those need business evidence it does not have. What it can do is show you how you are built to operate and where that is costing you.</p>
-
-<h3>How is this different from a coach?</h3>
-<p>A coach asks questions until they understand how you work. This starts from a read of how you work and applies it — for $29 rather than a monthly retainer. It is not a replacement for someone who knows your business. It is the thing you would otherwise spend three sessions establishing.</p>
-
-<h3>What is "Ask your profile"?</h3>
-<p>A strategist that has read your document and answers in its terms. It sits at the bottom of every page in the portal and knows which page you are on. It is not a therapist and not a crisis service, and it will say so if you take it somewhere it should not go.</p>
-
-<h3>Is my data private?</h3>
-<p>Your birth data and your answers are used to write your profile and nothing else. You can export everything held about you, and you can delete it. Both are buttons in the portal, not an email you have to send.</p>
-
-<h3>Do I need to believe in any of this?</h3>
-<p>No. The document never asks you to. It describes how you operate and hands you instructions you can test inside seven days — and every instruction comes with what to watch, so you can find out whether it was right rather than deciding whether to trust it.</p>
-
+    <div class="narrow" style="margin-top:52px">
+      <p class="rv">You don't have to take that boundary on faith from a sales page. The profile draws it itself, in its own final section. From the real sample:</p>
+      <figure class="fig rv" data-d="1" style="margin-top:22px">
+        <p style="font-size:17px;line-height:1.72;color:var(--bone);margin:0 0 16px">What you just read knows how you're wired to operate. It does not know whether a market wants what you're selling. That is a question your numbers answer, not your birth data. [&hellip;] Every one of those things is settled by evidence: your market, your numbers, the people actually in the room with you.</p>
+        <p style="font-size:17px;line-height:1.72;color:var(--bone);margin:0">The company is yours. The call is yours. Nothing written here outranks your own judgement about your own business.</p>
+      </figure>
+      <p class="rv" style="margin-top:26px">That's the arrangement. You get better information about the operator; you stay the one who decides what the business does with it. If a line in there doesn't match what you see in your own week, throw it out. The profile hands you its instructions as experiments for exactly that reason, and tells you what to watch so you can settle it yourself.</p>
+    </div>
   </div>
 </section>
-<section id="12-close" style="background:#171812;padding:74px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-<h2>Every other one stops at what you are</h2>
 
-<p>You have probably taken one of these before. It gave you a type, a number, a letter. It held your attention for a day. Then Monday came and nothing about how you run the business changed, because nobody told you what to do with it.</p>
+<!-- ═══ WHO IT IS FOR ══════════════════════════════════════════════════════ -->
+<section id="who" class="band">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">Who the Operator Profile is for</h2>
+      <p class="lede h2sub rv" data-d="1">You are already running something. There is revenue, there are customers, and a week that fills itself.</p>
+      <p class="rv" data-d="2">That is the starting condition: the profile applies how you are built to a business that already exists, so there has to be one. Past that, it is written for you if any of this is true.</p>
+    </div>
 
-<p>That is the whole difference here. The Operator Profile spends its first half on recognition — the contradiction you are running, how a decision actually arrives for you, the pace you can hold, how you are built to sell, what money and pressure do to your judgement, and where you have become the bottleneck. Then it turns and spends the second half on what to do about it, inside the business you described, starting this week.</p>
+    <div class="duo rv" data-d="2" style="margin-top:36px">
+      <ul class="tick yes">
+        <li><i class="ph ph-check" aria-hidden="true"></i>The business works, but only because you keep overriding your own pace or your own way of deciding.</li>
+        <li><i class="ph ph-check" aria-hidden="true"></i>Advice that visibly works for other founders keeps failing to stick for you.</li>
+        <li><i class="ph ph-check" aria-hidden="true"></i>You are sitting on a decision you understand completely and still cannot make cleanly.</li>
+      </ul>
+      <ul class="tick yes">
+        <li><i class="ph ph-check" aria-hidden="true"></i>Selling, being visible, or handing work off keeps costing more than it should.</li>
+        <li><i class="ph ph-check" aria-hidden="true"></i>You suspect you are the bottleneck, and you cannot see the exact mechanism.</li>
+        <li><i class="ph ph-check" aria-hidden="true"></i>You want something you can act on this week, not another label for the pile.</li>
+      </ul>
+    </div>
 
-<p>That is also why the intake asks six questions about the business alongside your birth date, exact birth time, and place. Without those answers you get a portrait. With them, the instructions name your own pipeline, your own stuck decision, and the advice you keep abandoning.</p>
+    <div class="narrow" style="margin-top:44px">
+      <p class="rv">The profile reads your six answers straight back to you before it applies anything. Here is that moment from a real generated profile:</p>
+      <figure class="fig rv" data-d="1" style="margin-top:20px">
+        <p style="font-size:17px;line-height:1.72;color:var(--bone);margin:0">Strategic advisory retainers sold to founders of small agencies, plus a self-serve digital product. Right now the business is you alone. Clients find you through referrals and through content you put out.</p>
+      </figure>
+      <p class="rv" style="margin-top:24px">If you do not have answers to those questions yet, there is nothing for the profile to be applied to.</p>
+    </div>
 
-<h3>What arrives</h3>
-
-<ul>
-<li>A written profile of at least 5,000 words in thirteen sections. The real one we generated ran to more than 7,600.</li>
-<li>Five to seven operating instructions. Each one carries why it fits you, where it shows up in your week, what ignoring it costs, an experiment you can run inside seven days, and the signal to watch.</li>
-<li>A 30-day operating experiment that sequences the three with the most leverage.</li>
-<li>Four pin-it-up cards: how you make every call, your early warning signs, what to stop doing by default, and the support you need next.</li>
-<li>A section that states plainly what the profile cannot know.</li>
-<li>A portal you keep. It holds every section, six practices — the Decision Room, the Bottleneck Lab, the Weekly Operator Review, the Delegation Lab, Build My Week, and the Advice Fit Lab — and Ask your profile, a strategist that answers in your own operating terms.</li>
-</ul>
-
-<p>$29, once. The profile is complete on its own, and nothing else is required to use it.</p>
-
-<p>Enter your birth date, exact birth time, and place. Answer the six questions about the business. Then read the first section and hold it against a real Thursday in your actual week. If it is not true of you, stop there. If it is, the rest of the document was written for that person.</p>
-
-<p>Get the Operator Profile — $29.</p>
-<p style="margin:34px 0 0"><a class="btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Operator Profile — $29</a></p>
+    <div class="narrow" style="margin-top:56px">
+      <h3 class="rv">And who it is not for</h3>
+      <p class="rv" data-d="1" style="margin-top:14px">Here is what it will not do. Better you find that out now than after you pay.</p>
+      <p class="rv" data-d="1">It will not write your business plan, and it will not build your marketing strategy. It will not pick a niche or rank your options by which one pays best. It will not name a dream client. It will not tell you whether your price is right, whether your unit economics work, or whether the market wants what you sell, because those are settled by your numbers and not by your birth data.</p>
+      <p class="rv" data-d="1">It will not forecast. Nothing in it predicts revenue, growth, or how a decision turns out. The profile says so itself, in its own closing section: it does not know whether a particular decision you are weighing will succeed or fail, and it does not tell you what to do.</p>
+      <p class="rv" data-d="1">And it is not a horoscope. No month ahead, no good days and bad days, no daily guidance. Your birth data is read once, for how you are built to operate, and everything after that is about how your week actually goes.</p>
+      <p class="lede rv" data-d="2" style="margin-top:26px">If you wanted one of those, this is not it, and I would rather you kept your $29. If you wanted a straight read on why the way you run the business keeps fighting the person running it, that is the whole document.</p>
+    </div>
   </div>
 </section>
-<footer style="background:#0E0F0B;border-top:1px solid #24261C;padding:54px 0">
-  <div class="pad-x" style="max-width:760px;margin:0 auto;padding:0 40px">
-    <p class="sub" style="margin:0 0 10px">The Operator Profile · $29, one time · Abundanc3 Alch3my</p>
-    <p class="sub" style="margin:0">It reads how you are wired to operate. It is not financial, legal, or medical advice, and it does not predict outcomes.</p>
+
+<!-- ═══ FAQ ════════════════════════════════════════════════════════════════ -->
+<section id="faq">
+  <div class="wrap">
+    <h2 class="rv">Questions people actually ask</h2>
+    <div class="faq rv" data-d="1" style="margin-top:34px">
+      <div>
+        <details><summary>Is this astrology?</summary><div class="ans"><p>Astrology is two of the four things it reads: the Western chart and the Vedic chart. The others are Human Design and the I Ching. But nothing in the document names any of them, and it is not written in that register. It is written as an operating manual. If a section only worked because you believed in the source, it would not be worth $29. Read it and see whether it describes how you actually work.</p></div></details>
+        <details><summary>What if I don't know my birth time?</summary><div class="ans"><p>Then it will not guess one. A birth time changes the read substantially, so instead of inventing a plausible time, the system calculates your chart across the window you give it and keeps only what stays the same throughout. The time-sensitive parts are left out and said to be left out. A smaller true profile beats a complete invented one.</p></div></details>
+        <details><summary>Do I have to answer the business questions?</summary><div class="ans"><p>No. The profile still generates. But the instructions get noticeably less specific, because there is nothing to aim them at, and the section that reflects your business back is simply omitted rather than filled in with a guess. Three minutes is a good trade.</p></div></details>
+        <details><summary>How long is it, and how fast?</summary><div class="ans"><p>More than 5,000 words; the sample ran 7,627. It appears on screen while it is being written, about forty seconds. Keep the link it gives you. That link is how you get back in.</p></div></details>
+        <details><summary>Is this a subscription?</summary><div class="ans"><p>No. $29, once. The profile is yours to keep and does not expire.</p></div></details>
+        <details><summary>Can I change my business answers later?</summary><div class="ans"><p>Yes, any time, from inside the portal. Businesses change in month three. You should not have to buy a second profile to say so.</p></div></details>
+      </div>
+      <div>
+        <details><summary>What if it doesn't describe me?</summary><div class="ans"><p>Then say so. It is a read of tendencies, not a measurement, and it can be wrong about a person. The practices are built to notice that. The Weekly Review is explicitly allowed to conclude that a hypothesis in your profile did not hold. A tool that can never be wrong is not telling you anything.</p></div></details>
+        <details><summary>Will it tell me what to do with my business?</summary><div class="ans"><p>No, and it says so in its own last section. It cannot know whether a market wants your offer, whether your price is right, whether the unit economics work, which niche is most profitable, whether to hire or fire someone, or whether a decision will succeed. Those need business evidence it does not have. What it can do is show you how you are built to operate and where that is costing you.</p></div></details>
+        <details><summary>How is this different from a coach?</summary><div class="ans"><p>A coach asks questions until they understand how you work. This starts from a read of how you work and applies it, for $29 rather than a monthly retainer. It is not a replacement for someone who knows your business. It is the thing you would otherwise spend three sessions establishing.</p></div></details>
+        <details><summary>What is &ldquo;Ask your profile&rdquo;?</summary><div class="ans"><p>A strategist that has read your document and answers in its terms. It sits at the bottom of every page in the portal and knows which page you are on. It is not a therapist and not a crisis service, and it will say so if you take it somewhere it should not go.</p></div></details>
+        <details><summary>Is my data private?</summary><div class="ans"><p>Your birth data and your answers are used to write your profile and nothing else. You can export everything held about you, and you can delete it. Both are buttons in the portal, not an email you have to send.</p></div></details>
+        <details><summary>Do I need to believe in any of this?</summary><div class="ans"><p>No. The document never asks you to. It describes how you operate and hands you instructions you can test inside seven days, and every instruction comes with what to watch, so you can find out whether it was right rather than deciding whether to trust it.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLOSE ══════════════════════════════════════════════════════════════ -->
+<section id="close">
+  <div class="wrap closegrid">
+    <div>
+      <h2 class="rv">Every other one stops at what you are</h2>
+      <p class="h2sub rv" data-d="1">It gave you a type, a number, a letter. It held your attention for a day. Then Monday came and nothing about how you run the business changed, because nobody told you what to do with it.</p>
+      <p class="rv" data-d="1">That is the whole difference here. The Operator Profile spends its first half on recognition: the contradiction you are running, how a decision actually arrives for you, the pace you can hold, how you are built to sell, what money and pressure do to your judgement, and where you have become the bottleneck. Then it turns and spends the second half on what to do about it, inside the business you described, starting this week.</p>
+      <p class="rv" data-d="1">Enter your birth date, exact birth time, and place. Answer the six questions about the business. Then read the first section and hold it against a real Thursday in your actual week. If it is not true of you, stop there. If it is, the rest of the document was written for that person.</p>
+      <div class="buy rv" data-d="2">
+        <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
+          <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
+        </a>
+        <p class="small">$29, once. Nothing else is required to use it.</p>
+      </div>
+    </div>
+    <div class="rv" data-d="2">
+      <h3 style="margin-bottom:18px">What arrives</h3>
+      <ul class="deliver">
+        <li><i class="ph ph-file-text" aria-hidden="true"></i><span>A written profile of <b>at least 5,000 words in thirteen sections</b>. The real one we generated ran to more than 7,600.</span></li>
+        <li><i class="ph ph-list-checks" aria-hidden="true"></i><span><b>Five to seven operating instructions</b>, each carrying why it fits you, where it shows up in your week, what ignoring it costs, an experiment you can run inside seven days, and the signal to watch.</span></li>
+        <li><i class="ph ph-flask" aria-hidden="true"></i><span>A <b>30-day operating experiment</b> that sequences the three with the most leverage.</span></li>
+        <li><i class="ph ph-push-pin" aria-hidden="true"></i><span><b>Four pin-it-up cards</b>: how you make every call, your early warning signs, what to stop doing by default, and the support you need next.</span></li>
+        <li><i class="ph ph-shield-check" aria-hidden="true"></i><span>A section that states plainly <b>what the profile cannot know</b>.</span></li>
+        <li><i class="ph ph-house-line" aria-hidden="true"></i><span><b>A portal you keep.</b> Every section, six practices, and Ask your profile, a strategist that answers in your own operating terms.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>The Operator Profile &middot; $29, one time &middot; Abundanc3 Alch3my</p>
+    <p>It reads how you are wired to operate. It is not financial, legal, or medical advice, and it does not predict outcomes.</p>
   </div>
 </footer>
-</div>
+
+<script>
+/* Scroll reveal. IntersectionObserver, not a scroll listener: one callback per
+   threshold crossing instead of one per frame, and it unobserves on first entry
+   so nothing keeps running after the page has been read. Reduced motion skips
+   the whole thing and the CSS shows every element outright. */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.rv');
+  if (reduce || !('IntersectionObserver' in window)) {
+    for (var i = 0; i < items.length; i++) items[i].classList.add('in');
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();
+
+/* The one authored moment: the convergence diagram draws its own routing lines
+   as it arrives, because the argument of that section IS the routing (four
+   readings, three independent sources, one theme). Every other section reveals;
+   only this one animates its content. */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.querySelectorAll('.draw').forEach(function (svg) {
+    var strokes = svg.querySelectorAll('path[stroke], line[stroke]');
+    strokes.forEach(function (s) {
+      var len = s.getTotalLength ? s.getTotalLength() : 0;
+      if (!len) return;
+      s.style.strokeDasharray = len;
+      s.style.strokeDashoffset = len;
+    });
+    new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        strokes.forEach(function (s, i) {
+          s.style.transition = 'stroke-dashoffset .9s cubic-bezier(.16,1,.3,1) ' + (i * 0.07) + 's';
+          s.style.strokeDashoffset = '0';
+        });
+        obs.disconnect();
+      });
+    }, { threshold: 0.3 }).observe(svg);
+  });
+})();
+</script>
 </body>
 </html>
