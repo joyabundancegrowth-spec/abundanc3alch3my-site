@@ -339,6 +339,20 @@ details .ans p{font-size:16px;margin:0}
 footer{background:#0E0F0B;border-top:1px solid var(--line);padding:52px 0}
 footer p{font-size:14px;color:var(--bone-3);margin:0 0 10px;max-width:80ch}
 footer p:last-child{margin:0}
+.tracking-choices{appearance:none;border:0;background:none;padding:0;color:var(--bronze-lt);
+  font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.tracking-choices:hover{color:var(--bone)}
+.tracking-consent{position:fixed;z-index:100;left:20px;right:20px;bottom:20px;
+  max-width:720px;margin:0 auto;padding:22px;border:1px solid var(--line-2);
+  border-radius:var(--r);background:var(--ob-3);box-shadow:0 22px 70px rgba(0,0,0,.48)}
+.tracking-consent[hidden]{display:none}
+.tracking-consent p{margin:0;font-size:14.5px;line-height:1.58;color:var(--bone-2);max-width:none}
+.tracking-consent a{white-space:nowrap}
+.tracking-consent .consent-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.tracking-consent .consent-choice{appearance:none;min-width:142px;padding:11px 16px;
+  border:1px solid var(--line-2);border-radius:var(--r-sm);background:var(--ob-2);
+  color:var(--bone);font:600 14px/1 'Inter',sans-serif;cursor:pointer}
+.tracking-consent .consent-choice:hover{border-color:var(--bronze-lt)}
 
 @media(max-width:560px){
   .wrap{padding:0 22px}
@@ -978,8 +992,17 @@ footer p:last-child{margin:0}
   <div class="wrap">
     <p>The Operator Profile &middot; $29, one time &middot; Abundanc3 Alch3my</p>
     <p>It reads how you are wired to operate. It is not financial, legal, or medical advice, and it does not predict outcomes.</p>
+    <p><button class="tracking-choices" id="tracking-choices" type="button" hidden>Tracking choices</button></p>
   </div>
 </footer>
+
+<aside class="tracking-consent" id="tracking-consent" aria-label="Advertising tracking choices" hidden>
+  <p>May we use Meta&rsquo;s pixel to measure visits and checkout clicks on this public sales page? It may set advertising cookies. Nothing from your private profile, birth data, business answers, or conversations is sent. You can decline and still use the page. <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">How Meta uses data</a>.</p>
+  <div class="consent-actions">
+    <button class="consent-choice" id="tracking-decline" type="button">Decline</button>
+    <button class="consent-choice" id="tracking-allow" type="button">Allow tracking</button>
+  </div>
+</aside>
 
 <script>
 /* Scroll reveal. IntersectionObserver, not a scroll listener: one callback per
@@ -1031,5 +1054,7 @@ footer p:last-child{margin:0}
   });
 })();
 </script>
+<script id="aa-meta-tracking" src="/operator-profile/tracking.js"
+        data-meta-pixel-id="1031125446413191" defer></script>
 </body>
 </html>
