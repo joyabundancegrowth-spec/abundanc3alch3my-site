@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find the Highest-Leverage Thing in Your Business | Abundanc3 Alch3my</title>
+<meta name="description" content="Free live session, Thursday September 17, 11am Pacific. We find the highest-leverage thing already inside your business, together, in about twenty minutes of actual work.">
+<meta property="og:title" content="Find the highest-leverage thing in your business tonight">
+<meta property="og:description" content="It is already in your business. It already makes money. You stopped looking at it months ago. Thursday September 17, 11am Pacific. Free.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13140F">
+<link rel="icon" type="image/png" href="/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Palette and type are BRAND.md's, same tokens the homepage and the Operator
+   Profile page use. Pine is the structural accent, Bronze is the action accent. */
+:root{
+  --ob:#13140F; --ob-2:#191B14; --ob-3:#1C1D16;
+  --line:#24261C; --line-2:#34352A;
+  --bone:#EAE3D3; --bone-2:#C6C2B3; --bone-3:#A2A392; --bone-4:#7E8070; --bone-5:#5E604D;
+  --pine:#3F6B62; --bronze:#B8823A;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ob);color:var(--bone);font-family:'Inter',sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--pine);color:var(--bone)}
+a{color:var(--bronze);text-decoration:none}
+a:hover{color:var(--bone)}
+h1,h2,h3{margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+.hl{font-family:'Oswald',sans-serif;text-transform:uppercase;line-height:.98;letter-spacing:.4px;font-weight:600}
+.eyebrow{font-family:'Inter',sans-serif;font-weight:600;font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pine)}
+.wrap{max-width:960px;margin:0 auto;padding-left:40px;padding-right:40px}
+section{padding-top:84px}
+
+/* brand bar. no navigation on this page by design. */
+.bar{display:flex;align-items:center;gap:14px;padding:20px 40px;border-bottom:1px solid var(--line)}
+.bar img{display:block;width:auto}
+
+/* hero. sized so the button is above the fold on a 390x844 phone. */
+.hero{padding-top:clamp(40px,7vh,68px)}
+.chip{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;border:1px solid var(--bronze);padding:9px 15px;border-radius:10px}
+.chip .d{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;font-size:14px;letter-spacing:.6px;color:var(--bronze)}
+.chip .m{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--bone-4)}
+h1{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;font-size:clamp(34px,6.6vw,66px);line-height:.98;letter-spacing:.4px;margin:24px 0 0;max-width:17ch}
+.deck{font-weight:300;font-size:clamp(17px,2vw,21px);line-height:1.5;color:var(--bone-2);margin-top:20px;max-width:54ch}
+
+.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:16px;padding:16px 30px;border-radius:11px;background:var(--bronze);color:var(--ob);border:none;cursor:pointer;text-align:center;transition:transform .15s,background .15s}
+.btn:hover{background:#c9924a;color:var(--ob);transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--pine);outline-offset:3px}
+.btn[disabled]{opacity:.55;cursor:default;transform:none}
+.under{font-size:14px;color:var(--bone-4);margin-top:13px}
+
+h2{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;font-size:clamp(26px,3.6vw,44px);line-height:1;letter-spacing:.4px;max-width:22ch;margin:14px 0 26px}
+.body p{color:var(--bone-2);max-width:64ch;font-size:17.5px;line-height:1.65}
+.body p + p{margin-top:16px}
+
+/* numbered takeaways */
+.take li{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.take li:last-child{border-bottom:none}
+.take .n{font-family:'Oswald',sans-serif;font-weight:600;font-size:20px;color:var(--pine);font-variant-numeric:tabular-nums}
+.take .t{font-size:19px;line-height:1.4;font-weight:300;color:var(--bone)}
+
+/* come if / skip it if */
+.who{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line-2);border-radius:16px;overflow:hidden}
+.who .col{padding:32px 30px 34px;background:var(--ob-3)}
+.who .col.no{background:var(--ob-2);border-left:1px solid var(--line)}
+.who h3{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;font-size:18px;letter-spacing:.6px;color:var(--bronze);margin-bottom:16px}
+.who .col.no h3{color:var(--bone-4)}
+.who li{font-size:16px;line-height:1.45;font-weight:300;color:var(--bone-2);padding-left:20px;position:relative;margin-bottom:12px}
+.who li:last-child{margin-bottom:0}
+.who li::before{content:"";position:absolute;left:0;top:.65em;width:10px;height:2px;background:var(--bronze)}
+.who .col.no li{color:var(--bone-4)}
+.who .col.no li::before{background:var(--bone-5)}
+
+.bio{border-top:2px solid var(--bronze);padding-top:24px}
+.bio p{color:var(--bone-3);max-width:66ch;font-size:17px;line-height:1.65}
+.bio b{color:var(--bone);font-weight:700}
+
+/* signup */
+.form-card{border:1px solid var(--line-2);border-radius:18px;background:var(--ob-3);padding:36px}
+.label{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--bone-4);margin:0 0 8px}
+.field{width:100%;font-family:'Inter',sans-serif;font-size:16px;color:var(--bone);background:var(--ob);border:1px solid var(--line-2);border-radius:11px;padding:14px 16px;outline:none;transition:border-color .15s}
+.field::placeholder{color:var(--bone-5)}
+.field:focus{border-color:var(--bronze)}
+select.field{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#7E8070 50%),linear-gradient(135deg,#7E8070 50%,transparent 50%);background-position:calc(100% - 19px) 22px,calc(100% - 13px) 22px;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:44px}
+textarea.field{min-height:104px;resize:vertical;line-height:1.5}
+.row{margin-bottom:20px}
+.radios{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.opt{display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:16px;line-height:1.4;color:var(--bone-2);border:1px solid var(--line-2);border-radius:11px;padding:13px 15px;background:var(--ob);transition:border-color .15s}
+.opt:hover{border-color:var(--bone-4)}
+.opt input{accent-color:var(--bronze);margin:2px 0 0;flex:none;width:17px;height:17px}
+.opt:has(input:checked){border-color:var(--bronze)}
+.msg{font-size:15px;line-height:1.6;margin-top:16px;color:var(--bronze)}
+.privacy{font-size:13px;line-height:1.55;color:var(--bone-5);margin-top:14px}
+
+/* closer */
+.closer{margin-top:96px;border:1px solid var(--line-2);border-radius:20px;background:var(--ob-2);padding:56px 44px 58px}
+.closer h2{color:var(--bone);margin-top:0}
+.closer p{color:var(--bone-2);max-width:56ch;font-size:17.5px;line-height:1.65}
+.sig{margin-top:56px;padding:22px 0 60px;border-top:1px solid var(--line);display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.sig b{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;font-size:16px;letter-spacing:.6px;color:var(--bone-3)}
+.sig span{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--bone-5)}
+
+@media(max-width:760px){
+  .who{grid-template-columns:1fr}
+  .who .col.no{border-left:none;border-top:1px solid var(--line)}
+  .closer{padding:40px 26px 44px}
+}
+@media(max-width:560px){
+  .wrap{padding-left:22px;padding-right:22px}
+  .bar{padding:18px 22px}
+  section{padding-top:64px}
+  .form-card{padding:26px 22px}
+}
+</style>
+</head>
+<body>
+
+<!-- BRAND BAR. Deliberately no navigation: this page has one job. -->
+<div class="bar">
+  <img src="/logo-mark.png" alt="" style="height:22px">
+  <img src="/wordmark-3s.png" alt="Abundanc3 Alch3my" style="height:16px">
+</div>
+
+<!-- HERO -->
+<header class="wrap hero">
+  <div class="chip">
+    <span class="d">Thursday, September 17</span>
+    <span class="m">11am Pacific &middot; 45 minutes &middot; free</span>
+  </div>
+  <h1>Find the highest-leverage thing in your business tonight</h1>
+  <p class="deck">It is already in your business. It already makes money. You stopped looking at it months ago. On this call we find it, together, in about twenty minutes of actual work.</p>
+  <p style="margin-top:30px"><a class="btn" href="#signup">Save my seat</a></p>
+  <p class="under">Free. Bring a pen, we do the exercise live.</p>
+</header>
+
+<!-- WHAT YOU WALK OUT WITH -->
+<section class="wrap">
+  <div class="eyebrow">What you walk out with</div>
+  <h2>Four things, and you keep all of them.</h2>
+  <ul class="take">
+    <li><span class="n">01</span><span class="t">The one highest-leverage thing in your business, named.</span></li>
+    <li><span class="n">02</span><span class="t">It written down, not floating around as a concept.</span></li>
+    <li><span class="n">03</span><span class="t">The one thing to stop doing tomorrow morning.</span></li>
+    <li><span class="n">04</span><span class="t">If it takes under an hour, it will already be done before you go to bed.</span></li>
+  </ul>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="wrap body">
+  <div class="eyebrow">The problem</div>
+  <h2>You know what you should do. So why haven&rsquo;t you?</h2>
+  <p>You want the next level of revenue and you genuinely do not know where to put the hours. Is it ads? Email? A hire? Content? A new product? Every answer sounds right, which is exactly why none of them help.</p>
+  <p>You have already hired, bought the course, installed the system, written the process doc. All of it came back to your plate. That is not a discipline problem and one more tactic will not fix it.</p>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="wrap">
+  <div class="eyebrow">Who this is for</div>
+  <h2>Two lists. Read both honestly.</h2>
+  <div class="who">
+    <div class="col">
+      <h3>Come if</h3>
+      <ul>
+        <li>Something in your business already works and it is straining.</li>
+        <li>You are the bottleneck and you know it.</li>
+        <li>You can name a thing you have been meaning to do for six months.</li>
+        <li>You will actually do the exercise on the call.</li>
+      </ul>
+    </div>
+    <div class="col no">
+      <h3>Skip it if</h3>
+      <ul>
+        <li>You are pre-revenue. Nothing is straining yet, so there is nothing to find.</li>
+        <li>You want a recording to half-watch later.</li>
+        <li>You are looking for a list of tactics rather than an answer.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS RUNNING THIS -->
+<section class="wrap">
+  <div class="eyebrow">Who is running this</div>
+  <h2>Brandon Huston</h2>
+  <div class="bio">
+    <p>I built The Spinsterz from the ground up, ran it for about eighteen years, grew it into a seven-figure business, and sold it. Twelve years in restaurants before that, including managing a Portland brewpub. Most recently fractional head of growth at Holy Wow Cacao, where over 67 days we cut cost per new customer 39% and lifted organic revenue 38%. The lever was an email list they already owned and had stopped using. That is the whole idea of this session.</p>
+  </div>
+</section>
+
+<!-- SIGNUP -->
+<section class="wrap" id="signup">
+  <div class="eyebrow">Save your seat</div>
+  <h2>Six questions. Then you are in.</h2>
+  <div class="form-card">
+    <!-- Posts straight into the Google Form "Find the Lever". The visitor never
+         sees Google. Answers land in the linked Sheet.
+         Google returns no CORS headers, so we cannot read the response with
+         fetch. Instead the form targets a hidden iframe and we treat that
+         iframe's load event as the receipt. -->
+    <form id="signup-form"
+          method="POST"
+          target="gsink"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSdw7b9IfmR99nKr5-4oLZNxh8ZXMW2DKvgBxhB4lcoNi_5g8g/formResponse"
+          novalidate>
+      <div class="row">
+        <label class="label" for="f-name">First name</label>
+        <input class="field" id="f-name" name="entry.548444775" type="text" autocomplete="given-name" required placeholder="Your first name">
+      </div>
+      <div class="row">
+        <label class="label" for="f-email">Email</label>
+        <input class="field" id="f-email" name="entry.1229772635" type="email" autocomplete="email" required placeholder="you@yourbusiness.com">
+      </div>
+      <div class="row">
+        <label class="label" for="f-biz">What&rsquo;s your business, in one line?</label>
+        <input class="field" id="f-biz" name="entry.621073746" type="text" required placeholder="What you sell, and to who">
+      </div>
+      <div class="row">
+        <label class="label" for="f-stuck">What have you been meaning to do for six months, and still haven&rsquo;t?</label>
+        <textarea class="field" id="f-stuck" name="entry.895863092" required placeholder="Be specific. This is the part I actually read."></textarea>
+      </div>
+      <div class="row">
+        <span class="label">Happy to be called on during the live call?</span>
+        <div class="radios">
+          <label class="opt"><input type="radio" name="entry.1490667125" value="Yes, use my business as the live example"><span>Yes, use my business as the live example</span></label>
+          <label class="opt"><input type="radio" name="entry.1490667125" value="No, I&#39;ll just do the exercise"><span>No, I&rsquo;ll just do the exercise</span></label>
+        </div>
+      </div>
+      <div class="row">
+        <label class="label" for="f-rev">Yearly revenue</label>
+        <!-- value= must match the Google Form option strings exactly.
+             The visible label is ours. -->
+        <select class="field" id="f-rev" name="entry.1919272376" required>
+          <option value="" selected disabled>Pick one</option>
+          <option value="Under $250K">Under $250k</option>
+          <option value="$250k - $1M">$250k to $1M</option>
+          <option value="$1M - $3M">$1M to $3M</option>
+          <option value="Over $3M">Over $3M</option>
+        </select>
+      </div>
+
+      <button class="btn" id="signup-btn" type="submit" style="width:100%">Save my seat</button>
+      <p class="msg" id="form-msg" role="status" aria-live="polite" hidden></p>
+      <p class="privacy">Free. Bring a pen, we do the exercise live. I email you the link, two reminders, and the replay. Nothing else, and you can unsubscribe from any of them.</p>
+    </form>
+    <iframe name="gsink" id="gsink" title="form target" style="display:none" aria-hidden="true"></iframe>
+  </div>
+</section>
+
+<!-- CLOSER -->
+<section class="wrap">
+  <div class="closer">
+    <h2>Thursday, September 17. 11am Pacific.</h2>
+    <p>Forty-five minutes, then questions for as long as people stay. Bring a pen and something you are stuck on.</p>
+    <p style="margin-top:28px"><a class="btn" href="#signup">Save my seat</a></p>
+  </div>
+  <div class="sig">
+    <b>Brandon Huston</b>
+    <span>Abundanc3 Alch3my</span>
+  </div>
+</section>
+
+<script>
+(function(){
+  var form = document.getElementById('signup-form');
+  var btn  = document.getElementById('signup-btn');
+  var msg  = document.getElementById('form-msg');
+  var sink = document.getElementById('gsink');
+  var sent = false;
+
+  function say(text){ msg.textContent = text; msg.hidden = false; }
+
+  form.addEventListener('submit', function(e){
+    var required = ['f-name','f-email','f-biz','f-stuck','f-rev'];
+    for (var i = 0; i < required.length; i++){
+      var el = document.getElementById(required[i]);
+      if (!el.value.trim() || !el.checkValidity()){
+        e.preventDefault();
+        say(el.id === 'f-email' && el.value.trim()
+              ? 'That email does not look right. Check it.'
+              : 'Every question is required except the last one.');
+        el.focus();
+        return;
+      }
+    }
+    /* No preventDefault: the browser posts to Google in the hidden iframe. */
+    sent = true;
+    btn.disabled = true;
+    btn.textContent = 'Saving your seat';
+    msg.hidden = true;
+  });
+
+  /* Google gives us no readable response, so the iframe finishing loading is
+     the receipt. It also fires once on initial page load, hence the flag. */
+  sink.addEventListener('load', function(){
+    if (!sent) return;
+    form.innerHTML =
+      '<div class="hl" style="font-size:26px;color:#B8823A">You&rsquo;re in.</div>' +
+      '<p style="color:#C6C2B3;font-size:17.5px;line-height:1.65;margin-top:14px;max-width:52ch">' +
+      'Thursday Sept 17, 11am Pacific. I&rsquo;ll email you the Zoom link and a worksheet to print ' +
+      'before we start. Bring a pen, we do the exercise live.</p>';
+    form.scrollIntoView({block:'center'});
+  });
+
+  /* If the iframe never loads, do not leave them staring at a dead button. */
+  form.addEventListener('submit', function(){
+    setTimeout(function(){
+      if (sent && btn.disabled && document.body.contains(btn)){
+        btn.disabled = false;
+        btn.textContent = 'Save my seat';
+        say('That is taking too long. Press it once more. If it still fails, message me on Facebook and I will add you by hand.');
+      }
+    }, 12000);
+  });
+})();
+</script>
+</body>
+</html>
