@@ -98,18 +98,10 @@ textarea.field{min-height:104px;resize:vertical;line-height:1.5}
 .msg{font-size:15px;line-height:1.6;margin-top:16px;color:var(--bronze)}
 .privacy{font-size:13px;line-height:1.55;color:var(--bone-5);margin-top:14px}
 
-/* closer */
-.closer{margin-top:96px;border:1px solid var(--line-2);border-radius:20px;background:var(--ob-2);padding:56px 44px 58px}
-.closer h2{color:var(--bone);margin-top:0}
-.closer p{color:var(--bone-2);max-width:56ch;font-size:17.5px;line-height:1.65}
-.sig{margin-top:56px;padding:22px 0 60px;border-top:1px solid var(--line);display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
-.sig b{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;font-size:16px;letter-spacing:.6px;color:var(--bone-3)}
-.sig span{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--bone-5)}
 
 @media(max-width:760px){
   .who{grid-template-columns:1fr}
   .who .col.no{border-left:none;border-top:1px solid var(--line)}
-  .closer{padding:40px 26px 44px}
 }
 @media(max-width:560px){
   .wrap{padding-left:22px;padding-right:22px}
@@ -194,7 +186,7 @@ textarea.field{min-height:104px;resize:vertical;line-height:1.5}
 </section>
 
 <!-- SIGNUP -->
-<section class="wrap" id="signup">
+<section class="wrap" id="signup" style="padding-bottom:90px">
   <div class="eyebrow">Save your seat</div>
   <h2>Six questions. Then you are in.</h2>
   <div class="form-card">
@@ -244,26 +236,15 @@ textarea.field{min-height:104px;resize:vertical;line-height:1.5}
         </select>
       </div>
 
+      <p class="privacy" style="margin:0 0 18px">Free. Bring a pen, we do the exercise live. I email you the link, two reminders, and the replay. Nothing else, and you can unsubscribe from any of them.</p>
       <button class="btn" id="signup-btn" type="submit" style="width:100%">Save my seat</button>
       <p class="msg" id="form-msg" role="status" aria-live="polite" hidden></p>
-      <p class="privacy">Free. Bring a pen, we do the exercise live. I email you the link, two reminders, and the replay. Nothing else, and you can unsubscribe from any of them.</p>
     </form>
     <iframe name="gsink" id="gsink" title="form target" style="display:none" aria-hidden="true"></iframe>
   </div>
 </section>
 
-<!-- CLOSER -->
-<section class="wrap">
-  <div class="closer">
-    <h2>Thursday, September 17. 11am Pacific.</h2>
-    <p>Forty-five minutes, then questions for as long as people stay. Bring a pen and something you are stuck on.</p>
-    <p style="margin-top:28px"><a class="btn" href="#signup">Save my seat</a></p>
-  </div>
-  <div class="sig">
-    <b>Brandon Huston</b>
-    <span>Abundanc3 Alch3my</span>
-  </div>
-</section>
+
 
 <script>
 (function(){
