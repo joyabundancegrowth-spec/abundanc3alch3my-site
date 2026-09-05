@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Operator Profile — Abundanc3 Alch3my</title>
-<meta name="description" content="A founder operating manual built from your birth data and six questions about the business: the exact place how you're wired and how you're running it are fighting each other, and five to seven operating instructions to close it. $29.">
+<title>The Operator Profile — the founder blueprint — Abundanc3 Alch3my</title>
+<meta name="description" content="A founder blueprint built from your birth data and six questions about the business: the exact place how you're wired and how you're running the company are fighting each other, the instructions to close it, a 30-day path that installs them, and a review at day 30 that reads your month back. $29.">
 <meta property="og:title" content="The Operator Profile — Abundanc3 Alch3my">
-<meta property="og:description" content="Every assessment tells you what you are and stops. This tells you what to do with it — to run your business.">
+<meta property="og:description" content="Every assessment tells you what you are and stops. This is the blueprint for running the company at the level you are actually built to run it at.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/operator-profile/img/collision.webp">
 <meta name="theme-color" content="#13140F">
@@ -130,7 +130,11 @@ nav a.nl{font-size:14px;font-weight:500;color:var(--bone-3);text-decoration:none
 nav a.nl:hover{color:var(--bone)}
 nav .btn{padding:11px 20px;font-size:14px}
 @media(max-width:880px){nav a.nl{display:none}}
-@media(max-width:560px){nav{padding:0 20px;height:62px}}
+@media(max-width:560px){nav{padding:0 20px;height:62px}
+  /* The wordmark costs 189px and the buy button was being clipped off the
+     right edge of a 390px phone. The mark alone still identifies the brand. */
+  nav .brand img.word{display:none}
+  nav .btn{padding:10px 16px}}
 
 /* ── HERO — asymmetric split ─────────────────────────────────────────────── */
 #hero{padding:clamp(46px,6vw,84px) 0 clamp(58px,6vw,88px);overflow:hidden}
@@ -305,7 +309,9 @@ figure{margin:0}
        align-items:end}
 .shot{border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden;background:var(--ob-3);
       box-shadow:0 40px 90px -55px rgba(0,0,0,.95)}
-.shot img{width:100%}
+.shot img{width:100%;height:auto}  /* height:auto is load-bearing: without it the
+   img height attribute (820/1180/1050) is honoured literally against a 100% width,
+   and every product screenshot renders squashed. */
 .shotcap{font-size:13px;color:var(--bone-3);margin:12px 2px 0;line-height:1.5}
 @media(max-width:860px){.shots{grid-template-columns:1fr}.shots>div:last-child{max-width:340px}}
 
@@ -364,6 +370,56 @@ footer p:last-child{margin:0}
   .buy .btn{width:100%;justify-content:center}
   .buy .small{margin-top:4px}
 }
+
+/* ── NUMBERED DELIVERABLE STACK ──────────────────────────────────────────────
+   The one place on the page that enumerates everything included. The number is
+   a left column of the row, never a label line stacked above the heading. */
+.numstack{border-top:1px solid var(--line)}
+.numstack .nrow{display:grid;grid-template-columns:52px minmax(0,.85fr) minmax(0,1.25fr);
+  gap:clamp(14px,2.4vw,34px);padding:26px 0;border-bottom:1px solid var(--line);
+  align-items:start;transition:background .25s var(--ease)}
+.numstack .nrow:hover{background:var(--ob-3)}
+.numstack .nn{font-family:'Oswald',sans-serif;font-size:19px;font-weight:600;color:var(--bronze);
+  line-height:1.25;letter-spacing:.5px}
+.numstack .nrow h3{font-size:19px;line-height:1.2}
+.numstack .nrow p{margin:0;font-size:16px;line-height:1.66}
+.numstack .nrow p.res{color:var(--bone);margin-top:9px;font-size:15.5px}
+.numstack .nrow p.res b{color:var(--pine-lt);font-weight:600}
+@media(max-width:820px){
+  .numstack .nrow{grid-template-columns:38px minmax(0,1fr);gap:10px 14px;padding:22px 0}
+  .numstack .nrow>div:last-child{grid-column:2}
+}
+
+/* ── PHASE TIMELINE ──────────────────────────────────────────────────────────
+   A rule down the left with a node per phase. The day range is a column, not a
+   heading eyebrow, so the phase title still stands on its own. */
+.path{border-top:1px solid var(--line)}
+.phase{display:grid;grid-template-columns:132px minmax(0,1fr);gap:clamp(16px,2.8vw,36px);
+  padding:28px 0;border-bottom:1px solid var(--line);position:relative}
+.phase .day{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;letter-spacing:.9px;
+  color:var(--pine-lt);text-transform:uppercase;padding-top:2px}
+.phase h3{margin-bottom:11px}
+.phase p{margin:0;font-size:16.5px;line-height:1.66}
+.phase.last .day{color:var(--bronze)}
+.phase.last{background:linear-gradient(90deg,rgba(184,130,58,.07),transparent 62%)}
+@media(max-width:700px){.phase{grid-template-columns:1fr;gap:8px;padding:24px 0}}
+
+/* ── NUMBERED HOW-IT-WORKS ───────────────────────────────────────────────── */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.step{background:var(--ob-3);padding:26px 24px;display:flex;flex-direction:column;gap:11px}
+.step .sn{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--bronze);
+  letter-spacing:1px}
+.step p{margin:0;font-size:15.5px;line-height:1.62}
+.step b{color:var(--bone)}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* ── PLAIN CALLOUT PANEL ─────────────────────────────────────────────────── */
+.panel{border:1px solid var(--line-2);border-left:3px solid var(--bronze);border-radius:var(--r-sm);
+  padding:clamp(22px,3vw,32px);background:var(--ob-3)}
+.panel p:last-child{margin-bottom:0}
+.panel .said{font-style:italic;color:var(--bone);font-size:17.5px;line-height:1.6}
 </style>
 </head>
 <body>
@@ -377,6 +433,7 @@ footer p:last-child{margin:0}
     <a class="nl" href="#arrives">What arrives</a>
     <a class="nl" href="#sample">A real passage</a>
     <a class="nl" href="#portal">The portal</a>
+    <a class="nl" href="#path">The 30 days</a>
     <a class="nl" href="#faq">Questions</a>
     <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Profile</a>
   </div>
@@ -387,13 +444,14 @@ footer p:last-child{margin:0}
   <div class="wrap hero-grid">
     <div>
       <div class="hero-price rv"><b>$29</b><span>one time &middot; founding price for the first 30 customers, then $149</span></div>
-      <h1 class="rv" data-d="1">You built the business. Now it only runs when you override yourself.</h1>
-      <p class="lede rv" data-d="2">A founder operating manual written for one person, from your birth data and six questions about the company.</p>
+      <h1 class="rv" data-d="1">You built the business. Now it runs on your override &mdash; and the override is your ceiling.</h1>
+      <p class="lede rv" data-d="2">The Operator Profile is a founder blueprint written for one person: thirteen sections built from your exact birth data and six questions about the company, a 30-day path that puts them into an actual week, and a review at day 30 that reads your month back and tells you what held.</p>
       <div class="buy rv" data-d="3">
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
         </a>
         <a class="btn btn-ghost" href="#sample">Read a real passage first</a>
+        <p class="small">$29 one time. Answer six questions, watch it write on the page in minutes, keep the portal.</p>
       </div>
     </div>
     <div class="hero-shot rv" data-d="2">
@@ -409,8 +467,8 @@ footer p:last-child{margin:0}
   <div class="facts rv">
     <div class="fact"><b class="num">1</b><span>person. Built from your exact birth data and your own six answers, and nobody else&rsquo;s.</span></div>
     <div class="fact"><b class="num">13</b><span>sections that name how you actually run, and what to change because of it.</span></div>
-    <div class="fact"><b class="num">7</b><span>days. Every instruction is small enough to test before next Friday.</span></div>
-    <div class="fact"><b class="num">30</b><span>days of sequenced experiments, so it lands in how the week actually runs.</span></div>
+    <div class="fact"><b class="num">6</b><span>practices in a portal you keep, each one run against something live in the business.</span></div>
+    <div class="fact"><b class="num">30</b><span>days, sequenced one move at a time, ending in a review of your own month.</span></div>
   </div>
 </div>
 
@@ -422,9 +480,10 @@ footer p:last-child{margin:0}
        width="1600" height="900" loading="lazy">
   <div class="wrap">
     <div class="col">
-      <h2 class="rv">The advice isn't wrong. It was written for a different operator.</h2>
+      <h2 class="rv">Nothing is wrong with the advice. It was built on somebody else's wiring, and it holds you at theirs.</h2>
       <p class="lede h2sub rv" data-d="1">You are working hard and the business is fighting you anyway.</p>
       <p class="rv" data-d="2">The pace it demands is not the pace you can actually hold. The decision you have been sitting on still will not close. The advice that works for every other founder keeps sliding off you. That collision, between how you are built to operate and how you are currently running the company, is what this is about.</p>
+      <p class="rv" data-d="2">It is also what the ceiling is made of. Not effort, not talent, not the market. Every week you spend forcing yourself through a process you were never built for is a week the company runs on your override instead of your capacity &mdash; and an operator running on override has a hard limit that no amount of trying raises.</p>
     </div>
   </div>
 </section>
@@ -489,6 +548,40 @@ footer p:last-child{margin:0}
         </svg>
         <figcaption>The system doesn't collapse because you failed it. It collapses at a specific joint. And because nobody ever names the joint, the failure reads as a character flaw instead of a mismatch.</figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE LEVEL ══════════════════════════════════════════════════════════ -->
+<section id="level" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">What it looks like when the model finally fits</h2>
+      <p class="lede h2sub rv" data-d="1">Not a different person. The same person, with the friction taken out.</p>
+      <p class="rv" data-d="2">Founders imagine the next level as a bigger version of the same week. It is usually the opposite: the same week with the expensive parts removed. Here is what actually changes when how you run the company stops arguing with how you are built.</p>
+    </div>
+
+    <div class="duo rv" data-d="2" style="margin-top:38px">
+      <ul class="tick yes">
+        <li><i class="ph ph-timer" aria-hidden="true"></i>Decisions close in an afternoon instead of sitting open for a fortnight, because you know what a real yes feels like from the inside and stop waiting on a signal that was never going to arrive in that form.</li>
+        <li><i class="ph ph-target" aria-hidden="true"></i>The week produces work, because the blocks sit where your attention actually is rather than where a productivity book put them.</li>
+        <li><i class="ph ph-handshake" aria-hidden="true"></i>Revenue work stops costing three times what it returns, because you are doing the kind of selling that suits you and have stopped forcing the kind that does not.</li>
+      </ul>
+      <ul class="tick yes">
+        <li><i class="ph ph-hand-arrow-up" aria-hidden="true"></i>The thing you kept taking back is finally somebody else's, and you already know the exact route by which you were going to take it back.</li>
+        <li><i class="ph ph-moon-stars" aria-hidden="true"></i>You stop paying for the same argument with yourself every Sunday night.</li>
+        <li><i class="ph ph-crown-simple" aria-hidden="true"></i>More of the week goes to the part of the business only you can do. That is the level. It was always the level &mdash; the borrowed operating model was in the way.</li>
+      </ul>
+    </div>
+
+    <div class="narrow" style="margin-top:40px">
+      <p class="rv">Two things this is not. It is not a promise about revenue: nothing here can see your market, your pricing or your unit economics, and the profile says so in its own final section. And it is not a claim that you were secretly exceptional all along. It is the more boring correction, and the more fixable one &mdash; you have been running a company on operating instructions written for somebody wired differently, and nobody ever told you which instruction that was.</p>
+      <div class="buy rv" data-d="1">
+        <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
+          <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
+        </a>
+        <p class="small">$29 one time &middot; founding price for the first 30 customers.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -563,6 +656,45 @@ footer p:last-child{margin:0}
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
         </a>
         <p class="small">$29, one time. Pay, answer the questions, and watch it build on the page.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE COMPLETE BLUEPRINT ═════════════════════════════════════════════ -->
+<section id="blueprint">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">Everything in the blueprint</h2>
+      <p class="lede h2sub rv" data-d="1">Fifteen parts. Six of them tell you how you operate, and the other nine exist to make sure that knowledge reaches an actual Tuesday.</p>
+      <p class="rv" data-d="2">Listed once, in full, so you can see exactly what $29 buys before you spend it.</p>
+    </div>
+
+    <div class="numstack" style="margin-top:40px">
+      <div class="nrow rv"><span class="nn">01</span><div><h3>The contradiction you're running</h3></div><div><p>The exact place where how you are built and how you are currently running the company are fighting each other &mdash; where it shows up in an ordinary week, what it costs, and why it has survived, which is almost always because one half of it is a genuine strength that has paid off before.</p><p class="res"><b>So that</b> you stop treating a structural mismatch as a discipline problem.</p></div></div>
+      <div class="nrow rv"><span class="nn">02</span><div><h3>How a decision actually arrives for you</h3></div><div><p>On what timescale a real yes forms, what a true signal feels like from the inside, what the convincing impostor feels like, and which calls you should never make alone or on the spot.</p><p class="res"><b>So that</b> the decision you have been circling closes, and the ones you are bad at stop being made at speed.</p></div></div>
+      <div class="nrow rv"><span class="nn">03</span><div><h3>Your sustainable pace</h3></div><div><p>The conditions that produce your best work, what drains you fastest, and the tell that you have crossed from capacity into adrenaline. It also names the piece of popular productivity advice most likely to fail someone built like you.</p><p class="res"><b>So that</b> you can tell the difference before the week takes it out of you.</p></div></div>
+      <div class="nrow rv"><span class="nn">04</span><div><h3>How you're built to sell</h3></div><div><p>Where your persuasive force actually comes from &mdash; rarely the thing you think you are supposed to be doing. What kind of selling costs you almost nothing, and what kind drains you out of proportion to what it returns.</p><p class="res"><b>So that</b> the revenue work stops being the most expensive hour in your week.</p></div></div>
+      <div class="nrow rv"><span class="nn">05</span><div><h3>Money, risk and pressure</h3></div><div><p>How you behave when money is tight and when it is suddenly plentiful, since both distort and usually in different directions. Your real risk posture, which is often not the one you claim. And your stress signature.</p><p class="res"><b>So that</b> you know which of your own judgements to distrust in a hard week.</p></div></div>
+      <div class="nrow rv"><span class="nn">06</span><div><h3>Your bottleneck</h3></div><div><p>The one recognition section that reads what you typed. It takes the thing you said feels heavy and diagnoses the operating pattern underneath it.</p><p class="res"><b>So that</b> the heaviest thing in the business gets diagnosed instead of endured.</p></div></div>
+      <div class="nrow rv"><span class="nn">07</span><div><h3>Five to seven operating instructions</h3></div><div><p>Each one a single direct sentence plus five fields: why it fits you, where it shows up in the week you described, what ignoring it costs, an experiment small enough to run inside seven days, and the observable signal to watch.</p><p class="res"><b>So that</b> there is something to do on Tuesday, not only something to know.</p></div></div>
+      <div class="nrow rv"><span class="nn">08</span><div><h3>A 30-day operating experiment</h3></div><div><p>The three instructions with the most leverage, sequenced across four weeks as a behaviour-change loop rather than a business roadmap.</p><p class="res"><b>So that</b> the change lands in how the week runs instead of in how you feel about yourself.</p></div></div>
+      <div class="nrow rv"><span class="nn">09</span><div><h3>Four pin-it-up cards</h3></div><div><p>How you make every call, your early warning signs, what to stop doing by default, and the support you need next &mdash; each short enough to read in ten seconds without rereading the section it came from.</p><p class="res"><b>So that</b> a bad morning has something usable on it.</p></div></div>
+      <div class="nrow rv"><span class="nn">10</span><div><h3>What this profile cannot know</h3></div><div><p>A plain list of the questions your birth data and six answers cannot reach, written by the document about itself.</p><p class="res"><b>So that</b> you can tell exactly how far to trust the rest of it.</p></div></div>
+      <div class="nrow rv"><span class="nn">11</span><div><h3>The portal, which you keep</h3></div><div><p>Not a PDF. Every section of your profile in a rail you can jump around, on desktop and on a phone, at a link that does not expire.</p><p class="res"><b>So that</b> you open the section that matters this week instead of scrolling a file you saved once.</p></div></div>
+      <div class="nrow rv"><span class="nn">12</span><div><h3>Six practices</h3></div><div><p>Decision Room, Bottleneck Lab, Weekly Operator Review, Delegation Lab, Build My Week and Advice Fit Lab. Each takes something live in the business and runs your own profile against it.</p><p class="res"><b>So that</b> the profile gets applied to a real decision, a real handoff and a real week &mdash; not read and admired.</p></div></div>
+      <div class="nrow rv"><span class="nn">13</span><div><h3>The 30-day path</h3></div><div><p>Six phases from day 0 to day 30, each a short list of moves with a link straight to the thing that does it. Nothing is scored, nothing streaks, and it waits where you left it.</p><p class="res"><b>So that</b> you are never looking at thirteen sections wondering which one to start with.</p></div></div>
+      <div class="nrow rv"><span class="nn">14</span><div><h3>The Operator Review at day 30</h3></div><div><p>The month read back to you in eight parts: what your profile predicted, what you said was true, what your experiments actually showed, and the place those three disagree.</p><p class="res"><b>So that</b> you find out what held and what did not, from your own evidence rather than ours.</p></div></div>
+      <div class="nrow rv"><span class="nn">15</span><div><h3>Ask your profile &mdash; 100 questions across 90 days</h3></div><div><p>A strategist that has read your document, answers in its operating terms, and already knows which page you are standing on. Included, not an upsell.</p><p class="res"><b>So that</b> you never have to re-explain your own context to get a straight answer.</p></div></div>
+    </div>
+
+    <div class="narrow" style="margin-top:44px">
+      <p class="rv">Numbers 1 to 10 are the written document. Numbers 11 to 15 are the part that makes it stick, and they are the reason this is not another file in your downloads folder.</p>
+      <div class="buy rv" data-d="1">
+        <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
+          <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
+        </a>
+        <p class="small">$29, one time. Nothing here is an add-on.</p>
       </div>
     </div>
   </div>
@@ -830,6 +962,113 @@ footer p:last-child{margin:0}
   </div>
 </section>
 
+<!-- ═══ THE 30-DAY PATH ════════════════════════════════════════════════════ -->
+<section id="path">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">The 30-day path: the blueprint, installed one move at a time</h2>
+      <p class="lede h2sub rv" data-d="1">A document you agree with changes nothing. This is the part that puts it into a week.</p>
+      <p class="rv" data-d="2">Thirteen sections and six practices is a lot to be handed at once, and the ordinary result of being handed a lot at once is that you read the first section, feel understood, and close the tab. So the portal opens on a path instead: six phases, each one a short list of moves, each move a link straight to the thing that does it.</p>
+      <p class="rv" data-d="2">It moves with the calendar and it does not chase you. Nothing is scored. There is no streak to keep, no percentage complete, and no page that tells you that you are behind &mdash; if you disappear for a fortnight the path is exactly where you left it, because a founder who missed a week does not need a scolding, they need to know which move is next.</p>
+    </div>
+
+    <div class="path rv" data-d="2" style="margin-top:42px">
+      <div class="phase">
+        <div class="day">Day 0</div>
+        <div>
+          <h3>Read the map</h3>
+          <p>Three things, in one sitting. Read the contradiction you are running. Pin how you make every call. Name the one thing you are working on this month, in your own words, which every later phase gets pointed at.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="day">Days 1&ndash;7</div>
+        <div>
+          <h3>Observe before fixing</h3>
+          <p>The week where you change almost nothing on purpose. Learn your early warning signs and catch one happening. Ask your profile about a situation that is live right now. Start one small experiment. Run your first weekly review. The point of the order is that you cannot tell what is broken until you have watched yourself run for a week.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="day">Days 8&ndash;14</div>
+        <div>
+          <h3>Make one cleaner call</h3>
+          <p>Bring a decision you are genuinely sitting on through the Decision Room, using your own decision protocol rather than a generic framework. Then, after you act, debrief it: what you chose, how you knew, what actually happened. That debrief is the single most valuable thing you will record all month, and it is what the review at the end reads hardest.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="day">Days 15&ndash;21</div>
+        <div>
+          <h3>Release one piece of work</h3>
+          <p>Take the responsibility inventory, sort what you are carrying into keep, hand off, systemise, automate and stop &mdash; then actually hand one thing over, with the handoff written and the route by which you are most likely to take it back already named.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="day">Days 22&ndash;28</div>
+        <div>
+          <h3>Rebuild one operating week</h3>
+          <p>Build a week shaped like how you actually work, from the hours you actually have. Take one piece of outside advice you have been carrying and test it against your wiring, keeping the parts that fit. Then run another weekly review, four weeks after the first, which is the comparison that makes the pace question answerable.</p>
+        </div>
+      </div>
+      <div class="phase last">
+        <div class="day">Day 30</div>
+        <div>
+          <h3>The Operator Review</h3>
+          <p>The month, read back to you. It opens at day 28, or as soon as you have worked through the phases if you move faster than the calendar does.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE OPERATOR REVIEW ════════════════════════════════════════════════ -->
+<section id="review" class="band">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">At day 30 it reads your own month back to you</h2>
+      <p class="lede h2sub rv" data-d="1">Written from what you actually recorded &mdash; not from how long you have had it open.</p>
+      <p class="rv" data-d="2">Eight parts. What your profile predicted about you. What you said was true in your own reviews. What your experiments actually showed. The place those three disagree. What you genuinely released and what you only talked about releasing. What is still unfinished. What to carry into the next thirty days, and what to drop.</p>
+      <p class="rv" data-d="2">It refuses to write over an empty month. If nothing was recorded there is nothing to read back, and it says so rather than producing a page of encouragement &mdash; which would be worth less to you than an honest blank.</p>
+    </div>
+
+    <div class="narrow" style="margin-top:42px">
+      <h3 class="rv">The part that matters: it is allowed to conclude your profile was wrong</h3>
+      <p class="rv" data-d="1" style="margin-top:14px">We tested that deliberately before shipping it. We seeded a month designed to trap flattery: a profile that claimed this founder's clarity arrives immediately and physically, and a recorded debrief saying the exact opposite &mdash; no body signal at all, four days of going back and forth, and a first instinct that turned out to be wrong.</p>
+      <div class="panel rv" data-d="1" style="margin-top:24px">
+        <p class="said">&ldquo;The profile's account of how your best decisions arrive does not match what you actually observed this month. That is not a small discrepancy. That stands.&rdquo;</p>
+        <p class="small" style="margin-top:16px">From a real generated Operator Review, on the seeded month described above.</p>
+      </div>
+      <p class="rv" data-d="1" style="margin-top:26px">In the same run it recorded that nothing had genuinely been handed off that month, even though the delegation practice had been completed &mdash; the naming happened, the change did not. And it did not invent a single detail about the two practices that were never opened.</p>
+      <p class="rv" data-d="1">That is the whole reason the review is worth reading. A tool that can only ever confirm itself is not telling you anything. This one reads your evidence against its own claims, and where they disagree it says so and leaves the disagreement standing for you to settle.</p>
+      <div class="buy rv" data-d="2">
+        <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
+          <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
+        </a>
+        <p class="small">The path and the review are included. There is no upgrade tier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══════════════════════════════════════════════════════ -->
+<section id="how">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">How it works, start to finish</h2>
+      <p class="lede h2sub rv" data-d="1">About four minutes of your input. The rest happens on the page while you watch.</p>
+    </div>
+    <div class="steps rv" data-d="1" style="margin-top:38px">
+      <div class="step"><span class="sn">STEP 01</span><p><b>Pay $29.</b> There is no account to create first and no call to book.</p></div>
+      <div class="step"><span class="sn">STEP 02</span><p><b>Enter your birth date, exact birth time and birthplace.</b> If you do not know the time, say so &mdash; it will not guess one, and it tells you what it left out because of that.</p></div>
+      <div class="step"><span class="sn">STEP 03</span><p><b>Answer six questions about the business.</b> One per screen, about three minutes, and you are never asked for your revenue.</p></div>
+      <div class="step"><span class="sn">STEP 04</span><p><b>Watch it write.</b> Four readings are calculated and interpreted separately, then your profile builds section by section on the page in front of you.</p></div>
+      <div class="step"><span class="sn">STEP 05</span><p><b>The portal opens and stays.</b> Every section in a rail, the six practices, the 30-day path, and an ask bar at the bottom of every screen.</p></div>
+      <div class="step"><span class="sn">STEP 06</span><p><b>Work the path, then read the month back.</b> One move at a time to day 30, when the Operator Review tells you what actually held.</p></div>
+    </div>
+    <div class="narrow" style="margin-top:34px">
+      <p class="rv">If the business changes in month three, you change the six answers from inside the portal and the profile is applied to whatever you say it is. You are never asked those questions from scratch again.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ THE PIN-IT-UP CARDS ════════════════════════════════════════════════ -->
 <section class="bleed" id="cards">
   <img src="img/cards.webp" alt="Four handwritten index cards laid out on a green desk surface with a brass pin." width="1500" height="844" loading="lazy">
@@ -935,6 +1174,50 @@ footer p:last-child{margin:0}
   </div>
 </section>
 
+<!-- ═══ NO TESTIMONIALS ════════════════════════════════════════════════════ -->
+<section id="proof">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">Nobody has reviewed this product yet</h2>
+      <p class="rv" data-d="1" style="margin-top:18px">A page like this normally has a wall of screenshots by now. There is not one here, for a boring reason: the Operator Profile in this form is new, and the first thirty customers have not finished their thirty days. When there are real ones &mdash; with names, with permission, from people who ran the path and read their own review &mdash; they will go here, and not before.</p>
+      <p class="rv" data-d="1">So the substitute is the product. The opening lines of a real generated profile are further up this page, copied out of the file exactly as produced. So is a complete operating instruction with all six of its fields, and a passage from a real Operator Review disagreeing with the profile that produced it. Those were all generated by the thing you would be buying.</p>
+      <p class="rv" data-d="1">That is also the whole reason it is $29 instead of $149. You are early, and what I want back from the first thirty people is which parts they actually used and which they ignored. In the meantime, the next section is who is asking.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHO MADE IT ════════════════════════════════════════════════════════ -->
+<section id="maker" class="band">
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="rv">Who made this</h2>
+      <p class="rv" data-d="1" style="margin-top:18px">I am Brandon Huston. I built The Spinsterz from the ground up inside flow arts and festival culture, ran it for roughly eighteen years, grew it into a seven-figure business, and eventually sold it.</p>
+      <p class="rv" data-d="1">Eighteen years is long enough to make every mistake in this document personally. I ran on override for most of them. I built the time-blocked schedule more than once and quietly stopped setting the alarm. I kept work I should have handed off, on the reasoning that it was faster to do it myself than to write the instructions &mdash; a sentence you will meet again inside the Delegation Lab, which is in there because it was mine first.</p>
+      <p class="rv" data-d="1">What came after that chapter is why this exists. I kept building businesses, and I got much more interested in why people make the decisions they make &mdash; including why I had spent years overriding calls I had already made correctly in the first ten seconds. The things that finally explained that to me were not business tools. They were readings of how a person is built: Human Design, the I Ching, and the Western and Vedic charts, treated as one map rather than four hobbies. The problem was that nobody had ever pointed one of them at a Tuesday.</p>
+      <p class="rv" data-d="1">That is the whole of what the Operator Profile is. Those readings, aimed at the operating problem, written in the language of running a company instead of the language of the systems they came from.</p>
+    </div>
+
+    <div class="narrow" style="margin-top:36px">
+      <div class="panel rv" data-d="1">
+        <p class="said">Building one seven-figure business does not make me right about yours.</p>
+        <p style="margin-top:16px">It makes me one operator, with one set of wiring, and eighteen years of evidence about what that particular wiring costs when you ignore it. Which is exactly why none of this is built on my opinion of your business. It is calculated from your birth data, applied to the six answers you give about the company, and every instruction in it is written as an experiment with an observable signal &mdash; so your own week gets the last word, not me.</p>
+      </div>
+    </div>
+
+    <div class="narrow" style="margin-top:36px">
+      <p class="rv">Somewhere in the middle of all that I started describing the job as professional fun-haver. It is not a joke about being unserious. It is the actual target: fewer weeks spent forcing yourself through work you were never built to do, and more of the business spent on the part you would have done anyway.</p>
+      <p class="rv">The founders who come to me have usually already built the thing. The business works. They do not &mdash; not the way they should. They are running something real, and somehow it is still running them. That gap is the only thing I look at, and this is the version of it you can buy for $29 instead of booking me.</p>
+
+      <div class="buy rv" data-d="1">
+        <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
+          <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
+        </a>
+        <p class="small">$29 one time &middot; founding price for the first 30 customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ FAQ ════════════════════════════════════════════════════════════════ -->
 <section id="faq">
   <div class="wrap">
@@ -947,11 +1230,16 @@ footer p:last-child{margin:0}
         <details><summary>How long is it?</summary><div class="ans"><p>Longer than you will finish in one sitting. The sample we generated runs to roughly fifteen printed pages, and that is the floor rather than the figure. It is built to be returned to on the week the section applies, not read once. Keep the link it gives you. That link is how you get back in.</p></div></details>
         <details><summary>Why is it $29?</summary><div class="ans"><p>Because you are early. The Operator Profile is priced at $149. The first 30 customers pay $29, and what I want back is which parts you actually used and which you ignored. The price rises once those 30 are gone. Nothing about your profile, your portal or your access changes when it does.</p></div></details>
         <details><summary>Is this a subscription?</summary><div class="ans"><p>The profile is not. $29 buys the document and the portal once, and they do not expire. Asking the strategist is included for your first 90 days, up to 100 questions. If you want to keep asking after that, there is an optional $9 a month, or you can buy questions in a batch without any plan. Neither is required, and nothing you already paid for is taken away if you skip both.</p></div></details>
+        <details><summary>Will this help me make more money?</summary><div class="ans"><p>Not directly, and I would rather say so plainly. It cannot see your market, your pricing or your unit economics, and it says as much in its own final section. What it does is take out the friction between how you are built to operate and how you are currently running the company &mdash; the decision that stays open for a fortnight, the selling that costs three times what it returns, the work you keep taking back. What the business does with the hours that returns is your call, not the profile&rsquo;s.</p></div></details>
+        <details><summary>What is the 30-day path?</summary><div class="ans"><p>Six phases from day 0 to day 30 that turn the document into a sequence of single moves: read the contradiction and set your focus, then a week of observing before fixing, then one cleaner decision, then one real handoff, then a rebuilt week, then the review. Every move is a link to the page that does it. It is included, it opens when your profile does, and nothing is scored.</p></div></details>
+        <details><summary>What if I fall behind the path?</summary><div class="ans"><p>Nothing happens. There is no streak, no percentage complete, and no page that tells you that you are behind. Come back after three quiet weeks and the path is exactly where you left it, with the next move still the next move.</p></div></details>
+        <details><summary>What happens at day 30?</summary><div class="ans"><p>The Operator Review reads your month back in eight parts, written only from what you actually recorded. It will name the place your own evidence contradicts your profile and refuse to resolve it in the profile&rsquo;s favour &mdash; we tested exactly that before shipping it. If you have recorded nothing, it declines to write rather than filling an empty month with encouragement. It opens at day 28, or earlier if you work through the phases faster than the calendar.</p></div></details>
         <details><summary>Can I change my business answers later?</summary><div class="ans"><p>Yes, any time, from inside the portal. Businesses change in month three. You should not have to buy a second profile to say so.</p></div></details>
       </div>
       <div>
         <details><summary>What if it doesn't describe me?</summary><div class="ans"><p>Then say so. It is a read of tendencies, not a measurement, and it can be wrong about a person. The practices are built to notice that. The Weekly Review is explicitly allowed to conclude that a hypothesis in your profile did not hold. A tool that can never be wrong is not telling you anything.</p></div></details>
         <details><summary>Will it tell me what to do with my business?</summary><div class="ans"><p>No, and it says so in its own last section. It cannot know whether a market wants your offer, whether your price is right, whether the unit economics work, which niche is most profitable, whether to hire or fire someone, or whether a decision will succeed. Those need business evidence it does not have. What it can do is show you how you are built to operate and where that is costing you.</p></div></details>
+        <details><summary>Who is behind this?</summary><div class="ans"><p>Brandon Huston. I built The Spinsterz from the ground up, ran it for roughly eighteen years, grew it into a seven-figure business and sold it, and I have been building businesses since. The longer version, including why that does not make me right about your business, is further up this page.</p></div></details>
         <details><summary>How is this different from a coach?</summary><div class="ans"><p>A coach asks questions until they understand how you work. This starts from a read of how you work and applies it, for $29 rather than a monthly retainer. It is not a replacement for someone who knows your business. It is the thing you would otherwise spend three sessions establishing.</p></div></details>
         <details><summary>What is &ldquo;Ask your profile&rdquo;?</summary><div class="ans"><p>A strategist that has read your document and answers in its terms. It sits at the bottom of every page in the portal and knows which page you are on. It is not a therapist and not a crisis service, and it will say so if you take it somewhere it should not go.</p></div></details>
         <details><summary>Is my data private?</summary><div class="ans"><p>Your birth data and your answers are used to write your profile and nothing else. You can export everything held about you, and you can delete it. Both are buttons in the portal, not an email you have to send.</p></div></details>
@@ -968,12 +1256,12 @@ footer p:last-child{margin:0}
       <h2 class="rv">Every other one stops at what you are</h2>
       <p class="h2sub rv" data-d="1">It gave you a type, a number, a letter. It held your attention for a day. Then Monday came and nothing about how you run the business changed, because nobody told you what to do with it.</p>
       <p class="rv" data-d="1">That is the whole difference here. The Operator Profile spends its first half on recognition: the contradiction you are running, how a decision actually arrives for you, the pace you can hold, how you are built to sell, what money and pressure do to your judgement, and where you have become the bottleneck. Then it turns and spends the second half on what to do about it, inside the business you described, starting this week.</p>
-      <p class="rv" data-d="1">Enter your birth date, exact birth time, and place. Answer the six questions about the business. Then read the first section and hold it against a real Thursday in your actual week. If it is not true of you, stop there. If it is, the rest of the document was written for that person.</p>
+      <p class="rv" data-d="1">Enter your birth date, exact birth time, and place. Answer the six questions about the business. Then read the first section and hold it against a real Thursday in your actual week. If it is not true of you, stop there. If it is, the rest of the blueprint was written for that person &mdash; and the thirty days after it exist to get the thing into the week rather than into your notes.</p>
       <div class="buy rv" data-d="2">
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
         </a>
-        <p class="small">$29, once. Nothing else is required to use it.</p>
+        <p class="small">$29, once. The path, the review and the first 100 questions are included.</p>
       </div>
     </div>
     <div class="rv" data-d="2">
@@ -982,9 +1270,11 @@ footer p:last-child{margin:0}
         <li><i class="ph ph-file-text" aria-hidden="true"></i><span>A <b>written profile in thirteen sections</b>, built from your data and handed to nobody else.</span></li>
         <li><i class="ph ph-list-checks" aria-hidden="true"></i><span><b>Five to seven operating instructions</b>, each carrying why it fits you, where it shows up in your week, what ignoring it costs, an experiment you can run inside seven days, and the signal to watch.</span></li>
         <li><i class="ph ph-flask" aria-hidden="true"></i><span>A <b>30-day operating experiment</b> that sequences the three with the most leverage.</span></li>
-        <li><i class="ph ph-push-pin" aria-hidden="true"></i><span><b>Four pin-it-up cards</b>: how you make every call, your early warning signs, what to stop doing by default, and the support you need next.</span></li>
-        <li><i class="ph ph-shield-check" aria-hidden="true"></i><span>A section that states plainly <b>what the profile cannot know</b>.</span></li>
-        <li><i class="ph ph-house-line" aria-hidden="true"></i><span><b>A portal you keep.</b> Every section, six practices, and Ask your profile, a strategist that answers in your own operating terms.</span></li>
+        <li><i class="ph ph-push-pin" aria-hidden="true"></i><span><b>Four pin-it-up cards</b>, and a section stating plainly <b>what the profile cannot know</b>.</span></li>
+        <li><i class="ph ph-house-line" aria-hidden="true"></i><span><b>A portal you keep</b>, with every section in a rail and <b>six practices</b> that run your profile against a real decision, a real handoff and a real week.</span></li>
+        <li><i class="ph ph-path" aria-hidden="true"></i><span><b>The 30-day path</b>, which turns all of it into one move at a time, and never tells you that you are behind.</span></li>
+        <li><i class="ph ph-arrows-counter-clockwise" aria-hidden="true"></i><span><b>The Operator Review at day 30</b> &mdash; your month read back, including where your own evidence contradicted the profile.</span></li>
+        <li><i class="ph ph-chats-circle" aria-hidden="true"></i><span><b>100 questions across 90 days</b> to a strategist that has read your document and knows which page you are on.</span></li>
       </ul>
     </div>
   </div>
