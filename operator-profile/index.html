@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Operator Profile — the founder blueprint — Abundanc3 Alch3my</title>
-<meta name="description" content="A founder blueprint built from your birth data and six questions about the business: the exact place how you're wired and how you're running the company are fighting each other, the instructions to close it, a 30-day path that installs them, and a review at day 30 that reads your month back. $29.">
-<meta property="og:title" content="The Operator Profile — Abundanc3 Alch3my">
-<meta property="og:description" content="Every assessment tells you what you are and stops. This is the blueprint for running the company at the level you are actually built to run it at.">
+<title>The Operator Profile — your soul-aligned business guide — Brandon Huston</title>
+<meta name="description" content="A personal, interactive business guide built from Western astrology, Vedic astrology, Human Design, the I Ching, and six questions about your company. Use it to build toward your $10,000-a-month goal in a way that fits how you work. $29 one time.">
+<meta property="og:title" content="The Operator Profile — Brandon Huston">
+<meta property="og:description" content="Build toward $10,000 a month with a business that fits how you make decisions, work, sell, delegate, and handle pressure. $29 one time.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/operator-profile/img/collision.webp">
-<meta name="theme-color" content="#13140F">
+<meta name="theme-color" content="#0C0C0C">
 <link rel="icon" type="image/png" href="/logo-mark.png">
 <noscript><style>
   /* The reveal animation starts every .rv block at opacity:0 and JS turns it on.
@@ -17,9 +17,9 @@
   .rv{opacity:1 !important;transform:none !important;filter:none !important}
   .draw *{stroke-dashoffset:0 !important;animation:none !important;opacity:1 !important}
 </style></noscript>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/kanit-normal-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-normal-300-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <link rel="preload" as="image" href="img/hero-desk.webp"
       imagesrcset="img/hero-desk-sm.webp 700w, img/hero-desk.webp 1100w"
@@ -34,13 +34,22 @@
    floor). The pair #00A98C / #B8823A passes all six palette checks against this
    surface, worst CVD separation deltaE 10.5.                                    */
 :root{
-  --ob:#13140F; --ob-2:#191B14; --ob-3:#1F211A; --ob-4:#262920;
-  --line:#2A2C21; --line-2:#3B3E2E;
-  --bone:#EAE3D3; --bone-2:#C6C7B4; --bone-3:#93957F;
-  --pine:#3F6B62; --pine-lt:#6D9A8E; --pine-dk:#2A4A44;
-  --bronze:#B8823A; --bronze-lt:#D6A45F;
-  --data-a:#00A98C; --data-b:#B8823A;
-  --r:14px; --r-sm:8px;
+  --ob:#0C0C0C; --ob-2:#101114; --ob-3:#17181C; --ob-4:#1E2024;
+  --line:rgba(215,226,234,.14); --line-2:rgba(215,226,234,.28);
+  --bone:#D7E2EA; --bone-2:#D7E2EA; --bone-3:#8E9AA4;
+  --pine:#646973; --pine-lt:#BBCCD7; --pine-dk:#17181C;
+  --bronze:#BBCCD7; --bronze-lt:#FFFFFF;
+  --data-a:#BBCCD7; --data-b:#E04ED2;
+  --ink:#D7E2EA; --ink-muted:#8E9AA4; --paper:#FFFFFF; --paper-ink:#0C0C0C; --paper-rule:rgba(12,12,12,.15);
+  --magenta:#B600A8; --violet:#7621B0;
+  --radius:clamp(40px,5vw,60px); --radius-sm:clamp(20px,2.5vw,28px);
+  --pad-y:clamp(4rem,8vw,8rem); --pad-x:clamp(1.25rem,3vw,2.5rem);
+  --kanit:'Kanit',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --newsreader:'Newsreader',Georgia,'Times New Roman',serif;
+  --steel:linear-gradient(180deg,#646973 0%,#BBCCD7 100%);
+  --cta-gradient:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);
+  --sheen:linear-gradient(158deg,#1E2024 0%,#0C0C0C 34%,#0C0C0C 66%,#191B1F 100%);
+  --r:var(--radius-sm); --r-sm:12px;
   --ease:cubic-bezier(.16,1,.3,1);
   --shell:1240px;
   color-scheme:dark;
@@ -48,35 +57,36 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--ob);color:var(--bone);font-family:'Inter',system-ui,sans-serif;
+body{margin:0;background:var(--ob);color:var(--bone);font-family:var(--kanit);
      -webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* Browser surfaces we did not draw, themed from the palette. */
-::selection{background:var(--pine);color:var(--bone)}
-:focus-visible{outline:2px solid var(--bronze-lt);outline-offset:3px;border-radius:4px}
+::selection{background:var(--violet);color:#FFFFFF}
+:focus-visible{outline:2px solid #FFFFFF;outline-offset:3px;border-radius:4px}
 *{scrollbar-color:var(--line-2) var(--ob)}
 ::-webkit-scrollbar{width:11px;height:11px}
 ::-webkit-scrollbar-track{background:var(--ob)}
 ::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:99px;border:3px solid var(--ob)}
-::-webkit-scrollbar-thumb:hover{background:var(--pine)}
-a{color:var(--bronze-lt);text-decoration-thickness:1px;text-underline-offset:3px}
+::-webkit-scrollbar-thumb:hover{background:#646973}
+a{color:#FFFFFF;text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{color:var(--bone)}
 img{max-width:100%;display:block}
 .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
 
 /* ── TYPE ────────────────────────────────────────────────────────────────── */
-h1,h2,h3,h4{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;
+h1,h2,h3,h4{font-family:var(--kanit);text-transform:uppercase;font-weight:900;
             margin:0;color:var(--bone);text-wrap:balance}
-h1{font-size:clamp(36px,4.6vw,56px);line-height:.98;letter-spacing:-.3px;font-weight:700}
-h2{font-size:clamp(29px,4.1vw,45px);line-height:.99;letter-spacing:-.2px;font-weight:700}
-h3{font-size:clamp(18px,2.1vw,23px);line-height:1.14;letter-spacing:.2px}
-h4{font-size:13.5px;line-height:1.2;letter-spacing:1.4px;color:var(--pine-lt);font-weight:500}
-p{margin:0 0 18px;font-size:17px;line-height:1.72;color:var(--bone-2);max-width:68ch}
+h1{font-size:clamp(1.9rem,5.2vw,4.5rem);line-height:.94;letter-spacing:-.03em;font-weight:900;
+   background-image:var(--steel);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h2{font-size:clamp(1.6rem,3.6vw,3rem);line-height:.96;letter-spacing:-.03em;font-weight:900}
+h3{font-size:clamp(1.05rem,1.7vw,1.45rem);line-height:1.15;letter-spacing:0;font-weight:500}
+h4{font-size:clamp(.75rem,1vw,.9rem);line-height:1.2;letter-spacing:.22em;color:var(--ink-muted);font-weight:500}
+p{margin:0 0 18px;font-family:var(--newsreader);font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.68;color:var(--bone-2);max-width:62ch;text-wrap:pretty}
 p:last-child{margin-bottom:0}
-strong{color:var(--bone);font-weight:600}
+strong{color:#FFFFFF;font-weight:600}
 em{color:var(--bone);font-style:italic}
-.lede{font-size:clamp(18px,2.05vw,21px);line-height:1.6;color:var(--bone);max-width:60ch}
-.small{font-size:14.5px;line-height:1.62;color:var(--bone-3);max-width:64ch}
+.lede{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.6;color:var(--bone);max-width:56ch}
+.small{font-size:clamp(.9rem,1.1vw,1rem);line-height:1.6;color:var(--bone-3);max-width:60ch}
 .h2sub{margin-top:20px}
 
 /* ── SHELL ───────────────────────────────────────────────────────────────── */
@@ -87,19 +97,19 @@ section{padding:clamp(64px,8vw,104px) 0;position:relative}
 hr.rule{height:1px;background:var(--line);border:0;margin:0}
 
 /* ── BUTTONS ─────────────────────────────────────────────────────────────── */
-.btn{font-family:'Inter',sans-serif;font-weight:600;font-size:15.5px;letter-spacing:.1px;
-     padding:15px 28px;border-radius:var(--r);border:1px solid transparent;cursor:pointer;
+.btn{font-family:var(--kanit);font-weight:500;font-size:clamp(.75rem,1.1vw,1rem);letter-spacing:.12em;text-transform:uppercase;
+     padding:clamp(.85rem,1.15vw,1.05rem) clamp(1.6rem,2.6vw,2.4rem);border-radius:9999px;border:2px solid transparent;cursor:pointer;
      display:inline-flex;align-items:center;gap:10px;white-space:nowrap;text-decoration:none;
      transition:transform .18s var(--ease),background .18s,border-color .18s,box-shadow .18s}
 /* Offset plus soft blur, tinted to the button's own hue: a warm lift off the
    ground, not a zero-offset halo. */
-.btn-primary{background:var(--bronze);color:#17120A;
-             box-shadow:0 12px 28px -18px rgba(120,82,28,.9)}
-.btn-primary:hover{background:var(--bronze-lt);color:#17120A;transform:translateY(-2px);
-                   box-shadow:0 18px 36px -18px rgba(120,82,28,.95)}
+.btn-primary{color:#FFFFFF;background-image:var(--cta-gradient);border-color:transparent;
+             box-shadow:0 4px 4px rgba(181,1,167,.25),inset 4px 4px 12px #7721B1;outline:2px solid #FFFFFF;outline-offset:-3px}
+.btn-primary:hover{color:#FFFFFF;transform:translateY(-2px)}
+.btn-primary:focus-visible{outline:2px solid #FFFFFF;outline-offset:3px}
 .btn-primary:active{transform:translateY(0) scale(.985)}
-.btn-ghost{background:transparent;color:var(--bone);border-color:var(--line-2)}
-.btn-ghost:hover{border-color:var(--pine-lt);color:var(--bone);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--bone);border-color:rgba(215,226,234,.55)}
+.btn-ghost:hover{border-color:#D7E2EA;background:rgba(215,226,234,.08);color:var(--bone);transform:translateY(-2px)}
 .btn-ghost:active{transform:translateY(0) scale(.985)}
 .buy{display:flex;flex-wrap:wrap;align-items:center;gap:15px 22px;margin-top:38px}
 .buy .small{margin:0;max-width:30ch}
@@ -118,42 +128,24 @@ hr.rule{height:1px;background:var(--line);border:0;margin:0}
   .btn,.pract,.qcard,.anat-row{transition:none !important}
 }
 
-/* ── NAV ─────────────────────────────────────────────────────────────────── */
-nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:16px;height:70px;
-    padding:0 40px;background:rgba(19,20,15,.88);backdrop-filter:blur(14px) saturate(140%);
-    -webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid var(--line)}
-nav .brand{display:flex;align-items:center;gap:13px;flex:none;text-decoration:none}
-nav .brand img.mark{height:25px;width:auto}
-nav .brand img.word{height:18px;width:auto}
-nav .navend{margin-left:auto;display:flex;align-items:center;gap:26px}
-nav a.nl{font-size:14px;font-weight:500;color:var(--bone-3);text-decoration:none;transition:color .18s}
-nav a.nl:hover{color:var(--bone)}
-nav .btn{padding:11px 20px;font-size:14px}
-@media(max-width:880px){nav a.nl{display:none}}
-@media(max-width:560px){nav{padding:0 20px;height:62px}
-  /* The wordmark costs 189px and the buy button was being clipped off the
-     right edge of a 390px phone. The mark alone still identifies the brand. */
-  nav .brand img.word{display:none}
-  nav .btn{padding:10px 16px}}
-
 /* ── HERO — asymmetric split ─────────────────────────────────────────────── */
 #hero{padding:clamp(46px,6vw,84px) 0 clamp(58px,6vw,88px);overflow:hidden}
 #hero::before{content:"";position:absolute;left:-20%;top:-25%;width:75%;height:110%;
-  pointer-events:none;background:radial-gradient(ellipse at 35% 42%,rgba(63,107,98,.20),transparent 62%)}
+  pointer-events:none;background:radial-gradient(ellipse at 35% 42%,rgba(118,33,176,.22),transparent 62%)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.78fr);
            gap:clamp(32px,4.4vw,60px);align-items:center;position:relative}
 .hero-price{display:inline-flex;align-items:baseline;gap:9px;margin-bottom:26px;
   padding:8px 16px 8px 14px;border:1px solid var(--line-2);border-radius:99px;background:var(--ob-2)}
-.hero-price b{font-family:'Oswald',sans-serif;font-size:19px;font-weight:600;color:var(--bronze-lt)}
-.hero-price span{font-size:13.5px;color:var(--bone-3);letter-spacing:.2px}
+.hero-price b{font-family:var(--kanit);font-size:19px;font-weight:900;color:#FFFFFF}
+.hero-price span{font-size:.8rem;color:var(--bone-3);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 #hero p.lede{margin:26px 0 0}
-.hero-shot{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);
+.hero-shot{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
   box-shadow:0 44px 96px -52px rgba(0,0,0,.95),0 5px 24px -14px rgba(0,0,0,.75)}
 .hero-shot img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
 /* The lower third of this frame is handwriting. It belongs to the picture as
    texture, not as something to read, so the scrim drops it into shadow. */
 .hero-shot::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(200deg,rgba(63,107,98,.14),transparent 38%,rgba(19,20,15,.62) 82%,rgba(19,20,15,.9) 100%)}
+  background:linear-gradient(200deg,rgba(118,33,176,.14),transparent 38%,rgba(12,12,12,.62) 82%,rgba(12,12,12,.9) 100%)}
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr}
   .hero-shot{order:-1;max-width:520px;margin-inline:auto}
@@ -165,7 +157,7 @@ nav .btn{padding:11px 20px;font-size:14px}
        border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .fact{padding:32px 30px 32px 0;border-right:1px solid var(--line)}
 .fact:last-child{border-right:0}
-.fact b{display:block;font-family:'Oswald',sans-serif;font-size:clamp(27px,3.3vw,39px);
+.fact b{display:block;font-family:var(--kanit);font-size:clamp(27px,3.3vw,39px);
         font-weight:600;color:var(--bone);line-height:1;margin-bottom:10px;letter-spacing:-.3px}
 .fact span{font-size:14px;line-height:1.5;color:var(--bone-3);display:block;max-width:23ch}
 @media(max-width:820px){
@@ -181,20 +173,20 @@ nav .btn{padding:11px 20px;font-size:14px}
 .bleed>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
            object-position:78% 50%}
 .bleed::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(90deg,rgba(19,20,15,.97) 0%,rgba(19,20,15,.94) 40%,rgba(19,20,15,.34) 76%,rgba(19,20,15,.56) 100%)}
+  background:linear-gradient(90deg,rgba(12,12,12,.97) 0%,rgba(12,12,12,.94) 40%,rgba(12,12,12,.34) 76%,rgba(12,12,12,.56) 100%)}
 /* The card frame is busy edge to edge, unlike the gears, so its copy needs a
    near-solid ground rather than a wash. */
 #cards>img{object-position:100% 50%}
-#cards.bleed::after{background:linear-gradient(90deg,rgba(19,20,15,.99) 0%,rgba(19,20,15,.98) 42%,rgba(19,20,15,.62) 66%,rgba(19,20,15,.3) 100%)}
+#cards.bleed::after{background:linear-gradient(90deg,rgba(12,12,12,.99) 0%,rgba(12,12,12,.98) 42%,rgba(12,12,12,.62) 66%,rgba(12,12,12,.3) 100%)}
 .bleed .wrap{position:relative;z-index:2;padding-block:clamp(64px,8vw,96px)}
 .bleed .col{max-width:560px}
 @media(max-width:760px){
   /* Stacked, the copy sits on the lower half and the picture keeps the upper
      third clear enough to actually be seen. */
   .bleed{align-items:end;min-height:clamp(500px,105vw,660px)}
-  .bleed::after{background:linear-gradient(180deg,rgba(19,20,15,.34) 0%,rgba(19,20,15,.62) 30%,rgba(19,20,15,.95) 56%,rgba(19,20,15,.98) 100%)}
+  .bleed::after{background:linear-gradient(180deg,rgba(12,12,12,.34) 0%,rgba(12,12,12,.62) 30%,rgba(12,12,12,.95) 56%,rgba(12,12,12,.98) 100%)}
   #cards>img{object-position:62% 34%}
-  #cards.bleed::after{background:linear-gradient(180deg,rgba(19,20,15,.42) 0%,rgba(19,20,15,.7) 28%,rgba(19,20,15,.96) 54%,rgba(19,20,15,.99) 100%)}
+  #cards.bleed::after{background:linear-gradient(180deg,rgba(12,12,12,.42) 0%,rgba(12,12,12,.7) 28%,rgba(12,12,12,.96) 54%,rgba(12,12,12,.99) 100%)}
 }
 
 /* ── SCROLL-SNAP QUESTION CARDS ──────────────────────────────────────────── */
@@ -219,7 +211,7 @@ figure{margin:0}
              font-weight:500}
 .legend i{width:11px;height:11px;border-radius:3px;flex:none}
 .fig svg{width:100%;height:auto;display:block;overflow:visible}
-.fig svg text{font-family:'Inter',sans-serif}
+.fig svg text{font-family:var(--kanit)}
 
 /* ── TWO-COLUMN CONTRAST ─────────────────────────────────────────────────── */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);align-items:start}
@@ -229,7 +221,7 @@ figure{margin:0}
          color:var(--bone-2)}
 .tick li:last-child{margin-bottom:0}
 .tick li i{position:absolute;left:0;top:2px;font-size:18px;line-height:1.2}
-.tick.no li i{color:#8A6B54}
+.tick.no li i{color:#8E9AA4}
 .tick.yes li i{color:var(--pine-lt)}
 
 /* ── PLAIN FEATURE LIST WITH LEADING RULE ────────────────────────────────── */
@@ -240,32 +232,22 @@ figure{margin:0}
 .stack .row p{margin:0;font-size:16.5px}
 @media(max-width:760px){.stack .row{grid-template-columns:1fr;gap:12px;padding:26px 0}}
 
-/* ── PINE COLOR BLOCK — the page's one deliberate field change ───────────── */
-.field{background:var(--pine-dk);border-block:1px solid #365F57;position:relative;overflow:hidden}
-.field::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 78% 10%,rgba(109,154,142,.28),transparent 58%)}
+/* ── PAPER FIELD — the sample passage sits on a white sheet ─────────────── */
+.field{background:var(--paper);color:var(--paper-ink);position:relative;overflow:hidden}
 .field .wrap{position:relative}
-.field h2,.field h3{color:#F2ECDD}
-.field p{color:#CDDCD6}
-.field .pull{font-family:'Inter',sans-serif;font-weight:300;
-  font-size:clamp(20px,2.7vw,30px);line-height:1.42;color:#F5F0E2;max-width:26ch;margin:0}
-.field .src{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:#9DBBB2;
+.field .pull{font-family:var(--newsreader);font-weight:400;font-style:italic;
+  font-size:clamp(1.25rem,2.4vw,1.9rem);line-height:1.42;color:var(--paper-ink);max-width:26ch;margin:0}
+.field .src{font-family:var(--kanit);font-size:clamp(.75rem,1vw,.9rem);letter-spacing:.22em;text-transform:uppercase;color:var(--paper-ink);
             margin:0 0 22px;font-weight:500}
-.quotecard{background:rgba(19,20,15,.34);border:1px solid rgba(234,227,211,.16);
+.quotecard{background:rgba(12,12,12,.03);border:1px solid var(--paper-rule);
            border-radius:var(--r);padding:clamp(24px,3.4vw,38px)}
-.quotecard p{color:#E4EDE8;font-size:17px;line-height:1.72}
+.quotecard p{color:var(--paper-ink);font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.72}
 .quotecard p:first-child{margin-top:0}
-/* On the pine field the ordinary pine-light icon loses too much contrast, so the
-   marks and the muted ink both step up against that ground. */
-.field .tick li{color:#D6E3DD}
-.field .tick.yes li i{color:#A9D0C4}
-.field .small{color:#A9BDB6}
-
 /* ── SIX QUESTIONS — numbered flow, the sequence carries information ─────── */
 .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
        border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .qg{background:var(--ob-3);padding:28px 26px 26px;display:flex;flex-direction:column;gap:12px}
-.qg .qn{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--bronze);
+.qg .qn{font-family:var(--kanit);font-size:15px;font-weight:600;color:var(--bronze);
         letter-spacing:1px}
 .qg .qq{font-size:16.5px;line-height:1.55;color:var(--bone);font-weight:500;margin:0;flex:1}
 @media(max-width:860px){.qgrid{grid-template-columns:1fr 1fr}}
@@ -274,7 +256,7 @@ figure{margin:0}
 /* ── ANNOTATED INSTRUCTION CARD ──────────────────────────────────────────── */
 .anat{background:var(--ob-3);border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden}
 .anat-head{padding:clamp(22px,3vw,32px);border-bottom:1px solid var(--line);
-           background:linear-gradient(180deg,rgba(184,130,58,.09),transparent)}
+           background:linear-gradient(180deg,rgba(215,226,234,.06),transparent)}
 .anat-head .lbl{font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;
                 color:var(--bronze);font-weight:600;display:block;margin-bottom:12px}
 .anat-head p{font-size:clamp(18px,2.2vw,22px);line-height:1.45;color:var(--bone);
@@ -285,7 +267,7 @@ figure{margin:0}
 .anat-row:last-child{border-bottom:0}
 .anat-row:hover{background:var(--ob-4)}
 .anat-row .k{display:flex;flex-direction:column;gap:6px}
-.anat-row .k b{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--bone);
+.anat-row .k b{font-family:var(--kanit);font-size:15px;font-weight:600;color:var(--bone);
                 letter-spacing:.6px;text-transform:uppercase}
 .anat-row .k span{font-size:12.5px;line-height:1.45;color:var(--pine-lt)}
 .anat-row p{margin:0;font-size:16px;line-height:1.68}
@@ -297,7 +279,7 @@ figure{margin:0}
 .practs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
 .pract{background:var(--ob-3);border:1px solid var(--line);border-radius:var(--r);
        padding:26px 24px;transition:border-color .25s var(--ease),transform .25s var(--ease)}
-.pract:hover{border-color:var(--pine);transform:translateY(-3px)}
+.pract:hover{border-color:#D7E2EA;transform:translateY(-3px)}
 .pract i{font-size:23px;color:var(--pine-lt);display:block;margin-bottom:15px}
 .pract h3{margin-bottom:9px;font-size:19px}
 .pract p{font-size:15.5px;line-height:1.6;margin:0;color:var(--bone-2)}
@@ -320,10 +302,10 @@ figure{margin:0}
 @media(max-width:860px){.faq{grid-template-columns:1fr}}
 details{border-bottom:1px solid var(--line)}
 details summary{cursor:pointer;list-style:none;padding:20px 34px 20px 0;position:relative;
-  font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:16.5px;font-weight:500;
+  font-family:var(--kanit);text-transform:uppercase;font-size:16.5px;font-weight:500;
   letter-spacing:.4px;color:var(--bone);transition:color .2s}
 details summary::-webkit-details-marker{display:none}
-details summary:hover{color:var(--bronze-lt)}
+details summary:hover{color:#FFFFFF}
 details summary::after{content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;
   margin-top:-7px;border-right:1.5px solid var(--pine-lt);border-bottom:1.5px solid var(--pine-lt);
   transform:rotate(45deg);transition:transform .28s var(--ease)}
@@ -339,12 +321,12 @@ details .ans p{font-size:16px;margin:0}
 .deliver{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .deliver li{display:grid;grid-template-columns:26px 1fr;gap:14px;padding:16px 0;
             border-bottom:1px solid var(--line);font-size:16px;line-height:1.62;color:var(--bone-2)}
-.deliver li i{color:var(--bronze);font-size:18px;line-height:1.5}
+.deliver li i{color:#FFFFFF;font-size:18px;line-height:1.5}
 .deliver li b{color:var(--bone);font-weight:600}
 
-footer{background:#0E0F0B;border-top:1px solid var(--line);padding:52px 0}
-footer p{font-size:14px;color:var(--bone-3);margin:0 0 10px;max-width:80ch}
-footer p:last-child{margin:0}
+.legal{border-top:1px solid var(--line);padding:clamp(2rem,3vw,2.75rem) 0 0}
+.legal p{font-size:.95rem;color:var(--bone-3);margin:0 0 10px;max-width:80ch}
+.legal p:last-child{margin:0}
 .tracking-choices{appearance:none;border:0;background:none;padding:0;color:var(--bronze-lt);
   font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .tracking-choices:hover{color:var(--bone)}
@@ -357,8 +339,8 @@ footer p:last-child{margin:0}
 .tracking-consent .consent-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .tracking-consent .consent-choice{appearance:none;min-width:142px;padding:11px 16px;
   border:1px solid var(--line-2);border-radius:var(--r-sm);background:var(--ob-2);
-  color:var(--bone);font:600 14px/1 'Inter',sans-serif;cursor:pointer}
-.tracking-consent .consent-choice:hover{border-color:var(--bronze-lt)}
+  color:var(--bone);font:500 .8rem/1 var(--kanit);text-transform:uppercase;letter-spacing:.1em;cursor:pointer}
+.tracking-consent .consent-choice:hover{border-color:#FFFFFF}
 
 @media(max-width:560px){
   .wrap{padding:0 22px}
@@ -379,7 +361,7 @@ footer p:last-child{margin:0}
   gap:clamp(14px,2.4vw,34px);padding:26px 0;border-bottom:1px solid var(--line);
   align-items:start;transition:background .25s var(--ease)}
 .numstack .nrow:hover{background:var(--ob-3)}
-.numstack .nn{font-family:'Oswald',sans-serif;font-size:19px;font-weight:600;color:var(--bronze);
+.numstack .nn{font-family:var(--kanit);font-size:19px;font-weight:600;color:var(--bronze);
   line-height:1.25;letter-spacing:.5px}
 .numstack .nrow h3{font-size:19px;line-height:1.2}
 .numstack .nrow p{margin:0;font-size:16px;line-height:1.66}
@@ -396,19 +378,19 @@ footer p:last-child{margin:0}
 .path{border-top:1px solid var(--line)}
 .phase{display:grid;grid-template-columns:132px minmax(0,1fr);gap:clamp(16px,2.8vw,36px);
   padding:28px 0;border-bottom:1px solid var(--line);position:relative}
-.phase .day{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;letter-spacing:.9px;
+.phase .day{font-family:var(--kanit);font-size:16px;font-weight:600;letter-spacing:.9px;
   color:var(--pine-lt);text-transform:uppercase;padding-top:2px}
 .phase h3{margin-bottom:11px}
 .phase p{margin:0;font-size:16.5px;line-height:1.66}
 .phase.last .day{color:var(--bronze)}
-.phase.last{background:linear-gradient(90deg,rgba(184,130,58,.07),transparent 62%)}
+.phase.last{background:linear-gradient(90deg,rgba(215,226,234,.05),transparent 62%)}
 @media(max-width:700px){.phase{grid-template-columns:1fr;gap:8px;padding:24px 0}}
 
 /* ── NUMBERED HOW-IT-WORKS ───────────────────────────────────────────────── */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .step{background:var(--ob-3);padding:26px 24px;display:flex;flex-direction:column;gap:11px}
-.step .sn{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--bronze);
+.step .sn{font-family:var(--kanit);font-size:15px;font-weight:600;color:var(--bronze);
   letter-spacing:1px}
 .step p{margin:0;font-size:15.5px;line-height:1.62}
 .step b{color:var(--bone)}
@@ -416,26 +398,94 @@ footer p:last-child{margin:0}
 @media(max-width:560px){.steps{grid-template-columns:1fr}}
 
 /* ── PLAIN CALLOUT PANEL ─────────────────────────────────────────────────── */
-.panel{border:1px solid var(--line-2);border-left:3px solid var(--bronze);border-radius:var(--r-sm);
+.panel{border:1px solid var(--line-2);border-left:3px solid #FFFFFF;border-radius:var(--r-sm);
   padding:clamp(22px,3vw,32px);background:var(--ob-3)}
 .panel p:last-child{margin-bottom:0}
 .panel .said{font-style:italic;color:var(--bone);font-size:17.5px;line-height:1.6}
+
+/* ── SHARED CHROME (mirrors /assets/css/site.css) ──────────────────────── */
+.site-header{position:relative;z-index:50;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:clamp(1rem,2vw,2rem);padding:clamp(1.25rem,2vw,1.75rem) var(--pad-x);font-family:var(--kanit)}
+.brand{display:flex;align-items:center;gap:.75rem;flex:none;text-decoration:none}
+.brand .wordmark{font-family:var(--kanit);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1;font-size:clamp(1.05rem,1.6vw,1.35rem);white-space:nowrap;background-image:var(--steel);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#BBCCD7}
+.site-footer .brand .wordmark{font-size:1.15rem}
+.brand img.mark{height:clamp(30px,3vw,40px);width:auto}
+.brand img.word{height:clamp(16px,1.6vw,22px);width:auto}
+.site-nav{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(1rem,2.2vw,2.25rem)}
+.site-nav a{color:var(--ink);font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:clamp(.75rem,1vw,.875rem);transition:opacity .2s ease;position:relative;text-decoration:none}
+.site-nav a:not(.btn):hover{opacity:.6;color:var(--ink)}
+.site-nav a[aria-current="page"]:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-.45em;height:2px;background:var(--magenta);border-radius:2px}
+.site-nav .btn{flex:none;font-size:clamp(.75rem,1vw,.875rem);padding:clamp(.6rem,.9vw,.8rem) clamp(1.25rem,2.2vw,2rem)}
+.nav-toggle{display:none;appearance:none;background:transparent;border:2px solid rgba(215,226,234,.55);color:var(--ink);border-radius:9999px;font-family:var(--kanit);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;padding:.6rem 1.1rem;cursor:pointer}
+@media (max-width:820px){
+  .site-header{flex-wrap:nowrap}
+  .nav-toggle{display:inline-block;position:relative;z-index:70}
+  .site-nav{position:fixed;inset:0;z-index:60;flex-direction:column;justify-content:center;align-items:flex-start;gap:1.5rem;padding:6rem var(--pad-x) 3rem;background:rgba(12,12,12,.97);backdrop-filter:blur(8px);transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s}
+  .site-nav a{font-size:clamp(1.1rem,4vw,1.5rem)}
+  .site-nav .btn{font-size:1rem;padding:.9rem 2rem;margin-top:.5rem}
+  body.nav-open .site-nav{opacity:1;transform:none;visibility:visible;transition:opacity .25s ease,transform .25s ease}
+  body.nav-open{overflow:hidden}
+}
+.sheet{position:relative;border-top-left-radius:var(--radius);border-top-right-radius:var(--radius);margin-top:calc(var(--radius) * -1);padding-top:calc(var(--pad-y) + var(--radius) * .35)}
+.sheet--dark{background-color:var(--ob);background-image:linear-gradient(180deg,#17181C 0%,#0C0C0C 22%);color:var(--ink);box-shadow:0 -24px 60px rgba(0,0,0,.65),inset 0 1px 0 rgba(215,226,234,.14)}
+.sheet--paper,.paper{background:var(--paper);color:var(--paper-ink)}
+.sheet--paper{box-shadow:0 -18px 50px rgba(0,0,0,.5)}
+section.sheet{border-top:0}
+.z1{z-index:2}.z2{z-index:3}.z3{z-index:4}.z4{z-index:5}.z5{z-index:6}.z6{z-index:7}.z7{z-index:8}.z8{z-index:9}
+.paper h1,.paper h2,.paper h3,.paper p,.paper strong,.paper em,.paper .lede,.paper li{color:var(--paper-ink)}
+.paper h4,.paper .small{color:rgba(12,12,12,.7)}
+.paper a{color:var(--paper-ink)}
+.paper .tick li{color:var(--paper-ink)}
+.paper .tick.yes li i{color:var(--paper-ink)}
+.paper .tick.no li i{color:rgba(12,12,12,.5)}
+.paper .panel{background:rgba(12,12,12,.03);border-color:var(--paper-rule);border-left-color:var(--paper-ink)}
+.paper .panel .said{color:var(--paper-ink)}
+.paper .btn-primary{color:#FFFFFF}
+.paper .btn-ghost{color:var(--paper-ink);border-color:var(--paper-ink)}
+.paper .btn-ghost:hover{background:var(--paper-ink);color:#FFFFFF}
+.paper .buy .small{color:rgba(12,12,12,.7)}
+.paper hr.rule{background:var(--paper-rule)}
+.paper ::selection{background:var(--paper-ink);color:#FFFFFF}
+.site-footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:clamp(3rem,5vw,4.5rem) var(--pad-x);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(1.5rem,3vw,3rem);font-family:var(--kanit);background:var(--ob)}
+.site-footer .col{display:flex;flex-direction:column;gap:1rem;max-width:34rem}
+.site-footer .brand img.mark{height:34px}
+.site-footer .brand img.word{height:18px}
+.site-footer .tagline{margin:0;font-family:var(--newsreader);color:var(--ink);font-size:clamp(.95rem,1.3vw,1.1rem);line-height:1.6;text-wrap:pretty}
+.site-footer .links{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem}
+.site-footer .links a{color:var(--ink);font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:clamp(.75rem,1vw,.875rem);text-decoration:none}
+.site-footer .links a:hover{opacity:.6}
+.site-footer .copy{color:var(--ink-muted);font-weight:400;letter-spacing:.08em;font-size:clamp(.8rem,1vw,.9rem)}
+.btn-cta{color:#FFFFFF;background-image:var(--cta-gradient);border-color:transparent;box-shadow:0 4px 4px rgba(181,1,167,.25),inset 4px 4px 12px #7721B1;outline:2px solid #FFFFFF;outline-offset:-3px}
+.btn-cta:hover{color:#FFFFFF;transform:translateY(-1px)}
+.paper .btn-cta{color:#FFFFFF}
+.jumpbar{position:sticky;top:0;z-index:40;background:rgba(12,12,12,.88);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-block:1px solid var(--line)}
+.jumpbar .wrap{display:flex;flex-wrap:wrap;gap:clamp(.75rem,2vw,2rem);padding-block:.8rem}
+.jumpbar a{font-family:var(--kanit);font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:clamp(.7rem,.9vw,.8rem);color:var(--ink-muted);text-decoration:none;transition:color .2s}
+.jumpbar a:hover{color:#FFFFFF}
+.site-nav a.btn-primary{color:#FFFFFF}
+.site-nav a.btn-primary:hover{color:#FFFFFF}
 </style>
 </head>
 <body>
 
-<nav>
-  <a class="brand" href="/">
-    <img class="mark" src="/logo-mark.png" alt="">
-    <img class="word" src="/wordmark-3s.png" alt="Abundanc3 Alch3my">
-  </a>
-  <div class="navend">
-    <a class="nl" href="#arrives">What arrives</a>
-    <a class="nl" href="#sample">A real passage</a>
-    <a class="nl" href="#portal">The portal</a>
-    <a class="nl" href="#path">The 30 days</a>
-    <a class="nl" href="#faq">Questions</a>
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Brandon Huston home"><span class="wordmark">Brandon Huston</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav class="site-nav" id="site-nav" aria-label="Site">
+    <a href="/how-it-works/">How it works</a>
+    <a href="/proof/">Proof</a>
+    <a href="/about/">About</a>
+    <a href="/operator-profile/" aria-current="page">Operator Profile</a>
     <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">Get the Profile</a>
+  </nav>
+</header>
+
+<nav class="jumpbar" aria-label="On this page">
+  <div class="wrap">
+    <a href="#arrives">What arrives</a>
+    <a href="#sample">A real passage</a>
+    <a href="#portal">The portal</a>
+    <a href="#path">The 30 days</a>
+    <a href="#faq">Questions</a>
   </div>
 </nav>
 
@@ -443,16 +493,17 @@ footer p:last-child{margin:0}
 <section id="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="hero-price rv"><b>$29</b><span>one time &middot; founding price for the first 30 customers, then $149</span></div>
-      <h1 class="rv" data-d="1">You built the business. Now it runs on your override &mdash; and the override is your ceiling.</h1>
-      <p class="lede rv" data-d="2">The Operator Profile is a founder blueprint written for one person: thirteen sections built from your exact birth data and six questions about the company, a 30-day path that puts them into an actual week, and a review at day 30 that reads your month back and tells you what held.</p>
+      <div class="hero-price rv"><b>$29</b><span>one time</span></div>
+      <h1 class="rv" data-d="1">Build toward $10,000 a month with a business that fits how you actually work.</h1>
+      <p class="lede rv" data-d="2">The Operator Profile is your personal, interactive guide to building a soul-aligned business: one shaped around how you make decisions, use your energy, sell, lead, and handle pressure. Western astrology, Vedic astrology, Human Design, the I Ching, and six questions about your company become a thirteen-section operating guide, six practices, and a 30-day path you can test in your actual week.</p>
       <div class="buy rv" data-d="3">
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
         </a>
         <a class="btn btn-ghost" href="#sample">Read a real passage first</a>
-        <p class="small">$29 one time. Answer six questions, watch it write on the page in minutes, keep the portal.</p>
+        <p class="small">$29 one time. Answer six questions, watch your profile build on the page, and keep the portal.</p>
       </div>
+      <p class="small rv" data-d="4" style="margin-top:16px;max-width:62ch">$10,000 a month is a goal, not a forecast. The Operator Profile cannot tell you what the market wants or guarantee revenue.</p>
     </div>
     <div class="hero-shot rv" data-d="2">
       <img src="img/hero-desk.webp" srcset="img/hero-desk-sm.webp 700w, img/hero-desk.webp 1100w"
@@ -480,10 +531,10 @@ footer p:last-child{margin:0}
        width="1600" height="900" loading="lazy">
   <div class="wrap">
     <div class="col">
-      <h2 class="rv">Nothing is wrong with the advice. It was built on somebody else's wiring, and it holds you at theirs.</h2>
-      <p class="lede h2sub rv" data-d="1">You are working hard and the business is fighting you anyway.</p>
-      <p class="rv" data-d="2">The pace it demands is not the pace you can actually hold. The decision you have been sitting on still will not close. The advice that works for every other founder keeps sliding off you. That collision, between how you are built to operate and how you are currently running the company, is what this is about.</p>
-      <p class="rv" data-d="2">It is also what the ceiling is made of. Not effort, not talent, not the market. Every week you spend forcing yourself through a process you were never built for is a week the company runs on your override instead of your capacity &mdash; and an operator running on override has a hard limit that no amount of trying raises.</p>
+      <h2 class="rv">When useful advice keeps falling apart in your week, the missing piece may be fit.</h2>
+      <p class="lede h2sub rv" data-d="1">You can work hard and still feel the business pushing against you.</p>
+      <p class="rv" data-d="2">A schedule can look sensible and still ask for a pace you cannot hold. A decision can look clear on paper and still refuse to close. A sales system can work for somebody else and keep sliding out of your week. If any of that feels familiar, the Operator Profile helps you find the point where the system and the operator stop matching.</p>
+      <p class="rv" data-d="2">Then it gives you a smaller way to test what fits: one live decision, one sales task, one handoff, or one operating week at a time. Your own results get the last word.</p>
     </div>
   </div>
 </section>
@@ -529,22 +580,22 @@ footer p:last-child{margin:0}
         <svg viewBox="0 0 420 250" role="img" aria-labelledby="jointTitle jointDesc" class="draw">
           <title id="jointTitle">Where a borrowed system breaks</title>
           <desc id="jointDesc">A five-step chain. The first two steps and the last two hold. The middle joint, the one place the system assumes something about the operator that isn't true, is the point that gives way.</desc>
-          <line x1="46" y1="70" x2="374" y2="70" stroke="#3B3E2E" stroke-width="2" stroke-linecap="round"/>
-          <g fill="#1F211A" stroke="#3B3E2E" stroke-width="2">
+          <line x1="46" y1="70" x2="374" y2="70" stroke="#454C51" stroke-width="2" stroke-linecap="round"/>
+          <g fill="#17181C" stroke="#454C51" stroke-width="2">
             <circle cx="46" cy="70" r="13"/><circle cx="128" cy="70" r="13"/>
             <circle cx="292" cy="70" r="13"/><circle cx="374" cy="70" r="13"/>
           </g>
-          <circle cx="210" cy="70" r="17" fill="rgba(184,130,58,.14)" stroke="#B8823A" stroke-width="2.5"/>
-          <path d="M203 63 L217 77 M217 63 L203 77" stroke="#B8823A" stroke-width="2.4" stroke-linecap="round"/>
-          <path d="M210 96 L210 128" stroke="#B8823A" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>
-          <text x="210" y="152" text-anchor="middle" fill="#EAE3D3" font-size="15" font-weight="600">The joint</text>
-          <text x="210" y="176" text-anchor="middle" fill="#93957F" font-size="13">The one place its assumption about</text>
-          <text x="210" y="196" text-anchor="middle" fill="#93957F" font-size="13">the operator doesn't match the</text>
-          <text x="210" y="216" text-anchor="middle" fill="#93957F" font-size="13">operator running it</text>
-          <text x="46" y="40" text-anchor="middle" fill="#93957F" font-size="12.5">Holds</text>
-          <text x="128" y="40" text-anchor="middle" fill="#93957F" font-size="12.5">Holds</text>
-          <text x="292" y="40" text-anchor="middle" fill="#93957F" font-size="12.5">Holds</text>
-          <text x="374" y="40" text-anchor="middle" fill="#93957F" font-size="12.5">Holds</text>
+          <circle cx="210" cy="70" r="17" fill="rgba(184,130,58,.14)" stroke="#E04ED2" stroke-width="2.5"/>
+          <path d="M203 63 L217 77 M217 63 L203 77" stroke="#E04ED2" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M210 96 L210 128" stroke="#E04ED2" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>
+          <text x="210" y="152" text-anchor="middle" fill="#D7E2EA" font-size="15" font-weight="600">The joint</text>
+          <text x="210" y="176" text-anchor="middle" fill="#8E9AA4" font-size="13">The one place its assumption about</text>
+          <text x="210" y="196" text-anchor="middle" fill="#8E9AA4" font-size="13">the operator doesn't match the</text>
+          <text x="210" y="216" text-anchor="middle" fill="#8E9AA4" font-size="13">operator running it</text>
+          <text x="46" y="40" text-anchor="middle" fill="#8E9AA4" font-size="12.5">Holds</text>
+          <text x="128" y="40" text-anchor="middle" fill="#8E9AA4" font-size="12.5">Holds</text>
+          <text x="292" y="40" text-anchor="middle" fill="#8E9AA4" font-size="12.5">Holds</text>
+          <text x="374" y="40" text-anchor="middle" fill="#8E9AA4" font-size="12.5">Holds</text>
         </svg>
         <figcaption>The system doesn't collapse because you failed it. It collapses at a specific joint. And because nobody ever names the joint, the failure reads as a character flaw instead of a mismatch.</figcaption>
       </figure>
@@ -553,41 +604,41 @@ footer p:last-child{margin:0}
 </section>
 
 <!-- ═══ THE LEVEL ══════════════════════════════════════════════════════════ -->
-<section id="level" style="border-top:1px solid var(--line)">
+<section class="sheet sheet--paper paper z1" id="level" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="narrow">
-      <h2 class="rv">What it looks like when the model finally fits</h2>
-      <p class="lede h2sub rv" data-d="1">Not a different person. The same person, with the friction taken out.</p>
-      <p class="rv" data-d="2">Founders imagine the next level as a bigger version of the same week. It is usually the opposite: the same week with the expensive parts removed. Here is what actually changes when how you run the company stops arguing with how you are built.</p>
+      <h2 class="rv">What you can test when the model fits</h2>
+      <p class="lede h2sub rv" data-d="1">The same person. A week with less friction in it.</p>
+      <p class="rv" data-d="2">The practices are designed to help you test a cleaner way to decide, plan, sell, and hand work off. These are the signals to watch for in your own week.</p>
     </div>
 
     <div class="duo rv" data-d="2" style="margin-top:38px">
       <ul class="tick yes">
-        <li><i class="ph ph-timer" aria-hidden="true"></i>Decisions close in an afternoon instead of sitting open for a fortnight, because you know what a real yes feels like from the inside and stop waiting on a signal that was never going to arrive in that form.</li>
-        <li><i class="ph ph-target" aria-hidden="true"></i>The week produces work, because the blocks sit where your attention actually is rather than where a productivity book put them.</li>
-        <li><i class="ph ph-handshake" aria-hidden="true"></i>Revenue work stops costing three times what it returns, because you are doing the kind of selling that suits you and have stopped forcing the kind that does not.</li>
+        <li><i class="ph ph-timer" aria-hidden="true"></i>A decision closes sooner because you know what a real yes feels like from the inside and stop waiting on a signal that may never arrive in that form.</li>
+        <li><i class="ph ph-target" aria-hidden="true"></i>A focus block survives the week because it sits where your attention actually is rather than where a productivity book put it.</li>
+        <li><i class="ph ph-handshake" aria-hidden="true"></i>Selling takes less out of you because you test the kind that suits you and stop forcing the kind that does not.</li>
       </ul>
       <ul class="tick yes">
-        <li><i class="ph ph-hand-arrow-up" aria-hidden="true"></i>The thing you kept taking back is finally somebody else's, and you already know the exact route by which you were going to take it back.</li>
-        <li><i class="ph ph-moon-stars" aria-hidden="true"></i>You stop paying for the same argument with yourself every Sunday night.</li>
-        <li><i class="ph ph-crown-simple" aria-hidden="true"></i>More of the week goes to the part of the business only you can do. That is the level. It was always the level &mdash; the borrowed operating model was in the way.</li>
+        <li><i class="ph ph-hand-arrow-up" aria-hidden="true"></i>A handoff stays handed off because you can see the route by which you are most likely to take it back.</li>
+        <li><i class="ph ph-moon-stars" aria-hidden="true"></i>You catch the same argument with yourself earlier and have a next move to test.</li>
+        <li><i class="ph ph-crown-simple" aria-hidden="true"></i>More of the week can go to the part of the business only you can do.</li>
       </ul>
     </div>
 
     <div class="narrow" style="margin-top:40px">
-      <p class="rv">Two things this is not. It is not a promise about revenue: nothing here can see your market, your pricing or your unit economics, and the profile says so in its own final section. And it is not a claim that you were secretly exceptional all along. It is the more boring correction, and the more fixable one &mdash; you have been running a company on operating instructions written for somebody wired differently, and nobody ever told you which instruction that was.</p>
+      <p class="rv">These are outcomes to test, not promises. The profile cannot see your market, your pricing, or your unit economics. It can help you test how you operate while you build toward the number you chose. Your customers and your business numbers still decide whether the model works.</p>
       <div class="buy rv" data-d="1">
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
         </a>
-        <p class="small">$29 one time &middot; founding price for the first 30 customers.</p>
+        <p class="small">$29 one time.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ WHAT ARRIVES — the document anatomy chart ══════════════════════════ -->
-<section id="arrives" class="band">
+<section id="arrives" class="band sheet sheet--dark z2">
   <div class="wrap">
     <div class="narrow">
       <h2 class="rv">What actually arrives</h2>
@@ -603,22 +654,22 @@ footer p:last-child{margin:0}
       <svg viewBox="0 0 900 214" role="img" aria-labelledby="anatTitle anatDesc">
         <title id="anatTitle">The two halves, measured on a real profile</title>
         <desc id="anatDesc">The document is built in two halves: six long sections describing how you operate, and thirteen shorter pieces telling you what to do about it.</desc>
-        <text x="0" y="16" fill="#93957F" font-size="13">Recognition &middot; 6 sections</text>
-        <text x="900" y="16" text-anchor="end" fill="#93957F" font-size="13">Instruction &middot; 13 pieces</text>
+        <text x="0" y="16" fill="#8E9AA4" font-size="13">Recognition &middot; 6 sections</text>
+        <text x="900" y="16" text-anchor="end" fill="#8E9AA4" font-size="13">Instruction &middot; 13 pieces</text>
         <g>
-          <rect class="barfill" x="0" y="30" width="509" height="46" rx="4" fill="#00A98C"/>
-          <rect class="barfill" x="513" y="30" width="387" height="46" rx="4" fill="#B8823A"/>
+          <rect class="barfill" x="0" y="30" width="509" height="46" rx="4" fill="#BBCCD7"/>
+          <rect class="barfill" x="513" y="30" width="387" height="46" rx="4" fill="#E04ED2"/>
         </g>
-        <text x="14" y="59" fill="#06231D" font-size="15" font-weight="600">How you operate</text>
-        <text x="527" y="59" fill="#241704" font-size="15" font-weight="600">What to do about it</text>
-        <g font-size="13.5" fill="#C6C7B4">
+        <text x="14" y="59" fill="#141A1E" font-size="15" font-weight="600">How you operate</text>
+        <text x="527" y="59" fill="#1E1420" font-size="15" font-weight="600">What to do about it</text>
+        <g font-size="13.5" fill="#D7E2EA">
           <text x="0" y="110">The contradiction you're running</text>
           <text x="0" y="134">How a decision actually arrives for you</text>
           <text x="0" y="158">Your sustainable pace</text>
           <text x="0" y="182">How you're built to sell</text>
           <text x="0" y="206">Money, risk and pressure &middot; Your bottleneck</text>
         </g>
-        <g font-size="13.5" fill="#C6C7B4" text-anchor="end">
+        <g font-size="13.5" fill="#D7E2EA" text-anchor="end">
           <text x="900" y="110">6 operating instructions</text>
           <text x="900" y="134">A 30-day operating experiment</text>
           <text x="900" y="158">The load you should stop carrying</text>
@@ -661,11 +712,11 @@ footer p:last-child{margin:0}
   </div>
 </section>
 
-<!-- ═══ THE COMPLETE BLUEPRINT ═════════════════════════════════════════════ -->
+<!-- ═══ THE COMPLETE GUIDE ═════════════════════════════════════════════════ -->
 <section id="blueprint">
   <div class="wrap">
     <div class="narrow">
-      <h2 class="rv">Everything in the blueprint</h2>
+      <h2 class="rv">Everything in your Operator Profile</h2>
       <p class="lede h2sub rv" data-d="1">Fifteen parts. Six of them tell you how you operate, and the other nine exist to make sure that knowledge reaches an actual Tuesday.</p>
       <p class="rv" data-d="2">Listed once, in full, so you can see exactly what $29 buys before you spend it.</p>
     </div>
@@ -712,40 +763,40 @@ footer p:last-child{margin:0}
       <svg viewBox="0 0 900 300" role="img" aria-labelledby="convTitle convDesc" class="draw">
         <title id="convTitle">Four readings, three independent counts, one profile built for one person</title>
         <desc id="convDesc">Western astrology, Vedic astrology, Human Design and the I Ching are each read separately. Human Design and the I Ching read the same computed wheel of 64 gates, so they count as one independent source, not two. The engine leads with what more than one source reached on its own.</desc>
-        <g font-size="14" fill="#EAE3D3" font-weight="500">
-          <rect x="0" y="18" width="196" height="46" rx="8" fill="#1F211A" stroke="#3B3E2E"/>
+        <g font-size="14" fill="#D7E2EA" font-weight="500">
+          <rect x="0" y="18" width="196" height="46" rx="8" fill="#17181C" stroke="#454C51"/>
           <text x="18" y="46">Western astrology</text>
-          <rect x="0" y="82" width="196" height="46" rx="8" fill="#1F211A" stroke="#3B3E2E"/>
+          <rect x="0" y="82" width="196" height="46" rx="8" fill="#17181C" stroke="#454C51"/>
           <text x="18" y="110">Vedic astrology</text>
-          <rect x="0" y="150" width="196" height="46" rx="8" fill="#1F211A" stroke="#3B3E2E"/>
+          <rect x="0" y="150" width="196" height="46" rx="8" fill="#17181C" stroke="#454C51"/>
           <text x="18" y="178">Human Design</text>
-          <rect x="0" y="214" width="196" height="46" rx="8" fill="#1F211A" stroke="#3B3E2E"/>
+          <rect x="0" y="214" width="196" height="46" rx="8" fill="#17181C" stroke="#454C51"/>
           <text x="18" y="242">The I Ching</text>
         </g>
-        <g stroke="#3B3E2E" stroke-width="1.5" fill="none">
+        <g stroke="#454C51" stroke-width="1.5" fill="none">
           <path d="M196 41 C 250 41, 250 41, 300 41"/>
           <path d="M196 105 C 250 105, 250 105, 300 105"/>
           <path d="M196 173 C 250 173, 250 190, 300 200"/>
           <path d="M196 237 C 250 237, 250 218, 300 208"/>
         </g>
         <g font-size="13.5">
-          <rect x="300" y="20" width="176" height="42" rx="8" fill="rgba(0,169,140,.11)" stroke="#00A98C"/>
-          <text x="388" y="46" text-anchor="middle" fill="#EAE3D3" font-weight="500">The Western chart</text>
-          <rect x="300" y="84" width="176" height="42" rx="8" fill="rgba(0,169,140,.11)" stroke="#00A98C"/>
-          <text x="388" y="110" text-anchor="middle" fill="#EAE3D3" font-weight="500">The Vedic chart</text>
-          <rect x="300" y="180" width="176" height="52" rx="8" fill="rgba(0,169,140,.11)" stroke="#00A98C"/>
-          <text x="388" y="202" text-anchor="middle" fill="#EAE3D3" font-weight="500">The gate wheel</text>
-          <text x="388" y="221" text-anchor="middle" fill="#93957F" font-size="12">one wheel, read twice</text>
+          <rect x="300" y="20" width="176" height="42" rx="8" fill="rgba(0,169,140,.11)" stroke="#BBCCD7"/>
+          <text x="388" y="46" text-anchor="middle" fill="#D7E2EA" font-weight="500">The Western chart</text>
+          <rect x="300" y="84" width="176" height="42" rx="8" fill="rgba(0,169,140,.11)" stroke="#BBCCD7"/>
+          <text x="388" y="110" text-anchor="middle" fill="#D7E2EA" font-weight="500">The Vedic chart</text>
+          <rect x="300" y="180" width="176" height="52" rx="8" fill="rgba(0,169,140,.11)" stroke="#BBCCD7"/>
+          <text x="388" y="202" text-anchor="middle" fill="#D7E2EA" font-weight="500">The gate wheel</text>
+          <text x="388" y="221" text-anchor="middle" fill="#8E9AA4" font-size="12">one wheel, read twice</text>
         </g>
-        <g stroke="#B8823A" stroke-width="1.7" fill="none">
+        <g stroke="#E04ED2" stroke-width="1.7" fill="none">
           <path d="M476 41 C 560 41, 570 120, 640 143"/>
           <path d="M476 105 C 560 105, 570 130, 640 148"/>
           <path d="M476 206 C 560 206, 570 175, 640 158"/>
         </g>
-        <rect x="640" y="112" width="260" height="80" rx="10" fill="rgba(184,130,58,.12)" stroke="#B8823A" stroke-width="1.6"/>
-        <text x="770" y="142" text-anchor="middle" fill="#EAE3D3" font-size="15" font-weight="600">Your profile, and nobody else&rsquo;s</text>
-        <text x="770" y="166" text-anchor="middle" fill="#C6C7B4" font-size="13">Led by what 2 or 3 reached alone</text>
-        <text x="770" y="184" text-anchor="middle" fill="#93957F" font-size="12.5">A single lens stays a minor note</text>
+        <rect x="640" y="112" width="260" height="80" rx="10" fill="rgba(184,130,58,.12)" stroke="#E04ED2" stroke-width="1.6"/>
+        <text x="770" y="142" text-anchor="middle" fill="#D7E2EA" font-size="15" font-weight="600">Your profile, and nobody else&rsquo;s</text>
+        <text x="770" y="166" text-anchor="middle" fill="#D7E2EA" font-size="13">Led by what 2 or 3 reached alone</text>
+        <text x="770" y="184" text-anchor="middle" fill="#8E9AA4" font-size="12.5">A single lens stays a minor note</text>
       </svg>
       <figcaption>In the sample profile quoted on this page, the strongest theme was carried by all three sources, with fifteen separate placements behind it. That is a real count off a real chart.</figcaption>
     </figure>
@@ -771,7 +822,7 @@ footer p:last-child{margin:0}
 </section>
 
 <!-- ═══ THE SAMPLE — the page's one field change ═══════════════════════════ -->
-<section id="sample" class="field">
+<section id="sample" class="field sheet sheet--paper paper z3">
   <div class="wrap">
     <div class="narrow">
       <h2 class="rv">A real passage from a real profile</h2>
@@ -823,7 +874,7 @@ footer p:last-child{margin:0}
 </section>
 
 <!-- ═══ THE SIX QUESTIONS ══════════════════════════════════════════════════ -->
-<section id="intake" class="band">
+<section id="intake" class="band sheet sheet--dark z4">
   <div class="wrap">
     <div class="narrow">
       <h2 class="rv">Six questions about your business, and why we ask them</h2>
@@ -966,7 +1017,7 @@ footer p:last-child{margin:0}
 <section id="path">
   <div class="wrap">
     <div class="narrow">
-      <h2 class="rv">The 30-day path: the blueprint, installed one move at a time</h2>
+      <h2 class="rv">The 30-day path: one move at a time</h2>
       <p class="lede h2sub rv" data-d="1">A document you agree with changes nothing. This is the part that puts it into a week.</p>
       <p class="rv" data-d="2">Thirteen sections and six practices is a lot to be handed at once, and the ordinary result of being handed a lot at once is that you read the first section, feel understood, and close the tab. So the portal opens on a path instead: six phases, each one a short list of moves, each move a link straight to the thing that does it.</p>
       <p class="rv" data-d="2">It moves with the calendar and it does not chase you. Nothing is scored. There is no streak to keep, no percentage complete, and no page that tells you that you are behind &mdash; if you disappear for a fortnight the path is exactly where you left it, because a founder who missed a week does not need a scolding, they need to know which move is next.</p>
@@ -1020,7 +1071,7 @@ footer p:last-child{margin:0}
 </section>
 
 <!-- ═══ THE OPERATOR REVIEW ════════════════════════════════════════════════ -->
-<section id="review" class="band">
+<section id="review" class="band sheet sheet--paper paper z5">
   <div class="wrap">
     <div class="narrow">
       <h2 class="rv">At day 30 it reads your own month back to you</h2>
@@ -1049,7 +1100,7 @@ footer p:last-child{margin:0}
 </section>
 
 <!-- ═══ HOW IT WORKS ═══════════════════════════════════════════════════════ -->
-<section id="how">
+<section class="sheet sheet--dark z6" id="how">
   <div class="wrap">
     <div class="narrow">
       <h2 class="rv">How it works, start to finish</h2>
@@ -1179,15 +1230,15 @@ footer p:last-child{margin:0}
   <div class="wrap">
     <div class="narrow">
       <h2 class="rv">Nobody has reviewed this product yet</h2>
-      <p class="rv" data-d="1" style="margin-top:18px">A page like this normally has a wall of screenshots by now. There is not one here, for a boring reason: the Operator Profile in this form is new, and the first thirty customers have not finished their thirty days. When there are real ones &mdash; with names, with permission, from people who ran the path and read their own review &mdash; they will go here, and not before.</p>
+      <p class="rv" data-d="1" style="margin-top:18px">A page like this normally has a wall of screenshots by now. There is not one here because the Operator Profile in this form is new. When there are real reviews &mdash; with names, with permission, from people who ran the path and read their own review &mdash; they will go here, and not before.</p>
       <p class="rv" data-d="1">So the substitute is the product. The opening lines of a real generated profile are further up this page, copied out of the file exactly as produced. So is a complete operating instruction with all six of its fields, and a passage from a real Operator Review disagreeing with the profile that produced it. Those were all generated by the thing you would be buying.</p>
-      <p class="rv" data-d="1">That is also the whole reason it is $29 instead of $149. You are early, and what I want back from the first thirty people is which parts they actually used and which they ignored. In the meantime, the next section is who is asking.</p>
+      <p class="rv" data-d="1">The price is $29, once. The written profile, portal, six practices, 30-day path, day-30 review, and first 100 questions are included.</p>
     </div>
   </div>
 </section>
 
 <!-- ═══ WHO MADE IT ════════════════════════════════════════════════════════ -->
-<section id="maker" class="band">
+<section id="maker" class="band sheet sheet--paper paper z7">
   <div class="wrap">
     <div class="narrow">
       <h2 class="rv">Who made this</h2>
@@ -1212,14 +1263,14 @@ footer p:last-child{margin:0}
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
         </a>
-        <p class="small">$29 one time &middot; founding price for the first 30 customers.</p>
+        <p class="small">$29 one time.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ FAQ ════════════════════════════════════════════════════════════════ -->
-<section id="faq">
+<section class="sheet sheet--dark z8" id="faq">
   <div class="wrap">
     <h2 class="rv">Questions people actually ask</h2>
     <div class="faq rv" data-d="1" style="margin-top:34px">
@@ -1228,9 +1279,9 @@ footer p:last-child{margin:0}
         <details><summary>What if I don't know my birth time?</summary><div class="ans"><p>Then it will not guess one. A birth time changes the read substantially, so instead of inventing a plausible time, the system calculates your chart across the window you give it and keeps only what stays the same throughout. The time-sensitive parts are left out and said to be left out. A smaller true profile beats a complete invented one.</p></div></details>
         <details><summary>Do I have to answer the business questions?</summary><div class="ans"><p>No. The profile still generates. But the instructions get noticeably less specific, because there is nothing to aim them at, and the section that reflects your business back is simply omitted rather than filled in with a guess. Three minutes is a good trade.</p></div></details>
         <details><summary>How long is it?</summary><div class="ans"><p>Longer than you will finish in one sitting. The sample we generated runs to roughly fifteen printed pages, and that is the floor rather than the figure. It is built to be returned to on the week the section applies, not read once. Keep the link it gives you. That link is how you get back in.</p></div></details>
-        <details><summary>Why is it $29?</summary><div class="ans"><p>Because you are early. The Operator Profile is priced at $149. The first 30 customers pay $29, and what I want back is which parts you actually used and which you ignored. The price rises once those 30 are gone. Nothing about your profile, your portal or your access changes when it does.</p></div></details>
+        <details><summary>What does $29 include?</summary><div class="ans"><p>Your thirteen-section profile, five to seven operating instructions, six practices, 30-day path, day-30 Operator Review, the portal you keep, and 100 questions across your first 90 days. The profile purchase is one time. More questions after the included allowance are optional.</p></div></details>
         <details><summary>Is this a subscription?</summary><div class="ans"><p>The profile is not. $29 buys the document and the portal once, and they do not expire. Asking the strategist is included for your first 90 days, up to 100 questions. If you want to keep asking after that, there is an optional $9 a month, or you can buy questions in a batch without any plan. Neither is required, and nothing you already paid for is taken away if you skip both.</p></div></details>
-        <details><summary>Will this help me make more money?</summary><div class="ans"><p>Not directly, and I would rather say so plainly. It cannot see your market, your pricing or your unit economics, and it says as much in its own final section. What it does is take out the friction between how you are built to operate and how you are currently running the company &mdash; the decision that stays open for a fortnight, the selling that costs three times what it returns, the work you keep taking back. What the business does with the hours that returns is your call, not the profile&rsquo;s.</p></div></details>
+        <details><summary>Can this help me build a $10,000-a-month business?</summary><div class="ans"><p>$10,000 a month can be the target you bring to the work. The Operator Profile cannot tell you whether the market wants your offer, whether your price is right, or whether the business will reach that number. It helps you test how you make decisions, sell, structure your week, delegate, and handle pressure while you build toward the target. The result still comes from your customers and your business numbers.</p></div></details>
         <details><summary>What is the 30-day path?</summary><div class="ans"><p>Six phases from day 0 to day 30 that turn the document into a sequence of single moves: read the contradiction and set your focus, then a week of observing before fixing, then one cleaner decision, then one real handoff, then a rebuilt week, then the review. Every move is a link to the page that does it. It is included, it opens when your profile does, and nothing is scored.</p></div></details>
         <details><summary>What if I fall behind the path?</summary><div class="ans"><p>Nothing happens. There is no streak, no percentage complete, and no page that tells you that you are behind. Come back after three quiet weeks and the path is exactly where you left it, with the next move still the next move.</p></div></details>
         <details><summary>What happens at day 30?</summary><div class="ans"><p>The Operator Review reads your month back in eight parts, written only from what you actually recorded. It will name the place your own evidence contradicts your profile and refuse to resolve it in the profile&rsquo;s favour &mdash; we tested exactly that before shipping it. If you have recorded nothing, it declines to write rather than filling an empty month with encouragement. It opens at day 28, or earlier if you work through the phases faster than the calendar.</p></div></details>
@@ -1240,9 +1291,9 @@ footer p:last-child{margin:0}
         <details><summary>What if it doesn't describe me?</summary><div class="ans"><p>Then say so. It is a read of tendencies, not a measurement, and it can be wrong about a person. The practices are built to notice that. The Weekly Review is explicitly allowed to conclude that a hypothesis in your profile did not hold. A tool that can never be wrong is not telling you anything.</p></div></details>
         <details><summary>Will it tell me what to do with my business?</summary><div class="ans"><p>No, and it says so in its own last section. It cannot know whether a market wants your offer, whether your price is right, whether the unit economics work, which niche is most profitable, whether to hire or fire someone, or whether a decision will succeed. Those need business evidence it does not have. What it can do is show you how you are built to operate and where that is costing you.</p></div></details>
         <details><summary>Who is behind this?</summary><div class="ans"><p>Brandon Huston. I built The Spinsterz from the ground up, ran it for roughly eighteen years, grew it into a seven-figure business and sold it, and I have been building businesses since. The longer version, including why that does not make me right about your business, is further up this page.</p></div></details>
-        <details><summary>How is this different from a coach?</summary><div class="ans"><p>A coach asks questions until they understand how you work. This starts from a read of how you work and applies it, for $29 rather than a monthly retainer. It is not a replacement for someone who knows your business. It is the thing you would otherwise spend three sessions establishing.</p></div></details>
+        <details><summary>How is this different from a coach?</summary><div class="ans"><p>A coach learns how you work through conversation. The Operator Profile starts with a read of your operating patterns and gives you practices to test those patterns against the business. It is not a replacement for someone who knows your market, your customers, and your numbers.</p></div></details>
         <details><summary>What is &ldquo;Ask your profile&rdquo;?</summary><div class="ans"><p>A strategist that has read your document and answers in its terms. It sits at the bottom of every page in the portal and knows which page you are on. It is not a therapist and not a crisis service, and it will say so if you take it somewhere it should not go.</p></div></details>
-        <details><summary>Is my data private?</summary><div class="ans"><p>Your birth data and your answers are used to write your profile and nothing else. You can export everything held about you, and you can delete it. Both are buttons in the portal, not an email you have to send.</p></div></details>
+        <details><summary>Is my data private?</summary><div class="ans"><p>Your birth data and business answers are used to generate and operate your profile, and the app stores them so you can return to your portal. You can export or delete your profile data using buttons inside the portal. Tracking choices for this public sales page are separate and optional.</p></div></details>
         <details><summary>Do I need to believe in any of this?</summary><div class="ans"><p>No. The document never asks you to. It describes how you operate and hands you instructions you can test inside seven days, and every instruction comes with what to watch, so you can find out whether it was right rather than deciding whether to trust it.</p></div></details>
       </div>
     </div>
@@ -1256,7 +1307,7 @@ footer p:last-child{margin:0}
       <h2 class="rv">Every other one stops at what you are</h2>
       <p class="h2sub rv" data-d="1">It gave you a type, a number, a letter. It held your attention for a day. Then Monday came and nothing about how you run the business changed, because nobody told you what to do with it.</p>
       <p class="rv" data-d="1">That is the whole difference here. The Operator Profile spends its first half on recognition: the contradiction you are running, how a decision actually arrives for you, the pace you can hold, how you are built to sell, what money and pressure do to your judgement, and where you have become the bottleneck. Then it turns and spends the second half on what to do about it, inside the business you described, starting this week.</p>
-      <p class="rv" data-d="1">Enter your birth date, exact birth time, and place. Answer the six questions about the business. Then read the first section and hold it against a real Thursday in your actual week. If it is not true of you, stop there. If it is, the rest of the blueprint was written for that person &mdash; and the thirty days after it exist to get the thing into the week rather than into your notes.</p>
+      <p class="rv" data-d="1">Enter your birth date, birth time if you know it, and place. Answer the six questions about the business. Then read the first section and hold it against a real Thursday in your actual week. If it is not true of you, stop there. If it is, the rest of the Operator Profile was written for that person &mdash; and the thirty days after it exist to get the thing into the week rather than into your notes.</p>
       <div class="buy rv" data-d="2">
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Operator Profile
@@ -1280,11 +1331,21 @@ footer p:last-child{margin:0}
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <p>The Operator Profile &middot; $29, one time &middot; Abundanc3 Alch3my</p>
+<div class="wrap legal">
+    <p>The Operator Profile &middot; $29, one time &middot; Brandon Huston</p>
     <p>It reads how you are wired to operate. It is not financial, legal, or medical advice, and it does not predict outcomes.</p>
     <p><button class="tracking-choices" id="tracking-choices" type="button" hidden>Tracking choices</button></p>
+  </div>
+
+<footer class="site-footer">
+  <div class="col">
+    <a class="brand" href="/" aria-label="Brandon Huston home"><span class="wordmark">Brandon Huston</span></a>
+    <p class="tagline">Finding the gap between who you are and how you operate — then closing it.</p>
+  </div>
+  <div class="links">
+    <a href="/operator-profile/">The Operator Profile</a>
+    <a href="/contact/">Book a fit call</a>
+    <span class="copy">© 2026 Brandon Huston</span>
   </div>
 </footer>
 
@@ -1346,6 +1407,7 @@ footer p:last-child{margin:0}
   });
 })();
 </script>
+<script src="/assets/js/site.js" defer></script>
 <script id="aa-meta-tracking" src="/operator-profile/tracking.js"
         data-meta-pixel-id="1031125446413191" defer></script>
 </body>
