@@ -197,11 +197,18 @@ a:hover{color:#FFFFFF}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* ---------- Hero video panel ---------- */
-.hero-video{position:relative;width:min(100% - 2 * var(--pad-x),1300px);margin:clamp(1.5rem,3vw,2.5rem) auto 0;aspect-ratio:16/9;max-height:62vh;border-radius:var(--radius);overflow:hidden;border:2px solid var(--ink);box-shadow:0 -24px 60px rgba(0,0,0,.75),inset 0 1px 0 rgba(215,226,234,.28);background:#0C0C0C;cursor:pointer}
+/* Frame stays exactly 16/9 at every viewport: the height allowance caps the WIDTH
+   (--hero-video-h * 16/9) instead of clamping height against a fixed width. A
+   max-height clamp made the box wider than the 1920x1080 source, and object-fit:cover
+   then ate ~30% of the frame top and bottom — Brandon's head and feet. Don't
+   reintroduce max-height here; raise --hero-video-h instead. */
+.hero-video{--hero-video-h:78vh;position:relative;width:min(100% - 2 * var(--pad-x),1300px,calc(var(--hero-video-h) * 16 / 9));margin:clamp(1.5rem,3vw,2.5rem) auto 0;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:2px solid var(--ink);box-shadow:0 -24px 60px rgba(0,0,0,.75),inset 0 1px 0 rgba(215,226,234,.28);background:#0C0C0C;cursor:pointer}
 .hero-video video,.hero-video img{width:100%;height:100%;object-fit:cover;display:block}
 .hero-video .replay{position:absolute;right:clamp(.75rem,1.5vw,1.25rem);bottom:clamp(.75rem,1.5vw,1.25rem);opacity:0;transition:opacity .3s ease;pointer-events:none}
 .hero-video.is-ended .replay{opacity:1;pointer-events:auto}
-@media (max-width:640px){.hero-video{aspect-ratio:4/5;max-height:70vh}}
+/* Phones keep the deliberate 4/5 portrait framing (he is centred, so the side crop
+   never touches him). Same trick as above: the 70vh allowance caps width, not height. */
+@media (max-width:640px){.hero-video{aspect-ratio:4/5;width:min(100% - 2 * var(--pad-x),calc(70vh * 4 / 5))}}
 
 /* ---------- Work cards (tall, flip to case study) ---------- */
 .work-list{max-width:1300px;margin:0 auto;display:flex;flex-direction:column}
