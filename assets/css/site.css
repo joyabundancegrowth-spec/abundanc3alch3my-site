@@ -221,6 +221,20 @@ a:hover{color:#FFFFFF}
 .face-back{transform:rotateY(180deg)}
 .work-card.is-flipped .flip-inner{transform:rotateY(180deg)}
 .work-card:hover .face{border-color:#FFFFFF}
+/* Hover nudge: the card rocks on its vertical axis - one edge ducks back into the
+   screen, the other comes forward - so it reads as a 3D object you can turn over.
+   Plays once per hover-in (re-entering replays it). The perspective comes from
+   .work-card; amplitude is deliberately small so it nudges rather than spins. */
+@media (hover:hover) and (pointer:fine){
+  .work-card:not(.is-flipped):hover .flip-inner{animation:card-nudge 1.15s var(--ease)}
+}
+@keyframes card-nudge{
+  0%{transform:rotateY(0deg)}
+  22%{transform:rotateY(-7deg)}
+  50%{transform:rotateY(5deg)}
+  76%{transform:rotateY(-2.5deg)}
+  100%{transform:rotateY(0deg)}
+}
 .face-front .card-media{aspect-ratio:3/2;flex:none}
 .no-js .face{position:static}.no-js .face-back{display:none}
 @media (max-width:640px){.face-front .card-media{aspect-ratio:4/5}}
@@ -236,7 +250,7 @@ a:hover{color:#FFFFFF}
 .tile-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:clamp(.6rem,1.2vw,1rem)}
 .tile-list .tile{font-family:var(--kanit);font-weight:500;text-transform:uppercase;letter-spacing:.04em;line-height:1.2;font-size:clamp(.9rem,1.2vw,1.05rem);color:var(--ink);padding:clamp(.9rem,1.5vw,1.25rem)}
 button.btn{appearance:none;background:transparent}
-@media (prefers-reduced-motion:reduce){.flip-inner{transition:height .5s ease}}
+@media (prefers-reduced-motion:reduce){.flip-inner{transition:height .5s ease}.work-card:not(.is-flipped):hover .flip-inner{animation:none}}
 
 /* ---------- Interior pages ---------- */
 .phase-head{display:flex;align-items:center;gap:clamp(1rem,3vw,2.5rem)}

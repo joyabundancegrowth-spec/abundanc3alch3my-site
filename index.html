@@ -116,67 +116,166 @@
   </div>
 </section>
 
-<!-- ============ THE WORK (dark sheet, deal-out card stack) ============ -->
+<!-- ============ THE WORK (dark sheet, tall flip cards) ============ -->
 <section class="section sheet sheet--dark" id="work" style="padding-bottom:clamp(6rem,10vw,10rem);">
   <h2 class="display center steel" data-fade style="margin-bottom:clamp(1rem,2vw,1.5rem);">The work</h2>
-  <p class="affordance" data-fade data-delay="1" style="margin-bottom:clamp(3rem,6vw,6rem);">Scroll or tap a card</p>
+  <p class="affordance" data-fade data-delay="1" style="margin-bottom:clamp(3rem,6vw,6rem);">Tap a card to turn it over</p>
 
-  <div class="stack" data-stack data-count="3">
-    <div class="stack-shell">
-      <div class="stack-frame">
-        <div class="stack-wrap">
-          <article class="stack-card">
-              <div class="card-head">
-                <div class="card-id">
-                  <span class="numeral">01</span>
-                  <div class="meta">
-                    <span class="eyebrow">Client</span>
-                    <h3 class="h-sub">Holy Wow Cacao</h3>
-                  </div>
-                </div>
-                <a class="btn btn-pill" href="/proof/">See the case study</a>
+  <div class="work-list">
+
+    <article class="work-card" data-flip data-fade>
+      <div class="flip-inner">
+        <div class="face face-front">
+          <div class="card-head">
+            <div class="card-id">
+              <span class="numeral">01</span>
+              <div class="meta">
+                <span class="eyebrow">Client</span>
+                <h3 class="h-sub">Holy Wow Cacao</h3>
               </div>
-              <div class="card-media">
-                <img src="/assets/img/work/holy-wow-cacao-1440.webp" srcset="/assets/img/work/holy-wow-cacao-960.webp 960w, /assets/img/work/holy-wow-cacao-1440.webp 1440w" sizes="(max-width: 1300px) 100vw, 1300px" width="1440" height="960" alt="Holy Wow Cacao homepage" loading="lazy" decoding="async">
-              </div>
-          </article>
+            </div>
+            <button class="btn btn-pill" type="button" data-flip-btn aria-expanded="false">See the case study</button>
+          </div>
+          <div class="card-media">
+            <img src="/assets/img/work/holy-wow-cacao-1440.webp" srcset="/assets/img/work/holy-wow-cacao-960.webp 960w, /assets/img/work/holy-wow-cacao-1440.webp 1440w" sizes="(max-width: 1300px) 100vw, 1300px" width="1440" height="960" alt="Holy Wow Cacao homepage" loading="lazy" decoding="async">
+          </div>
         </div>
-        <div class="stack-wrap">
-          <article class="stack-card">
-              <div class="card-head">
-                <div class="card-id">
-                  <span class="numeral">02</span>
-                  <div class="meta">
-                    <span class="eyebrow">Client</span>
-                    <h3 class="h-sub">Lindsay James Love</h3>
-                  </div>
-                </div>
-                <a class="btn btn-pill" href="/work/lindsay-james-love/">See the build</a>
+        <div class="face face-back">
+          <div class="card-head">
+            <div class="card-id">
+              <span class="numeral">01</span>
+              <div class="meta">
+                <span class="eyebrow">Proof · 67-day engagement</span>
+                <h3 class="h-sub">Holy Wow Cacao</h3>
               </div>
-              <div class="card-media">
-                <img src="/assets/img/work/lindsay-james-love-1440.webp" srcset="/assets/img/work/lindsay-james-love-960.webp 960w, /assets/img/work/lindsay-james-love-1440.webp 1440w" sizes="(max-width: 1300px) 100vw, 1300px" width="1440" height="960" alt="Lindsay James Love homepage" loading="lazy" decoding="async">
-              </div>
-          </article>
-        </div>
-        <div class="stack-wrap">
-          <article class="stack-card">
-              <div class="card-head">
-                <div class="card-id">
-                  <span class="numeral">03</span>
-                  <div class="meta">
-                    <span class="eyebrow">Own product</span>
-                    <h3 class="h-sub">Gnothia.com</h3>
-                  </div>
-                </div>
-                <a class="btn btn-pill" href="/work/gnothia/">See what it is</a>
-              </div>
-              <div class="card-media">
-                <img src="/assets/img/work/gnothia-1440.webp" srcset="/assets/img/work/gnothia-960.webp 960w, /assets/img/work/gnothia-1440.webp 1440w" sizes="(max-width: 1300px) 100vw, 1300px" width="1440" height="960" alt="Gnothia.com homepage" loading="lazy" decoding="async">
-              </div>
-          </article>
+            </div>
+            <button class="btn btn-pill" type="button" data-flip-btn aria-expanded="true">Turn it back</button>
+          </div>
+          <div class="back-body">
+            <h4 class="h-section">There wasn’t one neat problem. There were several.</h4>
+            <p class="eyebrow">What I found when I got in</p>
+            <div class="stat-grid">
+              <div class="stat"><span class="fig">54%</span><p class="lbl">of visitors left the site without ever seeing a product page</p></div>
+              <div class="stat"><span class="fig">$0</span><p class="lbl">recovered by the abandoned-cart flow — it had sent six emails in twelve months</p></div>
+              <div class="stat"><span class="fig">7 clicks</span><p class="lbl">from organic search in three months</p></div>
+              <div class="stat"><span class="fig">11.2%</span><p class="lbl">email conversion at a $176 average order value — already their best channel, with almost none of the infrastructure that should have existed around it</p></div>
+            </div>
+            <p class="eyebrow">Over the 67-day engagement</p>
+            <div class="stat-grid">
+              <div class="stat"><span class="fig">−39%</span><p class="lbl">Cost per new customer</p></div>
+              <div class="stat"><span class="fig">+12%</span><p class="lbl">New customers</p></div>
+              <div class="stat"><span class="fig">+83%</span><p class="lbl">Organic search traffic</p></div>
+              <div class="stat"><span class="fig">+38%</span><p class="lbl">Organic revenue</p></div>
+              <div class="stat"><span class="fig">+14%</span><p class="lbl">Total traffic, in a season it would normally fall</p></div>
+              <div class="stat"><span class="fig">2.25×</span><p class="lbl">Ad-reporting error found and fixed</p></div>
+            </div>
+            <div class="prose">
+              <p>The work touched SEO, email automation, product pages, conversion paths, subscription, brand implementation, and the way the business was reading its own advertising data.</p>
+              <p class="aside">I’m not telling you these numbers because I think your business will have the same problems or produce the same results. This is one client’s outcome over one 67-day window; substantiation on file.</p>
+            </div>
+            <div class="btn-row"><a class="btn btn-pill" href="/proof/">Read the full case study</a></div>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
+
+    <article class="work-card" data-flip data-fade>
+      <div class="flip-inner">
+        <div class="face face-front">
+          <div class="card-head">
+            <div class="card-id">
+              <span class="numeral">02</span>
+              <div class="meta">
+                <span class="eyebrow">Client</span>
+                <h3 class="h-sub">Lindsay James Love</h3>
+              </div>
+            </div>
+            <button class="btn btn-pill" type="button" data-flip-btn aria-expanded="false">See the build</button>
+          </div>
+          <div class="card-media">
+            <img src="/assets/img/work/lindsay-james-love-1440.webp" srcset="/assets/img/work/lindsay-james-love-960.webp 960w, /assets/img/work/lindsay-james-love-1440.webp 1440w" sizes="(max-width: 1300px) 100vw, 1300px" width="1440" height="960" alt="Lindsay James Love homepage" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="face face-back">
+          <div class="card-head">
+            <div class="card-id">
+              <span class="numeral">02</span>
+              <div class="meta">
+                <span class="eyebrow">Full infrastructure build</span>
+                <h3 class="h-sub">Lindsay James Love</h3>
+              </div>
+            </div>
+            <button class="btn btn-pill" type="button" data-flip-btn aria-expanded="true">Turn it back</button>
+          </div>
+          <div class="back-body">
+            <h4 class="h-section">A whole business, built from the ground up.</h4>
+            <div class="prose">
+              <p>Lindsay is a ceremonialist, a death doula, and a mentor to couples and women. This was a full infrastructure build, not a fix to one part of it: the website, the brand system, the product pages, the Klaviyo email flows, the course architecture, and the content pipeline that feeds all of it.</p>
+              <p>Then a product on top of that: a personal reading, sold under her own brand at reading.lindsayjames.love, running on Gnothia.</p>
+            </div>
+            <p class="eyebrow">What got built</p>
+            <div class="tile-list">
+              <div class="tile">The website</div>
+              <div class="tile">The brand system</div>
+              <div class="tile">Product pages</div>
+              <div class="tile">Klaviyo email flows</div>
+              <div class="tile">Course architecture</div>
+              <div class="tile">Content pipeline</div>
+              <div class="tile">A white-labeled reading product</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="work-card" data-flip data-fade>
+      <div class="flip-inner">
+        <div class="face face-front">
+          <div class="card-head">
+            <div class="card-id">
+              <span class="numeral">03</span>
+              <div class="meta">
+                <span class="eyebrow">Own product</span>
+                <h3 class="h-sub">Gnothia.com</h3>
+              </div>
+            </div>
+            <button class="btn btn-pill" type="button" data-flip-btn aria-expanded="false">See what it is</button>
+          </div>
+          <div class="card-media">
+            <img src="/assets/img/work/gnothia-1440.webp" srcset="/assets/img/work/gnothia-960.webp 960w, /assets/img/work/gnothia-1440.webp 1440w" sizes="(max-width: 1300px) 100vw, 1300px" width="1440" height="960" alt="Gnothia.com homepage" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="face face-back">
+          <div class="card-head">
+            <div class="card-id">
+              <span class="numeral">03</span>
+              <div class="meta">
+                <span class="eyebrow">Own product · live</span>
+                <h3 class="h-sub">Gnothia.com</h3>
+              </div>
+            </div>
+            <button class="btn btn-pill" type="button" data-flip-btn aria-expanded="true">Turn it back</button>
+          </div>
+          <div class="back-body">
+            <h4 class="h-section">A reading engine I built and run.</h4>
+            <div class="prose">
+              <p>Give it a name, a birth date, and a birthplace, and Gnothia writes a long, personal reading. Four independent systems, each read on its own, and the reading built only where they agree. Plain language throughout. A mirror, not a horoscope.</p>
+              <p>It runs under its own brand at gnothia.com and white-labels under other brands with no new engine work. Lindsay James was the first.</p>
+            </div>
+            <p class="eyebrow">What got built</p>
+            <div class="tile-list">
+              <div class="tile">The reading engine</div>
+              <div class="tile">The site</div>
+              <div class="tile">Checkout</div>
+              <div class="tile">Email delivery</div>
+              <div class="tile">The white-label layer</div>
+            </div>
+            <div class="btn-row"><a class="btn btn-pill" href="https://gnothia.com" target="_blank" rel="noopener">Get your free reading</a></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
   </div>
 </section>
 
