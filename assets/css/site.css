@@ -404,6 +404,7 @@ button.btn{appearance:none;background:transparent}
 .investment-band{max-width:1120px;margin:0 auto;padding:clamp(2rem,4vw,3.5rem);border:2px solid var(--ink);border-radius:var(--radius);background-image:var(--sheen);box-shadow:0 24px 70px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.22);display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(2rem,6vw,6rem);align-items:center}
 .investment-price{font-family:var(--kanit);font-weight:900;letter-spacing:-.04em;font-size:clamp(3rem,7vw,6rem);line-height:.9;color:var(--ink)}
 .investment-price small{display:block;margin-top:.8rem;font-size:.16em;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.detail-note{font-size:.88em;color:var(--ink-muted)}
 .fit-grid{max-width:1120px;margin:clamp(2rem,4vw,3.5rem) auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.25rem,2.5vw,2rem)}
 .fit-panel{padding:clamp(1.5rem,3vw,2.5rem);border:1px solid var(--card-edge);border-radius:var(--radius-sm);background:var(--ground-lift)}
 .fit-panel h3{margin:0 0 1.25rem;font-family:var(--kanit);font-weight:500;text-transform:uppercase;font-size:clamp(1.2rem,2vw,1.65rem)}
