@@ -51,8 +51,30 @@
           }, delay);
         };
         if (document.readyState === 'complete') start(); else window.addEventListener('load', start);
-        video.addEventListener('ended', function () { hv.classList.add('is-ended'); });
-        video.addEventListener('play', function () { hv.classList.remove('is-ended'); });
+        var syncEndFrame = function () {
+          var remaining = video.duration - video.currentTime;
+          hv.classList.toggle('is-ending', isFinite(remaining) && remaining <= 0.25);
+        };
+        var endFrameRaf = 0;
+        var watchEndFrame = function () {
+          syncEndFrame();
+          if (!video.paused && !video.ended && !hv.classList.contains('is-ending')) {
+            endFrameRaf = window.requestAnimationFrame(watchEndFrame);
+          }
+        };
+        video.addEventListener('timeupdate', syncEndFrame);
+        video.addEventListener('seeking', syncEndFrame);
+        video.addEventListener('ended', function () {
+          window.cancelAnimationFrame(endFrameRaf);
+          hv.classList.add('is-ending');
+          hv.classList.add('is-ended');
+        });
+        video.addEventListener('play', function () {
+          window.cancelAnimationFrame(endFrameRaf);
+          hv.classList.remove('is-ending');
+          hv.classList.remove('is-ended');
+          endFrameRaf = window.requestAnimationFrame(watchEndFrame);
+        });
         hv.addEventListener('click', function () {
           video.currentTime = 0;
           var pr = video.play();
@@ -131,6 +153,19 @@
     charEl.appendChild(frag);
   }
 
+  /* ---------- About: restrained depth through the Lake Atitlán panorama ---------- */
+  var atitlanImage = document.querySelector('[data-atitlan-image]');
+
+  function updateAtitlan() {
+    if (!atitlanImage || reduced) return;
+    var scene = atitlanImage.closest('.atitlan-story');
+    var r = scene.getBoundingClientRect();
+    var travel = window.innerHeight + r.height;
+    var p = travel > 0 ? (window.innerHeight - r.top) / travel : 0.5;
+    p = p < 0 ? 0 : p > 1 ? 1 : p;
+    atitlanImage.style.setProperty('--atitlan-shift', ((p - 0.5) * 28).toFixed(2) + 'px');
+  }
+
   /* ---------- Card stack ---------- */
   var stack = document.querySelector('[data-stack]');
   var wraps = stack ? Array.prototype.slice.call(stack.querySelectorAll('.stack-wrap')) : [];
@@ -151,6 +186,8 @@
 
   function update() {
     var vh = window.innerHeight;
+
+    updateAtitlan();
 
     if (chars.length && charEl) {
       var r = charEl.getBoundingClientRect();
@@ -259,7 +296,7 @@
     ticking = true;
     requestAnimationFrame(function () { ticking = false; update(); });
   };
-  if (chars.length || stackActive) {
+  if (chars.length || stackActive || atitlanImage) {
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     window.addEventListener('load', update);

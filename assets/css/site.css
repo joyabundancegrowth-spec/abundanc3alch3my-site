@@ -202,7 +202,9 @@ a:hover{color:#FFFFFF}
    reintroduce max-height here; raise --hero-video-h instead. */
 .hero-video{--hero-video-h:78vh;position:relative;width:min(100% - 2 * var(--pad-x),1300px,calc(var(--hero-video-h) * 16 / 9));margin:clamp(1.5rem,3vw,2.5rem) auto 0;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:2px solid var(--ink);box-shadow:0 -24px 60px rgba(0,0,0,.75),inset 0 1px 0 rgba(215,226,234,.28);background:#0C0C0C;cursor:pointer}
 .hero-video video,.hero-video img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-video .replay{position:absolute;right:clamp(.75rem,1.5vw,1.25rem);bottom:clamp(.75rem,1.5vw,1.25rem);opacity:0;transition:opacity .3s ease;pointer-events:none}
+.hero-video .hero-end-frame{position:absolute;z-index:1;inset:0;opacity:0;pointer-events:none;transition:opacity .12s ease}
+.hero-video.is-ending .hero-end-frame,.hero-video.is-ended .hero-end-frame{opacity:1}
+.hero-video .replay{position:absolute;z-index:2;right:clamp(.75rem,1.5vw,1.25rem);bottom:clamp(.75rem,1.5vw,1.25rem);opacity:0;transition:opacity .3s ease;pointer-events:none}
 .hero-video.is-ended .replay{opacity:1;pointer-events:auto}
 /* Phones keep the deliberate 4/5 portrait framing (he is centred, so the side crop
    never touches him). Same trick as above: the 70vh allowance caps width, not height. */
@@ -250,6 +252,7 @@ a:hover{color:#FFFFFF}
 .offer-card .card-media{aspect-ratio:3/2;border-radius:calc(var(--radius-sm) * .72);flex:none}
 .offer-card .card-media img{object-position:center}
 .offer-card .offer-photo-brandon img{object-position:center 38%}
+.offer-card .offer-photo-clarity img{object-position:center 24%}
 .offer-tease{margin:clamp(1.2rem,2vw,1.65rem) .25rem .15rem;font-family:var(--newsreader);font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.55;color:var(--ink);text-wrap:pretty}
 .offer-card:hover .face{border-color:#FFFFFF}
 .offer-back{justify-content:flex-start}
@@ -375,6 +378,7 @@ button.btn{appearance:none;background:transparent}
 .detail-hero-media{position:relative;overflow:hidden;min-height:clamp(430px,48vw,640px);border:2px solid var(--ink);border-radius:var(--radius);box-shadow:0 24px 70px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.28);background:var(--ground-lift)}
 .detail-hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .detail-hero-media--brandon img{object-position:center 38%}
+.detail-hero-media--about img{object-position:center 42%}
 .detail-stamp{position:absolute;z-index:1;left:clamp(1rem,2vw,1.5rem);right:clamp(1rem,2vw,1.5rem);bottom:clamp(1rem,2vw,1.5rem);padding:.85rem 1rem;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(12,12,12,.78);backdrop-filter:blur(8px);font-family:var(--kanit);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:clamp(.7rem,.9vw,.82rem);text-align:center;color:#FFFFFF}
 .detail-split{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(3rem,8vw,8rem);align-items:start}
 .detail-heading{display:flex;flex-direction:column;gap:1.15rem}
@@ -414,6 +418,17 @@ button.btn{appearance:none;background:transparent}
 .sheet--dark .story-beat{border-color:var(--dark-rule)}
 .sheet--dark .story-beat .fig,.sheet--dark .story-beat h3,.sheet--dark .story-beat p{color:var(--ink)}
 
+/* About: the real Lake Atitlán moment expands into a full environmental chapter. */
+.atitlan-story{isolation:isolate;display:flex;align-items:center;min-height:clamp(680px,68vw,880px);overflow:hidden;background:var(--ground);color:#FFFFFF;box-shadow:0 -24px 60px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.16)}
+.atitlan-story-media{position:absolute;z-index:-2;inset:0;overflow:hidden;background:#6D9CC6}
+.atitlan-story-media img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 48%;transform:translate3d(0,var(--atitlan-shift,0),0) scale(1.075);will-change:transform}
+.atitlan-story::before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(12,12,12,.04) 0%,rgba(12,12,12,.12) 34%,rgba(12,12,12,.58) 61%,rgba(12,12,12,.9) 100%),linear-gradient(180deg,rgba(12,12,12,.35) 0%,transparent 14%,transparent 76%,rgba(12,12,12,.78) 100%)}
+.atitlan-story-layout{width:min(100% - 2 * var(--pad-x),1120px);margin:auto;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:center}
+.atitlan-story-copy{position:relative;grid-column:8/-1;padding:clamp(1.25rem,3vw,2.5rem) 0 clamp(1.25rem,3vw,2.5rem) clamp(1.5rem,3vw,2.75rem);border-left:1px solid rgba(255,255,255,.48)}
+.atitlan-story-copy::before{content:"";position:absolute;z-index:-1;inset:-4rem -5rem;background:radial-gradient(ellipse at center,rgba(12,12,12,.62) 0%,rgba(12,12,12,.3) 48%,transparent 74%);filter:blur(12px);pointer-events:none}
+.atitlan-story-copy .title{color:#FFFFFF;text-shadow:0 2px 22px rgba(0,0,0,.5)}
+.atitlan-story-copy .detail-prose{margin-top:clamp(1.5rem,2.5vw,2.25rem);color:rgba(255,255,255,.94);text-shadow:0 1px 16px rgba(0,0,0,.58)}
+
 /* Original testimonial screenshots on the backs of the work cards. */
 .proof-foot{display:grid;grid-template-columns:minmax(0,.9fr) minmax(280px,1.1fr);gap:clamp(1.5rem,4vw,4rem);align-items:end;margin-top:auto}
 .proof-foot-copy{display:flex;flex-direction:column;gap:clamp(1.25rem,2vw,1.75rem)}
@@ -433,6 +448,13 @@ button.btn{appearance:none;background:transparent}
   .story-list{grid-template-columns:1fr}
   .proof-foot{grid-template-columns:1fr}
   .testimonial-shot--wide{margin-left:0}
+  .atitlan-story{display:block;min-height:0;padding-top:0;background:var(--ground)}
+  .atitlan-story-media{position:relative;inset:auto;width:calc(100% + 2 * var(--pad-x));height:auto;aspect-ratio:5/4;margin:0 calc(var(--pad-x) * -1);-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 70%,transparent 100%)}
+  .atitlan-story-media img{object-position:24% center;transform:translate3d(0,var(--atitlan-shift,0),0) scale(1.08)}
+  .atitlan-story::before{background:linear-gradient(180deg,transparent 0%,transparent 34%,rgba(12,12,12,.35) 49%,var(--ground) 63%)}
+  .atitlan-story-layout{display:block;width:100%;margin-top:clamp(-5rem,-10vw,-3rem)}
+  .atitlan-story-copy{max-width:42rem;padding:clamp(1.25rem,4vw,2rem) 0 0 clamp(1.25rem,4vw,2rem)}
+  .atitlan-story-copy::before{inset:-3rem -2rem;background:radial-gradient(ellipse at center,rgba(12,12,12,.78) 0%,rgba(12,12,12,.4) 55%,transparent 78%)}
 }
 @media (max-width:640px){
   .mentorship-hero-meta{flex-wrap:wrap}
@@ -442,4 +464,4 @@ button.btn{appearance:none;background:transparent}
   .sequence-row p{grid-column:2}
   .fit-grid{grid-template-columns:1fr}
 }
-@media (prefers-reduced-motion:reduce){.stack .stack-card{min-height:clamp(280px,40vh,420px)}}
+@media (prefers-reduced-motion:reduce){.stack .stack-card{min-height:clamp(280px,40vh,420px)}.atitlan-story-media img{transform:scale(1.04)}}
