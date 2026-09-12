@@ -33,7 +33,7 @@
   var hv = document.querySelector('[data-hero-video]');
   if (hv) {
     var video = hv.querySelector('video');
-    var delay = parseInt(hv.getAttribute('data-delay') || '1500', 10);
+    var delay = parseInt(hv.getAttribute('data-video-delay') || '1500', 10);
     if (video) {
       video.muted = true;
       if (reduced) {
