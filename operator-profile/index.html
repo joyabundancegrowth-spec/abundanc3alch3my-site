@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Founder Advantage Blueprint — your soul-aligned business guide — Brandon Huston</title>
-<meta name="description" content="A personal, interactive business guide built from Western astrology, Vedic astrology, Human Design, the I Ching, and six questions about your company. Use it to build toward your $10,000-a-month goal in a way that fits how you work. $29 one time.">
+<meta name="description" content="A personal, interactive business guide built from Western astrology, Vedic astrology, Human Design, the I Ching, and six questions about your company. Use it to build toward your $10,000-a-month goal in a way that fits how you work. $29.">
 <meta property="og:title" content="The Founder Advantage Blueprint — Brandon Huston">
-<meta property="og:description" content="Build toward $10,000 a month with a business that fits how you make decisions, work, sell, delegate, and handle pressure. $29 one time.">
+<meta property="og:description" content="Build toward $10,000 a month with a business that fits how you make decisions, work, sell, delegate, and handle pressure. $29.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/operator-profile/img/collision.webp">
 <meta name="theme-color" content="#0C0C0C">
@@ -21,9 +21,6 @@
 <link rel="preload" href="/assets/fonts/newsreader-normal-300-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-<link rel="preload" as="image" href="img/hero-desk.webp"
-      imagesrcset="img/hero-desk-sm.webp 700w, img/hero-desk.webp 1100w"
-      imagesizes="(max-width:900px) 92vw, 34vw">
 <style>
 /* ── TOKENS ─────────────────────────────────────────────────────────────────
    Palette and type are BRAND.md's, not this page's invention. Pine is the
@@ -108,9 +105,6 @@ hr.rule{height:1px;background:var(--line);border:0;margin:0}
 .btn-primary:hover{color:#FFFFFF;transform:translateY(-2px)}
 .btn-primary:focus-visible{outline:2px solid #FFFFFF;outline-offset:3px}
 .btn-primary:active{transform:translateY(0) scale(.985)}
-.btn-ghost{background:transparent;color:var(--bone);border-color:rgba(215,226,234,.55)}
-.btn-ghost:hover{border-color:#D7E2EA;background:rgba(215,226,234,.08);color:var(--bone);transform:translateY(-2px)}
-.btn-ghost:active{transform:translateY(0) scale(.985)}
 .buy{display:flex;flex-wrap:wrap;align-items:center;gap:15px 22px;margin-top:38px}
 .buy .small{margin:0;max-width:30ch}
 
@@ -128,28 +122,21 @@ hr.rule{height:1px;background:var(--line);border:0;margin:0}
   .btn,.pract,.qcard,.anat-row{transition:none !important}
 }
 
-/* ── HERO — asymmetric split ─────────────────────────────────────────────── */
+/* ── HERO ────────────────────────────────────────────────────────────────── */
 #hero{padding:clamp(46px,6vw,84px) 0 clamp(58px,6vw,88px);overflow:hidden}
 #hero::before{content:"";position:absolute;left:-20%;top:-25%;width:75%;height:110%;
   pointer-events:none;background:radial-gradient(ellipse at 35% 42%,rgba(118,33,176,.22),transparent 62%)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.78fr);
-           gap:clamp(32px,4.4vw,60px);align-items:center;position:relative}
-.hero-price{display:inline-flex;align-items:baseline;gap:9px;margin-bottom:26px;
-  padding:8px 16px 8px 14px;border:1px solid var(--line-2);border-radius:99px;background:var(--ob-2)}
-.hero-price b{font-family:var(--kanit);font-size:19px;font-weight:900;color:#FFFFFF}
-.hero-price span{font-size:.8rem;color:var(--bone-3);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.hero-grid{position:relative;max-width:1040px}
 #hero p.lede{margin:26px 0 0}
-.hero-shot{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
-  box-shadow:0 44px 96px -52px rgba(0,0,0,.95),0 5px 24px -14px rgba(0,0,0,.75)}
-.hero-shot img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
-/* The lower third of this frame is handwriting. It belongs to the picture as
-   texture, not as something to read, so the scrim drops it into shadow. */
-.hero-shot::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(200deg,rgba(118,33,176,.14),transparent 38%,rgba(12,12,12,.62) 82%,rgba(12,12,12,.9) 100%)}
-@media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-shot{order:-1;max-width:520px;margin-inline:auto}
-  .hero-shot img{aspect-ratio:16/10}
+.hero-purchase{margin-top:38px}
+.purchase-price{font-family:var(--kanit);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1;color:#FFFFFF;margin-bottom:18px}
+.trust-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:28px;max-width:960px}
+.trust-item{min-height:106px;padding:17px 14px;border:1px solid var(--line-2);border-radius:14px;background:rgba(23,24,28,.72);display:flex;flex-direction:column;gap:12px}
+.trust-item i{font-size:1.5rem;color:#FFFFFF}
+.trust-item span{font-family:var(--kanit);font-size:.76rem;font-weight:500;line-height:1.35;letter-spacing:.08em;text-transform:uppercase;color:var(--bone)}
+@media(max-width:760px){
+  .trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trust-item:last-child{grid-column:1/-1}
 }
 
 /* ── FACT ROW — under the hero, never inside it ──────────────────────────── */
@@ -440,8 +427,6 @@ section.sheet{border-top:0}
 .paper .panel{background:rgba(12,12,12,.03);border-color:var(--paper-rule);border-left-color:var(--paper-ink)}
 .paper .panel .said{color:var(--paper-ink)}
 .paper .btn-primary{color:#FFFFFF}
-.paper .btn-ghost{color:var(--paper-ink);border-color:var(--paper-ink)}
-.paper .btn-ghost:hover{background:var(--paper-ink);color:#FFFFFF}
 .paper .buy .small{color:rgba(12,12,12,.7)}
 .paper hr.rule{background:var(--paper-rule)}
 .paper ::selection{background:var(--paper-ink);color:#FFFFFF}
@@ -493,23 +478,23 @@ section.sheet{border-top:0}
 <section id="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="hero-price rv"><b>$29</b><span>one time</span></div>
       <h1 class="rv" data-d="1">Build toward $10,000 a month with a business that fits how you actually work.</h1>
       <p class="lede rv" data-d="2">The Founder Advantage Blueprint is your personal, interactive guide to building a soul-aligned business: one shaped around how you make decisions, use your energy, sell, lead, and handle pressure. Western astrology, Vedic astrology, Human Design, the I Ching, and six questions about your company become a thirteen-section operating guide, six practices, and a 30-day path you can test in your actual week.</p>
-      <div class="buy rv" data-d="3">
+      <div class="hero-purchase rv" data-d="3">
+        <div class="purchase-price">$29</div>
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Founder Advantage Blueprint
         </a>
-        <a class="btn btn-ghost" href="#sample">Read a real passage first</a>
-        <p class="small">$29 one time. Answer six questions, watch your profile build on the page, and keep the portal.</p>
+        <div class="trust-grid" aria-label="Purchase assurances">
+          <div class="trust-item"><i class="ph ph-shield-check" aria-hidden="true"></i><span>Satisfaction guaranteed</span></div>
+          <div class="trust-item"><i class="ph ph-lightning" aria-hidden="true"></i><span>Instant delivery</span></div>
+          <div class="trust-item"><i class="ph ph-pen-nib" aria-hidden="true"></i><span>Written just for you</span></div>
+          <div class="trust-item"><i class="ph ph-fingerprint" aria-hidden="true"></i><span>No two are alike</span></div>
+          <div class="trust-item"><i class="ph ph-compass" aria-hidden="true"></i><span>Your clarity, delivered</span></div>
+        </div>
+        <p class="small" style="margin-top:18px">Answer six questions, watch your profile build on the page, and keep the portal.</p>
       </div>
       <p class="small rv" data-d="4" style="margin-top:16px;max-width:62ch">$10,000 a month is a goal, not a forecast. The Founder Advantage Blueprint cannot tell you what the market wants or guarantee revenue.</p>
-    </div>
-    <div class="hero-shot rv" data-d="2">
-      <img src="img/hero-desk.webp" srcset="img/hero-desk-sm.webp 700w, img/hero-desk.webp 1100w"
-           sizes="(max-width:900px) 92vw, 34vw"
-           alt="A founder's desk late at night: one bronze lamp, a page of handwritten notes, a closed laptop."
-           width="1100" height="1375" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -631,7 +616,7 @@ section.sheet{border-top:0}
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Founder Advantage Blueprint
         </a>
-        <p class="small">$29 one time.</p>
+        <p class="small">The full profile, portal, 30-day path, and first 100 questions are included.</p>
       </div>
     </div>
   </div>
@@ -706,7 +691,7 @@ section.sheet{border-top:0}
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Founder Advantage Blueprint
         </a>
-        <p class="small">$29, one time. Pay, answer the questions, and watch it build on the page.</p>
+        <p class="small">Pay, answer the questions, and watch it build on the page.</p>
       </div>
     </div>
   </div>
@@ -736,7 +721,7 @@ section.sheet{border-top:0}
       <div class="nrow rv"><span class="nn">12</span><div><h3>Six practices</h3></div><div><p>Decision Room, Bottleneck Lab, Weekly Operator Review, Delegation Lab, Build My Week and Advice Fit Lab. Each takes something live in the business and runs your own profile against it.</p><p class="res"><b>So that</b> the profile gets applied to a real decision, a real handoff and a real week &mdash; not read and admired.</p></div></div>
       <div class="nrow rv"><span class="nn">13</span><div><h3>The 30-day path</h3></div><div><p>Six phases from day 0 to day 30, each a short list of moves with a link straight to the thing that does it. Nothing is scored, nothing streaks, and it waits where you left it.</p><p class="res"><b>So that</b> you are never looking at thirteen sections wondering which one to start with.</p></div></div>
       <div class="nrow rv"><span class="nn">14</span><div><h3>The Operator Review at day 30</h3></div><div><p>The month read back to you in eight parts: what your profile predicted, what you said was true, what your experiments actually showed, and the place those three disagree.</p><p class="res"><b>So that</b> you find out what held and what did not, from your own evidence rather than ours.</p></div></div>
-      <div class="nrow rv"><span class="nn">15</span><div><h3>Ask your profile &mdash; 100 questions across 90 days</h3></div><div><p>A strategist that has read your document, answers in its operating terms, and already knows which page you are standing on. Included, not an upsell.</p><p class="res"><b>So that</b> you never have to re-explain your own context to get a straight answer.</p></div></div>
+      <div class="nrow rv"><span class="nn">15</span><div><h3>Ask your profile &mdash; 100 questions across 90 days</h3></div><div><p>A strategist that has read your document, answers in its operating terms, and already knows which page you are standing on. Included with your Blueprint.</p><p class="res"><b>So that</b> you never have to re-explain your own context to get a straight answer.</p></div></div>
     </div>
 
     <div class="narrow" style="margin-top:44px">
@@ -745,7 +730,7 @@ section.sheet{border-top:0}
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Founder Advantage Blueprint
         </a>
-        <p class="small">$29, one time. Nothing here is an add-on.</p>
+        <p class="small">The profile, portal, practices, path, review, and first 100 questions are included.</p>
       </div>
     </div>
   </div>
@@ -1093,7 +1078,7 @@ section.sheet{border-top:0}
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Founder Advantage Blueprint
         </a>
-        <p class="small">The path and the review are included. There is no upgrade tier.</p>
+        <p class="small">The path and the review open inside your portal.</p>
       </div>
     </div>
   </div>
@@ -1232,7 +1217,7 @@ section.sheet{border-top:0}
       <h2 class="rv">Nobody has reviewed this product yet</h2>
       <p class="rv" data-d="1" style="margin-top:18px">A page like this normally has a wall of screenshots by now. There is not one here because the Founder Advantage Blueprint in this form is new. When there are real reviews &mdash; with names, with permission, from people who ran the path and read their own review &mdash; they will go here, and not before.</p>
       <p class="rv" data-d="1">So the substitute is the product. The opening lines of a real generated profile are further up this page, copied out of the file exactly as produced. So is a complete operating instruction with all six of its fields, and a passage from a real Operator Review disagreeing with the profile that produced it. Those were all generated by the thing you would be buying.</p>
-      <p class="rv" data-d="1">The price is $29, once. The written profile, portal, six practices, 30-day path, day-30 review, and first 100 questions are included.</p>
+      <p class="rv" data-d="1">The price is $29. The written profile, portal, six practices, 30-day path, day-30 review, and first 100 questions are included.</p>
     </div>
   </div>
 </section>
@@ -1263,7 +1248,7 @@ section.sheet{border-top:0}
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Founder Advantage Blueprint
         </a>
-        <p class="small">$29 one time.</p>
+        <p class="small">Start with six questions about the business.</p>
       </div>
     </div>
   </div>
@@ -1279,8 +1264,8 @@ section.sheet{border-top:0}
         <details><summary>What if I don't know my birth time?</summary><div class="ans"><p>Then it will not guess one. A birth time changes the read substantially, so instead of inventing a plausible time, the system calculates your chart across the window you give it and keeps only what stays the same throughout. The time-sensitive parts are left out and said to be left out. A smaller true profile beats a complete invented one.</p></div></details>
         <details><summary>Do I have to answer the business questions?</summary><div class="ans"><p>No. The profile still generates. But the instructions get noticeably less specific, because there is nothing to aim them at, and the section that reflects your business back is simply omitted rather than filled in with a guess. Three minutes is a good trade.</p></div></details>
         <details><summary>How long is it?</summary><div class="ans"><p>Longer than you will finish in one sitting. The sample we generated runs to roughly fifteen printed pages, and that is the floor rather than the figure. It is built to be returned to on the week the section applies, not read once. Keep the link it gives you. That link is how you get back in.</p></div></details>
-        <details><summary>What does $29 include?</summary><div class="ans"><p>Your thirteen-section profile, five to seven operating instructions, six practices, 30-day path, day-30 Operator Review, the portal you keep, and 100 questions across your first 90 days. The profile purchase is one time. More questions after the included allowance are optional.</p></div></details>
-        <details><summary>Is this a subscription?</summary><div class="ans"><p>The profile is not. $29 buys the document and the portal once, and they do not expire. Asking the strategist is included for your first 90 days, up to 100 questions. If you want to keep asking after that, there is an optional $9 a month, or you can buy questions in a batch without any plan. Neither is required, and nothing you already paid for is taken away if you skip both.</p></div></details>
+        <details><summary>What does $29 include?</summary><div class="ans"><p>Your thirteen-section profile, five to seven operating instructions, six practices, 30-day path, day-30 Operator Review, the portal you keep, and 100 questions across your first 90 days. More questions after the included allowance are optional.</p></div></details>
+        <details><summary>Is this a subscription?</summary><div class="ans"><p>No. $29 buys the document and the portal, and they do not expire. Asking the strategist is included for your first 90 days, up to 100 questions. If you want to keep asking after that, there is an optional $9 a month, or you can buy questions in a batch without any plan. Neither is required, and nothing you already paid for is taken away if you skip both.</p></div></details>
         <details><summary>Can this help me build a $10,000-a-month business?</summary><div class="ans"><p>$10,000 a month can be the target you bring to the work. The Founder Advantage Blueprint cannot tell you whether the market wants your offer, whether your price is right, or whether the business will reach that number. It helps you test how you make decisions, sell, structure your week, delegate, and handle pressure while you build toward the target. The result still comes from your customers and your business numbers.</p></div></details>
         <details><summary>What is the 30-day path?</summary><div class="ans"><p>Six phases from day 0 to day 30 that turn the document into a sequence of single moves: read the contradiction and set your focus, then a week of observing before fixing, then one cleaner decision, then one real handoff, then a rebuilt week, then the review. Every move is a link to the page that does it. It is included, it opens when your profile does, and nothing is scored.</p></div></details>
         <details><summary>What if I fall behind the path?</summary><div class="ans"><p>Nothing happens. There is no streak, no percentage complete, and no page that tells you that you are behind. Come back after three quiet weeks and the path is exactly where you left it, with the next move still the next move.</p></div></details>
@@ -1312,7 +1297,7 @@ section.sheet{border-top:0}
         <a class="btn btn-primary" href="https://buy.stripe.com/dRm14n6Xa5yd64m47kcQU01">
           <i class="ph ph-arrow-right" aria-hidden="true"></i>Get the Founder Advantage Blueprint
         </a>
-        <p class="small">$29, once. The path, the review and the first 100 questions are included.</p>
+        <p class="small">$29. The path, the review and the first 100 questions are included.</p>
       </div>
     </div>
     <div class="rv" data-d="2">
@@ -1332,7 +1317,7 @@ section.sheet{border-top:0}
 </section>
 
 <div class="wrap legal">
-    <p>The Founder Advantage Blueprint &middot; $29, one time &middot; Brandon Huston</p>
+    <p>The Founder Advantage Blueprint &middot; $29 &middot; Brandon Huston</p>
     <p>It reads how you are wired to operate. It is not financial, legal, or medical advice, and it does not predict outcomes.</p>
     <p><button class="tracking-choices" id="tracking-choices" type="button" hidden>Tracking choices</button></p>
   </div>
