@@ -381,6 +381,7 @@ button.btn{appearance:none;background:transparent}
 .detail-hero-media--about img{object-position:center 42%}
 .detail-stamp{position:absolute;z-index:1;left:clamp(1rem,2vw,1.5rem);right:clamp(1rem,2vw,1.5rem);bottom:clamp(1rem,2vw,1.5rem);padding:.85rem 1rem;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(12,12,12,.78);backdrop-filter:blur(8px);font-family:var(--kanit);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:clamp(.7rem,.9vw,.82rem);text-align:center;color:#FFFFFF}
 .detail-split{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(3rem,8vw,8rem);align-items:start}
+#quick-wins .detail-split{row-gap:clamp(1.5rem,3vw,2.25rem)}
 .detail-heading{display:flex;flex-direction:column;gap:1.15rem}
 .detail-prose{max-width:46rem;font-family:var(--newsreader);font-size:clamp(1.05rem,1.35vw,1.2rem);line-height:1.72;text-wrap:pretty}
 .detail-prose p{margin:0}.detail-prose p+p{margin-top:1.15em}
