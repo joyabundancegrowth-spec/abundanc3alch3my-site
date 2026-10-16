@@ -240,6 +240,14 @@ a:hover{color:#FFFFFF}
 .section-heading .lead{text-align:center}
 .section-heading .affordance{margin-top:.5rem}
 .offer-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.25rem,2.5vw,2rem)}
+#quick-wins .offer-grid{margin-top:clamp(2rem,4vw,3.5rem)}
+#quick-wins .card-hit{position:absolute;inset:0;z-index:1}
+#quick-wins .offer-card .btn-pill,
+#quick-wins .offer-card .see-link,
+#quick-wins .offer-card .offer-action .btn{position:relative;z-index:2}
+#quick-wins .offer-card a.see-link,
+#quick-wins .offer-card a.see-link:hover{color:#FFFFFF;text-decoration:underline;text-underline-offset:.18em}
+#quick-wins .offer-card :focus-visible{outline-color:#FFFFFF}
 .offer-card{position:relative;perspective:2400px;min-width:0}
 .offer-card.is-flipped{z-index:10}
 .offer-card.is-flipped .flip-inner{transform:rotateY(180deg)}
