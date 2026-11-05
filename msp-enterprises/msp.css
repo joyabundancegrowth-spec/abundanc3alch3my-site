@@ -1,0 +1,136 @@
+/* MSP Enterprises page — ventures showcase. Builds on /assets/css/site.css tokens. */
+
+/* ---------- Hero ---------- */
+.msp-hero .detail-hero-layout{grid-template-columns:minmax(0,1fr) minmax(340px,.95fr)}
+.msp-sparkle-word{background-image:linear-gradient(100deg,#D7E2EA 0%,#FFFFFF 18%,#E05BD6 36%,#B600A8 50%,#7621B0 64%,#BE4C00 82%,#D7E2EA 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#E05BD6;animation:msp-shimmer 7s ease-in-out infinite alternate}
+@keyframes msp-shimmer{from{background-position:0% 50%}to{background-position:100% 50%}}
+.msp-hero .btn-row{margin-top:.5rem}
+.msp-hero .detail-title--story{font-size:clamp(2.4rem,4.1vw,4.1rem);overflow-wrap:break-word}
+
+.msp-collage{position:relative;aspect-ratio:1/1;max-width:600px;width:100%;justify-self:center;perspective:1600px}
+.msp-collage .frame{position:absolute;width:68%;border:2px solid var(--ink);border-radius:var(--radius-sm);overflow:hidden;background:var(--ground-lift);box-shadow:0 30px 70px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.25);transform:translate3d(var(--px,0),var(--py,0),0) rotate(var(--r,0deg));transition:transform .5s var(--ease)}
+.msp-collage .frame img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:top}
+.msp-collage .frame-1{--r:-7deg;top:4%;left:0;z-index:1;animation:msp-float 9s ease-in-out infinite}
+.msp-collage .frame-2{--r:5deg;top:30%;right:0;z-index:2;animation:msp-float 10s ease-in-out -3s infinite}
+.msp-collage .frame-3{--r:-2deg;bottom:2%;left:12%;z-index:3;animation:msp-float 11s ease-in-out -6s infinite}
+@keyframes msp-float{0%,100%{translate:0 0}50%{translate:0 -14px}}
+
+.browser-bar{display:flex;align-items:center;gap:.6rem;padding:.55rem .8rem;background:#1E2024;border-bottom:1px solid var(--card-edge);font-family:var(--kanit);font-size:.72rem;letter-spacing:.06em;color:var(--ink-muted);white-space:nowrap;overflow:hidden}
+.browser-bar i{flex:none;width:.55rem;height:.55rem;border-radius:50%;background:#3A3D44;box-shadow:.85rem 0 0 #3A3D44,1.7rem 0 0 #3A3D44;margin-right:1.7rem}
+.browser-bar span{overflow:hidden;text-overflow:ellipsis}
+
+/* Sparkles (it is Mr. Sparkle Pants, after all) */
+.sparkle{position:absolute;z-index:4;width:var(--s,22px);height:var(--s,22px);color:#FFFFFF;pointer-events:none;filter:drop-shadow(0 0 8px rgba(224,91,214,.85));animation:msp-twinkle 3.2s ease-in-out infinite;animation-delay:var(--d,0s)}
+.sparkle svg{width:100%;height:100%;display:block}
+@keyframes msp-twinkle{0%,100%{opacity:.15;transform:scale(.55) rotate(0deg)}45%{opacity:1;transform:scale(1) rotate(45deg)}}
+
+/* ---------- Marquee ---------- */
+.msp-marquee{position:relative;z-index:3;overflow:hidden;margin-top:calc(var(--radius) * -1);padding:clamp(1rem,2vw,1.4rem) 0 calc(clamp(1rem,2vw,1.4rem) + var(--radius) * .6);background-image:var(--cta-gradient);border-top-left-radius:var(--radius);border-top-right-radius:var(--radius);box-shadow:0 -18px 50px rgba(0,0,0,.5)}
+.msp-marquee-track{display:flex;width:max-content;animation:msp-marquee 38s linear infinite}
+.msp-marquee ul{display:flex;flex:none;margin:0;padding:0;list-style:none}
+.msp-marquee li{display:flex;align-items:center;gap:clamp(1.25rem,2.5vw,2.25rem);padding-right:clamp(1.25rem,2.5vw,2.25rem);font-family:var(--kanit);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(1.15rem,2.2vw,1.9rem);color:#FFFFFF;white-space:nowrap}
+.msp-marquee li::after{content:"\2726";font-size:.7em;opacity:.8}
+@keyframes msp-marquee{to{transform:translateX(-50%)}}
+.msp-marquee + .sheet{margin-top:calc(var(--radius) * -1)}
+
+/* ---------- Name story ---------- */
+.msp-badge{position:relative;display:grid;place-items:center;width:clamp(9rem,16vw,12rem);aspect-ratio:1;border-radius:50%;background-image:var(--cta-gradient);color:#FFFFFF;font-family:var(--kanit);font-weight:900;font-size:clamp(2.4rem,4.5vw,3.5rem);letter-spacing:-.03em;box-shadow:0 18px 40px rgba(118,33,176,.35),inset 4px 4px 14px rgba(255,255,255,.25)}
+.msp-badge .sparkle{--s:26px;top:-6%;right:2%}
+.msp-badge .sparkle + .sparkle{--s:16px;--d:1.4s;top:auto;right:auto;bottom:4%;left:0}
+
+/* ---------- Filter ---------- */
+.msp-ventures-head{display:flex;flex-direction:column;align-items:center;gap:clamp(1.25rem,2.5vw,2rem);text-align:center}
+.msp-filter{display:inline-flex;gap:.35rem;padding:.35rem;border:1px solid var(--card-edge);border-radius:999px;background:rgba(23,24,28,.85);backdrop-filter:blur(10px)}
+.msp-filter button{appearance:none;border:0;border-radius:999px;background:transparent;color:var(--ink);font-family:var(--kanit);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:clamp(.7rem,1vw,.85rem);padding:.7rem clamp(.9rem,1.8vw,1.5rem);cursor:pointer;transition:background .3s ease,color .3s ease,box-shadow .3s ease}
+.msp-filter button:hover{background:rgba(215,226,234,.08)}
+.msp-filter button[aria-pressed="true"]{color:#FFFFFF;background-image:var(--cta-gradient);box-shadow:0 4px 14px rgba(181,1,167,.35)}
+
+.msp-group{max-width:1240px;margin:clamp(2.5rem,5vw,4.5rem) auto 0}
+.msp-group[hidden]{display:none}
+.msp-group.is-entering .venture{animation:msp-pop .6s var(--ease) both}
+.msp-group.is-entering .venture:nth-child(2){animation-delay:.06s}
+.msp-group.is-entering .venture:nth-child(3){animation-delay:.12s}
+.msp-group.is-entering .venture:nth-child(4){animation-delay:.18s}
+.msp-group.is-entering .venture:nth-child(5){animation-delay:.24s}
+.msp-group.is-entering .venture:nth-child(6){animation-delay:.3s}
+@keyframes msp-pop{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+.msp-group-title{margin:0 0 clamp(1.25rem,2.5vw,2rem);display:flex;align-items:center;gap:1rem}
+.msp-group-title::after{content:"";flex:1;height:1px;background:var(--dark-rule)}
+
+.venture-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.75rem)}
+.venture-grid--present .venture:first-child{grid-column:span 2}
+
+/* ---------- Venture card (homepage work-card style) ---------- */
+.venture{position:relative;perspective:1400px}
+.venture-inner{position:relative;height:100%;display:flex;flex-direction:column;gap:clamp(.9rem,1.5vw,1.25rem);border:2px solid var(--ink);border-radius:var(--radius);background-color:var(--ground);background-image:var(--sheen);box-shadow:0 -24px 60px rgba(0,0,0,.6),inset 0 1px 0 rgba(215,226,234,.28);padding:clamp(1rem,1.8vw,1.6rem);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--lift,0px));transition:transform .45s var(--ease),border-color .3s ease,box-shadow .45s var(--ease);will-change:transform}
+.venture:hover .venture-inner,.venture:focus-within .venture-inner{--lift:-8px;border-color:#FFFFFF;box-shadow:0 30px 70px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.15),inset 0 1px 0 rgba(215,226,234,.35)}
+.venture-inner::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.1),transparent 45%);opacity:0;transition:opacity .4s ease}
+.venture:hover .venture-inner::after{opacity:1}
+.venture .card-head{padding:0 .35rem;align-items:center;gap:.75rem}
+.venture .h-sub{color:var(--ink);font-size:clamp(1.05rem,1.5vw,1.35rem)}
+.venture .h-sub a{color:inherit}
+.venture .h-sub a::after{content:"";position:absolute;inset:0;z-index:1;border-radius:var(--radius)}
+.venture .h-sub a:focus-visible{outline:none}
+.venture:has(.h-sub a:focus-visible) .venture-inner{outline:2px solid #FFFFFF;outline-offset:4px}
+.chip{flex:none;display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .8rem;border:1px solid var(--card-edge);border-radius:999px;font-family:var(--kanit);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.68rem;line-height:1;color:var(--ink);white-space:nowrap}
+.chip--live::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:msp-pulse 2.4s ease-out infinite}
+@keyframes msp-pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.55)}70%,100%{box-shadow:0 0 0 .55rem rgba(61,220,132,0)}}
+.chip--soon{border-color:rgba(224,91,214,.6);color:#F3B7EE}
+.chip--sold{border-color:rgba(190,76,0,.7);color:#F5B98F}
+.chip--past{color:var(--ink-muted)}
+
+.venture-shot{position:relative;overflow:hidden;border:1px solid var(--card-edge);border-radius:calc(var(--radius-sm) * .8);background:var(--ground-lift)}
+.venture-shot img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:top center;transition:transform 1.2s var(--ease)}
+.venture:hover .venture-shot img{transform:scale(1.045)}
+.venture-shot .stamp{position:absolute;left:.75rem;bottom:.75rem;padding:.45rem .8rem;border-radius:999px;background:rgba(12,12,12,.78);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.35);font-family:var(--kanit);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.62rem;color:#FFFFFF}
+.venture-shot--archive img{filter:saturate(.9)}
+.venture .card-body{padding:0 .35rem;color:var(--ink)}
+.venture-foot{margin-top:auto;padding:0 .35rem .2rem;display:flex;flex-wrap:wrap;gap:.6rem;position:relative;z-index:2}
+.venture-foot .btn-pill{font-size:clamp(.66rem,.85vw,.76rem);padding:.6rem 1rem}
+.venture-foot .muted{font-family:var(--kanit);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.68rem;color:var(--ink-muted);padding:.6rem 0}
+
+/* Featured card: screenshot beside the copy */
+.venture-grid--present .venture:first-child .venture-inner{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto 1fr auto;column-gap:clamp(1.25rem,2.5vw,2rem)}
+.venture-grid--present .venture:first-child .venture-shot{grid-column:1;grid-row:1/-1;align-self:start}
+.venture-grid--present .venture:first-child .card-head,.venture-grid--present .venture:first-child .card-body,.venture-grid--present .venture:first-child .venture-foot{grid-column:2}
+.venture-grid--present .venture:first-child .card-head{padding-top:.5rem}
+.venture-grid--present .venture:first-child .h-sub{font-size:clamp(1.3rem,2.2vw,2rem)}
+
+/* Styled placeholder for a venture with nothing left online */
+.venture-placeholder{position:relative;aspect-ratio:3/2;display:grid;place-items:center;overflow:hidden;background:radial-gradient(120% 90% at 20% 0%,rgba(182,0,168,.35) 0%,transparent 55%),radial-gradient(120% 90% at 100% 100%,rgba(190,76,0,.32) 0%,transparent 55%),linear-gradient(160deg,#1E2024,#0C0C0C)}
+.venture-placeholder::before{content:"";position:absolute;left:-10%;right:-10%;bottom:22%;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 28px,transparent 28px 56px);animation:msp-road 2.8s linear infinite}
+@keyframes msp-road{to{transform:translateX(-56px)}}
+.venture-placeholder span{position:relative;font-family:var(--kanit);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:.85;text-align:center;font-size:clamp(1.8rem,3.4vw,2.8rem)}
+
+/* ---------- Note + close ---------- */
+.msp-note{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1100px){
+  .venture-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .venture-grid--present .venture:first-child{grid-column:1/-1}
+}
+@media (max-width:900px){
+  .msp-hero .detail-hero-layout{grid-template-columns:1fr}
+  .msp-collage{max-width:460px;aspect-ratio:5/4}
+  .msp-collage .frame{width:70%}
+}
+@media (max-width:700px){
+  .venture-grid{grid-template-columns:1fr}
+  .venture-grid--present .venture:first-child .venture-inner{display:flex}
+  .msp-note{grid-template-columns:1fr;justify-items:start}
+  .msp-filter{width:100%;justify-content:space-between}
+  .msp-filter button{flex:1;padding:.7rem .5rem;letter-spacing:.08em}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .msp-sparkle-word,.msp-collage .frame,.sparkle,.chip--live::before,.venture-placeholder::before{animation:none}
+  .sparkle{opacity:.85}
+  .msp-marquee-track{animation:none;width:auto}
+  .msp-marquee ul{flex-wrap:wrap;justify-content:center}
+  .msp-marquee ul[aria-hidden="true"]{display:none}
+  .venture-inner,.venture-shot img,.msp-collage .frame{transition:border-color .3s ease}
+  .venture:hover .venture-inner{--lift:0px}
+  .venture:hover .venture-shot img{transform:none}
+  .msp-group.is-entering .venture{animation:none}
+}
