@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thanks — Now Send Your Episode</title>
+<meta name="description" content="Payment received. Email a share link to your episode and your captioned clips arrive in 3 days or less.">
+<link rel="canonical" href="https://brandonhuston.com/clips/thanks/">
+<meta name="theme-color" content="#0C0C0C">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/logo-mark.png">
+<link rel="preload" href="/assets/fonts/kanit-normal-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-normal-300-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/site.css?v=20260912-7">
+<style>
+  .send-steps{list-style:none;margin:clamp(1.5rem,3vw,2.25rem) auto;padding:0;max-width:40rem;text-align:left;border-top:1px solid var(--dark-rule)}
+  .send-steps li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--dark-rule);font-family:var(--newsreader);font-size:1.08rem;line-height:1.5;color:var(--ink)}
+  .send-steps strong{font-family:var(--kanit);font-weight:500;letter-spacing:.08em;font-size:.8rem;color:#FFFFFF}
+  .send-steps a{border-bottom:1px solid currentColor}
+</style>
+</head>
+<body>
+<section class="section sheet sheet--dark glow-close" style="min-height:80vh;display:flex;align-items:center">
+  <div class="proof-close" style="margin-top:0;padding-top:0;border-top:0">
+    <h1 class="title steel">You’re in. Now send me your episode.</h1>
+    <p class="lead" data-plan-copy>Payment received. Send the episode and your 5 captioned clips arrive by email in 3 days or less.</p>
+    <ol class="send-steps">
+      <li><strong>01</strong><span>Upload your podcast or video to Google Drive, Dropbox, WeTransfer or YouTube (unlisted is fine). Set the link so anyone with it can view.</span></li>
+      <li><strong>02</strong><span>Email the link to <a href="mailto:hello@brandonhuston.com?subject=My%20episode%20for%20clips">hello@brandonhuston.com</a> from the email you used at checkout.</span></li>
+      <li><strong>03</strong><span>Optional: add timestamps or topics you want in the clips. If you don’t, I pick the five strongest moments.</span></li>
+    </ol>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn-primary" href="mailto:hello@brandonhuston.com?subject=My%20episode%20for%20clips">Email my episode link</a>
+      <a class="btn btn-ghost" href="/">Back to brandonhuston.com</a>
+    </div>
+  </div>
+</section>
+<script>
+  if (/[?&]plan=monthly\b/.test(location.search)) {
+    var p = document.querySelector('[data-plan-copy]');
+    if (p) p.textContent = 'Payment received. Your unlimited plan is active. Send each episode the same way, and its captioned clips arrive by email in 3 days or less.';
+  }
+</script>
+</body>
+</html>
