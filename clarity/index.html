@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clarity Intensive · Tell me about your business — Brandon Huston</title>
+  <meta name="description" content="Curious about the Clarity Intensive? Tell Brandon Huston about your business, where you are stuck, and the help you wish you had.">
+  <meta property="og:title" content="Curious about the Clarity Intensive?">
+  <meta property="og:description" content="Tell me about your business and the help you wish you had. Ten questions to start the conversation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brandonhuston.com/clarity/">
+  <link rel="canonical" href="https://brandonhuston.com/clarity/">
+  <meta name="theme-color" content="#0C0C0C">
+  <link rel="icon" type="image/png" href="/logo-mark.png">
+  <link rel="preload" href="/assets/fonts/kanit-normal-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/clarity.css">
+  <script src="/assets/js/clarity.js" defer></script>
+</head>
+<body>
+  <header class="header"><a class="brand" href="/">Brandon Huston</a><a class="home" href="/">Back to the site</a></header>
+  <main class="layout">
+    <div class="intro">
+      <p class="eyebrow">The Clarity Intensive</p>
+      <h1>Tell me where<br>you’re stuck.</h1>
+      <p class="deck">You know your business needs something. What would help you most right now?</p>
+      <p>Answer these ten questions. Tell me what you do, what’s getting in the way, and who you wish you could bring in to help.</p>
+      <p>I’ll read your answers and email you about the Clarity Intensive.</p>
+      <div class="intro-note">Start with what’s happening in your business. Short, honest answers are enough.</div>
+    </div>
+    <div class="form-panel">
+      <form id="clarity-form" aria-label="Clarity Intensive interest form">
+        <div class="form-heading"><h2>Your business. Your next move.</h2><p>All questions are required unless marked optional.</p></div>
+        <fieldset>
+          <legend>A little context</legend>
+          <div class="field"><label for="name">1. What is your name?</label><input id="name" name="name" autocomplete="name" maxlength="100" required></div>
+          <div class="field"><label for="email">2. What is the best email to reach you?</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required></div>
+          <div class="field"><label for="business">3. What industry are you in, and what does your business do?</label><p class="hint" id="business-hint">Include your business name, what you sell, and who you sell it to.</p><textarea id="business" name="business" rows="3" maxlength="1200" aria-describedby="business-hint" required></textarea></div>
+          <div class="field"><label for="businessLink">4. Where can I find your business online? <span class="optional">Optional</span></label><p class="hint" id="link-hint">Your website, TikTok, Instagram, or another place I can see your work.</p><input id="businessLink" name="businessLink" type="text" autocapitalize="none" spellcheck="false" maxlength="500" aria-describedby="link-hint"></div>
+          <div class="field"><label for="revenue">5. What is your average monthly business revenue?</label><p class="hint" id="revenue-hint">In US dollars, before expenses. A rough range is fine.</p><div class="select-wrap"><select id="revenue" name="revenue" aria-describedby="revenue-hint" required><option value="" disabled selected>Choose a range</option><option>Pre-revenue</option><option>Under $5,000</option><option>$5,000–$10,000</option><option>$10,000–$25,000</option><option>$25,000–$50,000</option><option>$50,000–$100,000</option><option>$100,000+</option><option>Prefer to discuss privately</option></select></div></div>
+        </fieldset>
+        <fieldset>
+          <legend>What’s getting in the way</legend>
+          <div class="field"><label for="hurdle">6. What is the biggest hurdle in your business right now?</label><p class="hint" id="hurdle-hint">What keeps landing back on your plate or stopping you from moving forward?</p><textarea id="hurdle" name="hurdle" rows="4" maxlength="3000" aria-describedby="hurdle-hint" required></textarea></div>
+          <div class="field"><label for="tried">7. What have you tried so far to get past it? <span class="optional">Optional</span></label><textarea id="tried" name="tried" rows="3" maxlength="2000"></textarea></div>
+        </fieldset>
+        <fieldset>
+          <legend>The help you wish you had</legend>
+          <div class="field"><label for="dreamPerson">8. If money were no object, who is the one person you would bring into your business?</label><p class="hint" id="person-hint">A role or a specific person. Who would make the biggest difference?</p><textarea id="dreamPerson" name="dreamPerson" rows="3" maxlength="2000" aria-describedby="person-hint" required></textarea></div>
+          <div class="field"><label for="dreamRole">9. What would that person do for you?</label><p class="hint" id="role-hint">What would they take off your plate, fix, or build? Be specific.</p><textarea id="dreamRole" name="dreamRole" rows="4" maxlength="3000" aria-describedby="role-hint" required></textarea></div>
+          <div class="field"><label for="goal">10. What do you actually want your business to look like 90 days from now?</label><p class="hint" id="goal-hint">What would change in the business, and in your day?</p><textarea id="goal" name="goal" rows="4" maxlength="3000" aria-describedby="goal-hint" required></textarea></div>
+        </fieldset>
+        <div class="trap" aria-hidden="true"><label for="companyWebsite">Leave this field empty</label><input id="companyWebsite" name="companyWebsite" tabindex="-1" autocomplete="off"></div>
+        <p class="consent">By submitting, you’re asking Brandon to contact you about the Clarity Intensive.</p>
+        <details class="privacy"><summary>How your answers are used</summary><p>Brandon Huston saves your answers in a private lead log and receives a copy by email. He uses them to understand your business and reply about this inquiry. This form does not sign you up for a newsletter. To ask about your answers or request their deletion, email <a href="mailto:hello@brandonhuston.com">hello@brandonhuston.com</a>.</p></details>
+        <button class="submit" type="submit">Submit</button>
+        <p id="form-error" class="error" role="alert" hidden></p>
+        <noscript><p class="error">Please enable JavaScript to submit this form, or email hello@brandonhuston.com.</p></noscript>
+      </form>
+      <section id="form-success" class="success" tabindex="-1" hidden aria-labelledby="success-title">
+        <p class="eyebrow">Your answers are in</p><h2 id="success-title">Thanks for telling me what’s going on.</h2>
+        <p>I’ll read your answers and get back to you by email about the Clarity Intensive.</p>
+        <p class="reference">Your reference: <span id="lead-reference"></span></p>
+        <a class="return-link" href="/">Back to brandonhuston.com</a>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"><span>© 2026 Brandon Huston</span><a href="mailto:hello@brandonhuston.com">hello@brandonhuston.com</a></footer>
+</body>
+</html>
